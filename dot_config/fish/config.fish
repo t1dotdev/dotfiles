@@ -13,6 +13,10 @@ function g
     command lazygit $argv
 end
 
+function ls
+    command eza --icons=always -a $argv
+end
+
 function t
     command tmux $argv
 end

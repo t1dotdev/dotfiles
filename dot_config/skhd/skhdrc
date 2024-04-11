@@ -63,7 +63,7 @@ shift + lctrl + alt - k : yabai -m window --insert north
 shift + lctrl + alt - l : yabai -m window --insert east
 
 # Float / Unfloat window
-shift + alt - space : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+# shift + alt - space : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
 # Restart Yabai
 shift + lctrl + alt - r : \
@@ -72,5 +72,5 @@ shift + lctrl + alt - r : \
     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # Make window native fullscreen
-alt - f         : yabai -m window --toggle zoom-fullscreen
+alt - f         : yabai -m window --resize right:80%:0:100%; 
 shift + alt - f : yabai -m window --toggle native-fullscreen

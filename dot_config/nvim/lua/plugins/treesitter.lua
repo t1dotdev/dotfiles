@@ -3,6 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		tag = "v0.9.1",
 		opts = {
+			autotag = { enable = true },
 			ensure_installed = {
 				"javascript",
 				"typescript",
@@ -15,6 +16,8 @@ return {
 				"sql",
 				"vim",
 				"lua",
+				"tsx",
+				"html",
 			},
 			query_linter = {
 				enable = true,

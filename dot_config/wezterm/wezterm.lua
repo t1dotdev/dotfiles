@@ -181,7 +181,7 @@ config.keys = {
 	{
 		key = "w",
 		mods = "CMD",
-		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
 }
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)

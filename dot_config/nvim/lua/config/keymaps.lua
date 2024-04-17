@@ -2,6 +2,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
+-- Shift + h to move ctrl + u to move half screen up
+keymap.set("n", "<S-h>", "<C-u>")
+keymap.set("n", "<S-l>", "<C-d>")
 
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
@@ -21,8 +24,8 @@ keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
 
 -- Tabs
 keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+keymap.set("n", "<Tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-Tab>", ":tabprev<Return>", opts)
 keymap.set("n", "tw", ":tabclose<Return>", opts)
 
 -- Split window

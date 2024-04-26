@@ -104,8 +104,10 @@ wezterm.on("update-right-status", function(window, pane)
 		if isCharging then
 			battery = 11
 		end
-		-- table.insert(cells, string.format(battery_icons[battery]))
-		table.insert(cells, string.format(battery_icons[battery] .. " " .. "%.0f%%", b.state_of_charge * 100))
+
+		if b.state ~= "Empty" then
+			table.insert(cells, string.format(battery_icons[battery] .. " " .. "%.0f%%", b.state_of_charge * 100))
+		end
 	end
 
 	-- The powerline < symbol

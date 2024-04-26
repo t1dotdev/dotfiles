@@ -185,6 +185,51 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
+	{
+		key = "l",
+		mods = "OPT",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "h",
+		mods = "OPT",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "k",
+		mods = "OPT",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "j",
+		mods = "OPT",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "h",
+		mods = "CTRL|OPT",
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "l",
+		mods = "CTRL|OPT",
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "k",
+		mods = "CTRL|OPT",
+		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		key = "j",
+		mods = "CTRL|OPT",
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+	},
+	{
+		key = "K",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+	},
 }
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	local title = tab.tab_index + 1
@@ -195,7 +240,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		{ Text = " " },
 	}
 end)
-config.window_close_confirmation = "NeverPrompt"
 config.initial_cols = 100
 config.initial_rows = 25
 

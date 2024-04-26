@@ -2,9 +2,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x')
--- Shift + h to move ctrl + u to move half screen up
-keymap.set("n", "<S-h>", "<C-u>")
-keymap.set("n", "<S-l>", "<C-d>")
+-- Shift + h to move to top of the screen
+-- keymap.set("n", "<S-h>", "H")
+-- keymap.set("n", "<S-l>", "L")
 
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")

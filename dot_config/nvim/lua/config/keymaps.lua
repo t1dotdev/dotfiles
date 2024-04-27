@@ -44,6 +44,10 @@ keymap.set("n", "<C-S-l>", "<C-w>>")
 keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
+-- Move lines
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()

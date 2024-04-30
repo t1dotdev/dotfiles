@@ -86,7 +86,10 @@ set -x PATH $GEM_HOME/bin $PATH
 
 # SML
 set -x PATH /usr/local/smlnj/bin $PATH
+# set -x PATH /Users/petchx/.local/bin $PATH
 
+export EDITOR=nvim
+export VISUAL=nvim
 
 if set -q ITERM_SESSION_ID; and test "$TERM_PROGRAM" = "iTerm.app"
     # nf
@@ -96,3 +99,6 @@ end
 
 zoxide init fish | source
 # tmux
+
+# Created by `pipx` on 2024-04-30 10:37:40
+set PATH $PATH /Users/petchx/.local/bin

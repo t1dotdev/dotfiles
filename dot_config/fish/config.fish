@@ -37,8 +37,7 @@ end
 # set red_color \#ec0101
 set blue_color \#cb5be6
 set cyan_color \#7d7cf9
-set -Ux LSCOLORS fxfxbEaEBxxEhEhBaDaCaD
-
+# set -Ux LSCOLORS fxfxcxdxbxegedabagacad
 function fish_prompt
     set_color $cyan_color
     echo -n "┌──("
@@ -90,6 +89,8 @@ set -x PATH /usr/local/smlnj/bin $PATH
 
 export EDITOR=nvim
 export VISUAL=nvim
+source ~/.config/fish/lscolors.csh
+
 
 if set -q ITERM_SESSION_ID; and test "$TERM_PROGRAM" = "iTerm.app"
     # nf
@@ -102,3 +103,5 @@ zoxide init fish | source
 
 # Created by `pipx` on 2024-04-30 10:37:40
 set PATH $PATH /Users/petchx/.local/bin
+
+fish_add_path /Users/petchx/.spicetify

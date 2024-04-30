@@ -22,13 +22,6 @@ wezterm.on("gui-startup", function(cmd)
 	end
 end)
 
-local function get_local_ip()
-	local handle = io.popen("ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}'")
-	local local_ip = handle:read("*a")
-	handle:close()
-	return local_ip
-end
-
 wezterm.on("update-right-status", function(window, pane)
 	-- Each element holds the text for a cell in a "powerline" style << fade
 	local cells = {}
@@ -246,18 +239,18 @@ config.initial_rows = 25
 config.window_padding = {
 	-- left = 10,
 	-- right = 0,
-	-- top = 0,
+	top = 20,
 	bottom = 0,
 }
-
+config.font_size = 13
 config.text_background_opacity = 0.8
-config.macos_window_background_blur = 10
+config.macos_window_background_blur = 20
 config.window_background_opacity = 0.8
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
 -- config.integrated_title_button_style = "Gnome"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 -- config.tab_bar_style = {
 -- 	window_hide = wezterm.format({
 -- 		{ Foreground = { Color = colors.success } },

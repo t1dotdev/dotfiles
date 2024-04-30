@@ -72,7 +72,7 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, cwd)
 		-- table.insert(cells, hostname)
 	end
-	local handle = io.popen("ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}'")
+	local handle = io.popen("ipconfig getifaddr en0")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end
@@ -227,7 +227,7 @@ config.keys = {
 	},
 	{
 		key = "K",
-		mods = "CTRL|SHIFT",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
 	},
 }

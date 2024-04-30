@@ -39,16 +39,17 @@ keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
 
 -- Resize window
-keymap.set("n", "<C-S-h>", "<C-w><")
-keymap.set("n", "<C-S-l>", "<C-w>>")
-keymap.set("n", "<C-S-k>", "<C-w>+")
-keymap.set("n", "<C-S-j>", "<C-w>-")
-
+-- keymap.set("n", "<C-h>", "<C-w><")
+-- keymap.set("n", "<C-l>", "<C-w>>")
+-- keymap.set("n", "<C-k>", "<C-w>+")
+-- keymap.set("n", "<C-j>", "<C-w>-")
+--
 -- Move lines
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 
+keymap.set("n", "<leader>r", require("telescope").extensions.flutter.commands, { desc = "Open command Flutter" })
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
-end, opts)
+-- keymap.set("n", "<C-j>", function()
+-- 	vim.diagnostic.goto_next()
+-- end, opts)

@@ -239,10 +239,10 @@ config.initial_rows = 25
 config.window_padding = {
 	-- left = 10,
 	-- right = 0,
-	top = 20,
+	top = 25,
 	bottom = 0,
 }
-config.font_size = 13
+config.font_size = 12
 config.text_background_opacity = 0.8
 config.macos_window_background_blur = 20
 config.window_background_opacity = 0.8

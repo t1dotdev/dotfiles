@@ -4,6 +4,7 @@ options=(
 	hidpi=on
 	active_color=0xffcb5be6
 	inactive_color=0xcc111111
+  blacklist="Simulator"
 )
 
 borders "${options[@]}"

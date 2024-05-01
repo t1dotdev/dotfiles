@@ -34,6 +34,10 @@ function nf
     neofetch
 end
 
+function ss
+    open /System/Library/CoreServices/ScreenSaverEngine.app
+end
+
 # set red_color \#ec0101
 set blue_color \#cb5be6
 set cyan_color \#7d7cf9
@@ -99,6 +103,7 @@ end
 # run tmux from the start
 
 zoxide init fish | source
+alias cd="z"
 # tmux
 
 # Created by `pipx` on 2024-04-30 10:37:40

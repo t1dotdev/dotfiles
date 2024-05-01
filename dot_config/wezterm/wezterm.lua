@@ -65,7 +65,7 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, cwd)
 		-- table.insert(cells, hostname)
 	end
-	local handle = io.popen("ipconfig getifaddr en0")
+	local handle = io.popen("ifconfig -l | xargs -n1 ipconfig getifaddr")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end

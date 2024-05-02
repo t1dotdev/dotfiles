@@ -176,7 +176,7 @@ config.keys = {
 	{
 		key = "w",
 		mods = "CMD",
-		action = wezterm.action.CloseCurrentTab({ confirm = false }),
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
 		key = "l",
@@ -250,7 +250,7 @@ config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
 -- config.integrated_title_button_style = "Gnome"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 -- config.tab_bar_style = {
 -- 	window_hide = wezterm.format({
 -- 		{ Foreground = { Color = colors.success } },

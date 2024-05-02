@@ -1,0 +1,103 @@
+# Personal Zsh configuration file. It is strongly recommended to keep all
+# shell customization and configuration (including exported environment
+# variables such as path) in this file or in files sourced from it.
+#
+# documentation: https://github.com/romkatv/zsh4humans/blob/v5/readme.md.
+
+# periodic auto-update on zsh startup: 'ask' or 'no'.
+# you can manually run `z4h update` to update everything.
+zstyle ':z4h:' auto-update      'no'
+# ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update-days '28'
+
+# keyboard type: 'mac' or 'pc'.
+zstyle ':z4h:bindkey' keyboard  'mac'
+
+# don't start tmux.
+zstyle ':z4h:' start-tmux       no
+
+# mark up shell's output with semantic information.
+zstyle ':z4h:' term-shell-integration 'yes'
+
+# right-arrow key accepts one character ('partial-accept') from
+# command autosuggestions or the whole thing ('accept')?
+zstyle ':z4h:autosuggestions' forward-char 'accept'
+
+# recursively traverse directories when tab-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs 'no'
+
+# enable direnv to automatically source .envrc files.
+zstyle ':z4h:direnv'         enable 'no'
+# show "loading" and "unloading" notifications from direnv.
+zstyle ':z4h:direnv:success' notify 'yes'
+
+# enable ('yes') or disable ('no') automatic teleportation of z4h over
+# ssh when connecting to these hosts.
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+# the default value if none of the overrides above match the hostname.
+zstyle ':z4h:ssh:*'                   enable 'no'
+
+# send these files over to the remote host when connecting over ssh to the
+# enabled hosts.
+zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+
+# clone additional git repositories from github.
+#
+# this doesn't do anything apart from cloning the repository and keeping it
+# up-to-date. cloned files can be used after `z4h init`. this is just an
+# example. if you don't plan to use oh my zsh, delete this line.
+z4h install ohmyzsh/ohmyzsh || return
+
+# install or update core components (fzf, zsh-autosuggestions, etc.) and
+# initialize zsh. after this point console i/o is unavailable until zsh
+# is fully initialized. everything that requires user interaction or can
+# perform network i/o must be done above. everything else is best done below.
+z4h init || return
+
+# extend path.
+path=(~/bin $path)
+
+# autoload functions.
+autoload -Uz zmv
+
+# define functions and completions.
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
+
+# define named directories: ~w <=> windows home directory on wsl.
+[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
+
+# define aliases.
+alias tree='tree -a -i .git'
+
+# set shell options: http://zsh.sourceforge.net/doc/release/options.html.
+setopt glob_dots     # no special treatment for file names with a leading dot
+setopt no_auto_menu  # require an extra tab press to open the completion menu
+
+
+export primary=#cb5be6
+# add flags to existing aliases.
+alias ls="eza --icons=always -a"
+alias ss="open /system/library/coreservices/screensaverengine.app"
+
+export PATH="$PATH:/users/petchx/development/flutter/bin"
+
+# cocoapod
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
+
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+# created by `pipx` on 2024-04-30 10:37:40
+export PATH="/users/petchx/.local/bin:$PATH"
+
+alias g="lazygit"
+alias n="nvim"
+source ~/lscolors.sh
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,underline 
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta 
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=magenta 
+ZSH_HIGHLIGHT_STYLES[path]=none
+

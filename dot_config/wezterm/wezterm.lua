@@ -118,7 +118,7 @@ wezterm.on("update-right-status", function(window, pane)
 	}
 
 	-- Foreground color for the text across the fade
-	local text_fg = "#111111"
+	local text_fg = "#000000"
 
 	-- The elements to be formatted
 	local elements = {}

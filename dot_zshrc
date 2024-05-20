@@ -101,3 +101,15 @@ ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=magenta 
 ZSH_HIGHLIGHT_STYLES[path]=none
 
+
+ # idle() {
+#   cmatrix -C magenta -s -B
+#   echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
+# }
+
+# Set up a trap to execute the function after a certain period of idleness
+# trap 'idle' ALRM
+
+# Set up a timer to send an alarm signal after 5 seconds of idleness
+# TMOUT=60
+

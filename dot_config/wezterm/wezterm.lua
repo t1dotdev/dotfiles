@@ -256,12 +256,15 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
+config.font = wezterm.font("Hack Nerd Font Mono")
 config.font_size = 13
+config.line_height = 1.2
 config.text_background_opacity = 0.8
 config.macos_window_background_blur = 20
 config.window_background_opacity = 0.8
 config.use_fancy_tab_bar = false
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
+config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
 -- config.integrated_title_button_style = "MacOsNative"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.hide_tab_bar_if_only_one_tab = false
@@ -301,5 +304,15 @@ config.hide_tab_bar_if_only_one_tab = false
 -- 	font = wezterm.font({ family = "Roboto", weight = "Bold" }),
 -- 	font_size = 12.0,
 -- 	active_titlebar_bg = "rgb(17,17,17,0.85)",
+-- }
+-- config.window_frame = {
+-- 	border_left_width = "0.2cell",
+-- 	border_right_width = "0.2cell",
+-- 	border_bottom_height = "0.1cell",
+-- 	border_top_height = "0.1cell",
+-- 	border_left_color = "#4A4A4B",
+-- 	border_right_color = "#4A4A4B",
+-- 	border_bottom_color = "#4a4a4b",
+-- 	border_top_color = "#4a4a4b",
 -- }
 return config

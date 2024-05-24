@@ -118,7 +118,7 @@ wezterm.on("update-right-status", function(window, pane)
 	}
 
 	-- Foreground color for the text across the fade
-	local text_fg = "#000000"
+	local text_fg = "#111111"
 
 	-- The elements to be formatted
 	local elements = {}
@@ -176,26 +176,26 @@ config.keys = {
 	{
 		key = "w",
 		mods = "CMD",
-		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
 		key = "l",
-		mods = "OPT",
+		mods = "CMD | OPT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "h",
-		mods = "OPT",
+		mods = "CMD|OPT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "k",
-		mods = "OPT",
+		mods = "CMD|OPT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "OPT",
+		mods = "CMD|OPT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
@@ -222,6 +222,20 @@ config.keys = {
 		key = "K",
 		mods = "CMD|SHIFT",
 		action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+	},
+	{
+		key = "d",
+		mods = "CMD",
+		action = wezterm.action.SplitPane({
+			direction = "Right",
+		}),
+	},
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.SplitPane({
+			direction = "Down",
+		}),
 	},
 }
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)

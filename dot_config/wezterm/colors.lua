@@ -5,6 +5,6 @@ colors.primary = "#cb5be6"
 colors.success = "#34C849"
 colors.warning = "#FEBB40"
 colors.danger = "#FD5754"
-colors.bg = "#000000"
+colors.bg = "#111111"
 
 return colors

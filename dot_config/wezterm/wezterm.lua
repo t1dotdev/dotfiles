@@ -200,22 +200,22 @@ config.keys = {
 	},
 	{
 		key = "h",
-		mods = "CTRL|OPT",
+		mods = "CTRL|CMD",
 		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
 		key = "l",
-		mods = "CTRL|OPT",
+		mods = "CTRL|CMD",
 		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
 		key = "k",
-		mods = "CTRL|OPT",
+		mods = "CTRL|CMD",
 		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
 		key = "j",
-		mods = "CTRL|OPT",
+		mods = "CTRL|CMD",
 		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
@@ -262,7 +262,7 @@ config.macos_window_background_blur = 20
 config.window_background_opacity = 0.8
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
--- config.integrated_title_button_style = "Gnome"
+-- config.integrated_title_button_style = "MacOsNative"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.hide_tab_bar_if_only_one_tab = false
 -- config.tab_bar_style = {

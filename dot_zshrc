@@ -95,11 +95,15 @@ export PATH="/users/petchx/.local/bin:$PATH"
 
 alias g="lazygit"
 alias n="nvim"
+alias s="spf"
 source ~/lscolors.sh
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,underline 
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta 
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=magenta 
 ZSH_HIGHLIGHT_STYLES[path]=none
+
+export EDITOR="/usr/local/bin/wezterm-nvim"
+# export EDITOR="code"
 
 
  # idle() {

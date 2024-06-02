@@ -9,6 +9,11 @@ function n
     command nvim $argv
 end
 
+function s
+    command spf $argv
+end
+
+
 function g
     command lazygit $argv
 end

@@ -110,8 +110,6 @@ wezterm.on("update-right-status", function(window, pane)
 
 	-- Color palette for the backgrounds of each cell
 	local colors = {
-		"#7D7CF9",
-		"#A86AEF",
 		"#B465EC",
 		"#BB62EA",
 		"#CB5BE6",
@@ -145,6 +143,8 @@ wezterm.on("update-right-status", function(window, pane)
 
 	window:set_right_status(wezterm.format(elements))
 end)
+
+local white = "#ffffff"
 
 config.colors = {
 	foreground = "#c7c7c7",
@@ -247,6 +247,42 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		{ Text = " " },
 	}
 end)
+-- -- The filled in variant of the < symbol
+-- local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+--
+-- -- The filled in variant of the > symbol
+-- local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+-- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+-- 	local edge_background = "#111111"
+-- 	local background = "#3b3052"
+-- 	local foreground = "#909090"
+--
+-- 	if tab.is_active then
+-- 		background = "#cb5be6"
+-- 		foreground = "#111111"
+-- 	elseif hover then
+-- 		background = "#3b3052"
+-- 		foreground = "#909090"
+-- 	end
+--
+-- 	local edge_foreground = background
+--
+-- 	-- ensure that the titles fit in the available space,
+-- 	-- and that we have room for the edges.
+-- 	local title = wezterm.truncate_right(tab.active_pane.title, max_width - 2)
+--
+-- 	return {
+-- 		{ Background = { Color = edge_background } },
+-- 		{ Foreground = { Color = edge_foreground } },
+-- 		{ Text = SOLID_LEFT_ARROW },
+-- 		{ Background = { Color = background } },
+-- 		{ Foreground = { Color = foreground } },
+-- 		{ Text = title },
+-- 		{ Background = { Color = edge_background } },
+-- 		{ Foreground = { Color = edge_foreground } },
+-- 		{ Text = SOLID_RIGHT_ARROW },
+-- 	}
+-- end)
 config.initial_cols = 100
 config.initial_rows = 25
 

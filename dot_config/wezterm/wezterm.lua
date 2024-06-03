@@ -133,7 +133,7 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(elements, { Text = " " .. text .. " " })
 		if not is_last then
 			table.insert(elements, { Foreground = { Color = colors[cell_no + 1] } })
-			table.insert(elements, { Text = SOLID_LEFT_ARROW })
+			-- table.insert(elements, { Text = SOLID_LEFT_ARROW })
 		end
 		num_cells = num_cells + 1
 	end
@@ -257,7 +257,7 @@ config.window_padding = {
 	bottom = 0,
 }
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13
+config.font_size = 14
 config.line_height = 1
 config.text_background_opacity = 0.8
 config.macos_window_background_blur = 20
@@ -268,6 +268,7 @@ config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
 -- config.integrated_title_button_style = "MacOsNative"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE|MACOS_FORCE_ENABLE_SHADOW"
 config.hide_tab_bar_if_only_one_tab = false
+
 -- config.tab_bar_style = {
 -- 	window_hide = wezterm.format({
 -- 		{ Foreground = { Color = colors.success } },
@@ -315,4 +316,27 @@ config.hide_tab_bar_if_only_one_tab = false
 -- 	border_bottom_color = "#4a4a4b",
 -- 	border_top_color = "#4a4a4b",
 -- }
+
+function recompute_opacity(window)
+	local window_dims = window:get_dimensions()
+	local overrides = window:get_config_overrides() or {}
+
+	if not window_dims.is_full_screen then
+		overrides.window_background_opacity = 0.8
+		overrides.font_size = 14
+	else
+		overrides.window_background_opacity = 1.0
+		overrides.font_size = 15
+	end
+	window:set_config_overrides(overrides)
+end
+
+wezterm.on("window-resized", function(window, pane)
+	recompute_opacity(window)
+end)
+
+wezterm.on("window-config-reloaded", function(window)
+	recompute_opacity(window)
+end)
+
 return config

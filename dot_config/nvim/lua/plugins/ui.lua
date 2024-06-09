@@ -171,6 +171,7 @@ return {
 
 					-- custom mappings
 					vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
+					vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
 				end,
 				actions = {
 					open_file = {

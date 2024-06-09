@@ -8,20 +8,24 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 wezterm.on("gui-startup", function(cmd)
+	local wezterm = require("wezterm")
 	local screenInfo = wezterm.gui.screens()
 
-	-- local padSize = 0
 	local screenWidth = screenInfo["virtual_width"]
 	local screenHeight = screenInfo["virtual_height"]
 
 	local tab, pane, window = wezterm.mux.spawn_window(cmd or {
 		workspace = "main",
 	})
+
 	if window ~= nil then
-		window:gui_window():set_position(screenWidth / 4, screenHeight / 4)
+		local windowWidth = window:get_dimensions().pixel_width
+		local windowHeight = window:get_dimensions().pixel_height
+		local x = (screenWidth - windowWidth) / 2
+		local y = (screenHeight - windowHeight) / 2
+		window:gui_window():set_position(x, y)
 	end
 end)
-
 wezterm.on("update-right-status", function(window, pane)
 	-- Each element holds the text for a cell in a "powerline" style << fade
 	local cells = {}
@@ -65,7 +69,7 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, cwd)
 		-- table.insert(cells, hostname)
 	end
-	local handle = io.popen("ifconfig -l | xargs -n1 ipconfig getifaddr")
+	local handle = io.popen("ipconfig getifaddr en0")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end
@@ -116,7 +120,7 @@ wezterm.on("update-right-status", function(window, pane)
 	}
 
 	-- Foreground color for the text across the fade
-	local text_fg = "#111111"
+	local text_fg = "#121212"
 
 	-- The elements to be formatted
 	local elements = {}
@@ -221,8 +225,12 @@ config.keys = {
 	{
 		key = "K",
 		mods = "CMD|SHIFT",
-		action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+		action = wezterm.action.Multiple({
+			wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
+		}),
 	},
+
 	{
 		key = "d",
 		mods = "CMD",
@@ -283,8 +291,8 @@ end)
 -- 		{ Text = SOLID_RIGHT_ARROW },
 -- 	}
 -- end)
-config.initial_cols = 100
-config.initial_rows = 25
+config.initial_cols = 90
+config.initial_rows = 24
 
 config.window_padding = {
 	-- left = 10,
@@ -293,10 +301,15 @@ config.window_padding = {
 	bottom = 0,
 }
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14
+
+-- config.font = wezterm.font_with_fallback({
+-- 	"JetBrainsMono Nerd Font",
+-- 	"Pridi",
+-- })
+config.font_size = 15
 config.line_height = 1
 config.text_background_opacity = 0.8
-config.macos_window_background_blur = 20
+config.macos_window_background_blur = 30
 config.window_background_opacity = 0.8
 config.use_fancy_tab_bar = false
 -- config.window_decorations = "RESIZE"
@@ -359,7 +372,7 @@ function recompute_opacity(window)
 
 	if not window_dims.is_full_screen then
 		overrides.window_background_opacity = 0.8
-		overrides.font_size = 14
+		overrides.font_size = 15
 	else
 		overrides.window_background_opacity = 1.0
 		overrides.font_size = 15

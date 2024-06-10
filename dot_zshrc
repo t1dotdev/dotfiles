@@ -78,7 +78,7 @@ setopt no_auto_menu  # require an extra tab press to open the completion menu
 
 export primary=#cb5be6
 # add flags to existing aliases.
-alias ls="eza --icons=always -a"
+alias ls="eza --icons=always -l"
 alias ss="open /system/library/coreservices/screensaverengine.app"
 
 export PATH="$PATH:/users/petchx/development/flutter/bin"

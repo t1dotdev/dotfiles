@@ -76,7 +76,7 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra tab press to open the completion menu
 
 
-export primary=#cb5be6
+export primary=#905aff
 # add flags to existing aliases.
 alias ls="eza --icons=always -l"
 alias ss="open /system/library/coreservices/screensaverengine.app"
@@ -97,8 +97,8 @@ alias g="lazygit"
 alias n="nvim"
 alias s="spf"
 source ~/lscolors.sh
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,underline 
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta 
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=99,underline 
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=99
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=99 
 ZSH_HIGHLIGHT_STYLES[path]=none
 

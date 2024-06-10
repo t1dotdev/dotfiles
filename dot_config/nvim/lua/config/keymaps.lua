@@ -49,6 +49,10 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 
 keymap.set("n", "<leader>r", require("telescope").extensions.flutter.commands, { desc = "Open command Flutter" })
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
 -- Diagnostics
 -- keymap.set("n", "<C-j>", function()
 -- 	vim.diagnostic.goto_next()

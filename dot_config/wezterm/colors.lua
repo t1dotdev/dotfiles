@@ -1,6 +1,8 @@
 local colors = {}
 -- colors.primary = "#ec0101"
-colors.primary = "#cb5be6"
+-- colors.primary = "#cb5be6"
+-- 905aff
+colors.primary = "#905aff"
 
 colors.success = "#34C849"
 colors.warning = "#FEBB40"

@@ -69,7 +69,7 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, cwd)
 		-- table.insert(cells, hostname)
 	end
-	local handle = io.popen("ipconfig getifaddr en0")
+	local handle = io.popen("ipconfig getifaddr en1")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end
@@ -114,9 +114,9 @@ wezterm.on("update-right-status", function(window, pane)
 
 	-- Color palette for the backgrounds of each cell
 	local colors = {
-		"#B465EC",
-		"#BB62EA",
-		"#CB5BE6",
+		colors.primary,
+		colors.primary,
+		colors.primary,
 	}
 
 	-- Foreground color for the text across the fade

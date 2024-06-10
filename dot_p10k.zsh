@@ -61,9 +61,9 @@
     prompt_char               # prompt symbol
   )
 
-  typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{99}┌──(' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{magenta}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{99})─[%f'"
-  typeset -g POWERLEVEL9K_CUSTOM_CLOSE_BRACKET="echo -n '%F{99}]%f'"
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{99}└─%f"
+  typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{7}┌──(' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{99}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{7})─[%f'"
+  typeset -g POWERLEVEL9K_CUSTOM_CLOSE_BRACKET="echo -n '%F{7}]%f'"
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{7}└─%f"
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
@@ -88,7 +88,7 @@
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Magenta prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$magenta
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND='99'
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$red
   # Default prompt symbol.

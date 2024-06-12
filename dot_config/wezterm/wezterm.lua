@@ -71,7 +71,7 @@ wezterm.on("update-right-status", function(window, pane)
 		-- table.insert(cells, hostname)
 	end
 
-	local handle = io.popen("ipconfig getifaddr en0")
+	local handle = io.popen("ipconfig getifaddr en0 || ipconfig getifaddr en1")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end
@@ -187,22 +187,22 @@ config.keys = {
 	},
 	{
 		key = "l",
-		mods = "CMD | OPT",
+		mods = "CTRL|OPT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "h",
-		mods = "CMD|OPT",
+		mods = "CTRL|OPT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "k",
-		mods = "CMD|OPT",
+		mods = "CTRL|OPT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "CMD|OPT",
+		mods = "CTRL|OPT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{

@@ -35,7 +35,7 @@ footer_fg = "#f8f8f2"
 modal_fg = "#f8f8f2"
 
 # ========= Special Color =========
-cursor = "#cb5be6"
+cursor = "#905aff"
 correct = "#50fa7b"
 error = "#ff5555"
 hint = "#8be9fd"
@@ -44,14 +44,14 @@ cancel = "#6272a4"
 gradient_color = ["#50fa7b", "#ff5555"]
 
 # ========= File Panel Special Items =========
-file_panel_top_directory_icon = "#50fa7b"
-file_panel_top_path = "#8be9fd"
+file_panel_top_directory_icon = "#905aff"
+file_panel_top_path = "#905aff"
 file_panel_item_selected_fg = "#ffb86c"
 file_panel_item_selected_bg = "#282a36"
 
 # ========= Sidebar Special Items =========
-sidebar_title = "#cb5be6"
-sidebar_item_selected_fg = "#ffb86c"
+sidebar_title = "#905aff"
+sidebar_item_selected_fg = "#905aff"
 sidebar_item_selected_bg = "#282a36"
 sidebar_divider = "#868686"
 
@@ -65,4 +65,4 @@ modal_confirm_bg = "#ffb86c"
 
 # ========= Help Menu =========
 help_menu_hotkey = "#ffb86c"
-help_menu_title = "#cb5be6"
+help_menu_title = "#905aff"

@@ -33,6 +33,7 @@ wezterm.on("update-right-status", function(window, pane)
 	-- Figure out the cwd and host of the current pane.
 	-- This will pick up the hostname for the remote host if your
 	-- shell is using OSC 7 on the remote host.
+	table.insert(cells, string.format(wezterm.nerdfonts.md_apple))
 	local cwd_uri = pane:get_current_working_dir()
 	if cwd_uri then
 		local cwd = ""
@@ -69,7 +70,8 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, cwd)
 		-- table.insert(cells, hostname)
 	end
-	local handle = io.popen("ipconfig getifaddr en1")
+
+	local handle = io.popen("ipconfig getifaddr en0")
 	local local_ip = handle:read("*a")
 	handle:close()
 	-- Remove the newline character from the end
@@ -114,6 +116,7 @@ wezterm.on("update-right-status", function(window, pane)
 
 	-- Color palette for the backgrounds of each cell
 	local colors = {
+		colors.primary,
 		colors.primary,
 		colors.primary,
 		colors.primary,
@@ -308,9 +311,9 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 -- })
 config.font_size = 15
 config.line_height = 1
-config.text_background_opacity = 0.8
-config.macos_window_background_blur = 30
-config.window_background_opacity = 0.8
+config.text_background_opacity = 0.85
+config.macos_window_background_blur = 25
+config.window_background_opacity = 0.85
 config.use_fancy_tab_bar = false
 -- config.window_decorations = "RESIZE"
 config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
@@ -371,11 +374,11 @@ function recompute_opacity(window)
 	local overrides = window:get_config_overrides() or {}
 
 	if not window_dims.is_full_screen then
-		overrides.window_background_opacity = 0.8
+		overrides.window_background_opacity = 0.85
 		overrides.font_size = 15
 	else
 		overrides.window_background_opacity = 1.0
-		overrides.font_size = 15
+		overrides.font_size = 16
 	end
 	window:set_config_overrides(overrides)
 end

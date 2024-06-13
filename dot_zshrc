@@ -108,9 +108,19 @@ export OPENAI_API_KEY=sk-mac-open-interpreter-YARGm5CtwRxLa7eySevmT3BlbkFJKqz43V
 # ZSH_HIGHLIGHT_STYLES[arg0]=fg=99 
 # ZSH_HIGHLIGHT_STYLES[path]=none
 
-export EDITOR="/usr/local/bin/wezterm-nvim"
-# export EDITOR="code"
+# export EDITOR="nvim"
+export EDITOR="nvim"
 
+petchx(){
+  echo -e "
+\e[38;5;99m██████╗ ███████╗████████╗ ██████╗██╗  ██╗██╗  ██╗\e[0m
+\e[38;5;99m██╔══██╗██╔════╝╚══██╔══╝██╔════╝██║  ██║╚██╗██╔╝\e[0m
+\e[38;5;99m██████╔╝█████╗     ██║   ██║     ███████║ ╚███╔╝ \e[0m
+\e[38;5;99m██╔═══╝ ██╔══╝     ██║   ██║     ██╔══██║ ██╔██╗ \e[0m
+\e[38;5;99m██║     ███████╗   ██║   ╚██████╗██║  ██║██╔╝ ██╗\e[0m
+\e[38;5;99m╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝\e[0m"
+echo -e "\n\e[38;5;99mPrimary ─❯ ${primary} \e[0m"
+}
 
  # idle() {
 #   cmatrix -C magenta -s -B

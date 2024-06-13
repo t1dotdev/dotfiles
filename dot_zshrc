@@ -99,6 +99,7 @@ alias s="spf ."
 alias bd="bun run dev"
 alias bi="bun install"
 alias i="interpreter -y"
+alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 export OPENAI_API_KEY=sk-mac-open-interpreter-YARGm5CtwRxLa7eySevmT3BlbkFJKqz43VgBJzrBzCBSj4d5
 
 # source ~/lscolors.sh

@@ -5,7 +5,7 @@ details: darker
 terminal_colors:
   normal:
     black: "#616161"
-    red: "#ff8272"
+    red: "#905aff"
     green: "#905aff"
     yellow: "#ffffff"
     blue: "#905aff"

@@ -100,6 +100,7 @@ alias bd="bun run dev"
 alias bi="bun install"
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
+alias p="petchx"
 export OPENAI_API_KEY=sk-mac-open-interpreter-YARGm5CtwRxLa7eySevmT3BlbkFJKqz43VgBJzrBzCBSj4d5
 
 # source ~/lscolors.sh
@@ -120,8 +121,12 @@ petchx(){
 \e[38;5;99m██╔═══╝ ██╔══╝     ██║   ██║     ██╔══██║ ██╔██╗ \e[0m
 \e[38;5;99m██║     ███████╗   ██║   ╚██████╗██║  ██║██╔╝ ██╗\e[0m
 \e[38;5;99m╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝\e[0m"
-echo -e "\n\e[38;5;99mPrimary ─❯ ${primary} \e[0m\n"
+echo -e "\n\e[38;5;99mIP -❯ \e[0m$(ipconfig getifaddr en0 || ipconfig getifaddr en1)"
+echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
+#get ip
+# ipconfig getifaddr en0 || ipconfig getifaddr en1
 }
+
 
  # idle() {
 #   cmatrix -C magenta -s -B

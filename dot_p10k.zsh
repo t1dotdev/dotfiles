@@ -34,9 +34,23 @@
     custom_open
     dir                     # current directory
     custom_close_bracket
+    # ip
+    # custom_open_ip
     vcs                     # git status
+    # custom_close_ip
+
     # prompt_char             # prompt symbol
   )
+    typeset -g POWERLEVEL9K_CUSTOM_OPEN_IP="echo -n '%F{7}─[ '"
+        typeset -g POWERLEVEL9K_CUSTOM_CLOSE_IP="echo -n ' %F{7}]%f'"
+
+
+  if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(newline)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
+
+fi
+
     typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{7}( ' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{99}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{7} )─[%f'"
   typeset -g POWERLEVEL9K_CUSTOM_CLOSE_BRACKET="echo -n '%F{7}]%f'"
 
@@ -105,13 +119,18 @@
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
     # time                  # current time
+    # custom_open_ip
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
+        # custom_close_ip
+
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
   )
+
+
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-v3
@@ -147,7 +166,7 @@
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=
   # Connect right prompt lines with these symbols.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=-
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX=
 
@@ -177,6 +196,7 @@
     typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=' '
     # Add a space between the filler and the start of right prompt.
     typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL=' '
+    # battery
     # Start filler from the edge of the screen if there are no left segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%{%}'
     # End filler on the edge of the screen if there are no right segments on the first line.
@@ -371,7 +391,7 @@
     if (( $1 )); then
       # Styling for up-to-date Git status.
       local       meta='%f'     # default foreground
-      local      clean='%76F'   # green foreground
+      local      clean='%99F'   # green foreground
       local   modified='%178F'  # yellow foreground
       local  untracked='%39F'   # blue foreground
       local conflicted='%196F'  # red foreground
@@ -487,7 +507,7 @@
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 
   # Icon color.
-  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=76
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=99
   typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
   # Custom icon.
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -1559,7 +1579,7 @@
 
   ###########[ ip: ip address and bandwidth usage for a specified network interface ]###########
   # IP color.
-  typeset -g POWERLEVEL9K_IP_FOREGROUND=38
+  typeset -g POWERLEVEL9K_IP_FOREGROUND=7
   # The following parameters are accessible within the expansion:
   #
   #   Parameter             | Meaning
@@ -1572,7 +1592,7 @@
   #   P9K_IP_TX_BYTES_DELTA | number of bytes sent since last prompt
   #   P9K_IP_RX_RATE        | receive rate (since last prompt)
   #   P9K_IP_TX_RATE        | send rate (since last prompt)
-  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP${P9K_IP_RX_RATE:+ %70F⇣$P9K_IP_RX_RATE}${P9K_IP_TX_RATE:+ %215F⇡$P9K_IP_TX_RATE}'
+  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP'
   # Show information for the first network interface whose name matches this regular expression.
   # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
   typeset -g POWERLEVEL9K_IP_INTERFACE='[ew].*'
@@ -1592,7 +1612,7 @@
   # Show battery in green when it's charging or fully charged.
   typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=70
   # Show battery in yellow when it's discharging.
-  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=178
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=7
   # Battery pictograms going from low to high level of charge.
   typeset -g POWERLEVEL9K_BATTERY_STAGES='\UF008E\UF007A\UF007B\UF007C\UF007D\UF007E\UF007F\UF0080\UF0081\UF0082\UF0079'
   # Don't show the remaining time to charge/discharge.

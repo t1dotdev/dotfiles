@@ -101,6 +101,8 @@ alias bi="bun install"
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias p="petchx"
+alias cat="bat"
+source ~/.config/music/zshMusic.zsh
 export OPENAI_API_KEY=sk-mac-open-interpreter-YARGm5CtwRxLa7eySevmT3BlbkFJKqz43VgBJzrBzCBSj4d5
 
 # source ~/lscolors.sh
@@ -129,14 +131,16 @@ echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 
 
  # idle() {
-#   cmatrix -C magenta -s -B
-#   echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
+  # cmatrix
+  # echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
 # }
 
 # Set up a trap to execute the function after a certain period of idleness
 # trap 'idle' ALRM
 
 # Set up a timer to send an alarm signal after 5 seconds of idleness
-# TMOUT=60
+# TMOUT=3
 
 # eval "$(dircolors ~/.dircolors)"
+
+eval $(thefuck --alias)

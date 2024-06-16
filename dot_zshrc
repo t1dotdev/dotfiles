@@ -103,7 +103,6 @@ alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias p="petchx"
 alias cat="bat"
 source ~/.config/music/zshMusic.zsh
-export OPENAI_API_KEY=sk-mac-open-interpreter-YARGm5CtwRxLa7eySevmT3BlbkFJKqz43VgBJzrBzCBSj4d5
 
 # source ~/lscolors.sh
 # export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"

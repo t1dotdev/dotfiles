@@ -103,6 +103,11 @@ alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias p="petchx"
 alias cat="bat"
 alias t='tmux'
+alias ta='tmux attach'
+alias td='tmux detach'
+alias tl='tmux ls'
+alias tk='tmux kill-session -t'
+alias tka='tmux kill-server'
 source ~/.config/music/zshMusic.zsh
 source ~/.key.sh
 source ~/lscolors.sh

@@ -108,9 +108,10 @@ alias td='tmux detach'
 alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
+alias y='yazi'
 source ~/.config/music/zshMusic.zsh
 source ~/.key.sh
-source ~/lscolors.sh
+source ~/.lscolors.sh
 export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=99,underline 
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=99

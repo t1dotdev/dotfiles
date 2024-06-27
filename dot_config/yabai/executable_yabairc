@@ -18,6 +18,5 @@ yabai -m config focus_follows_mouse autofocus
 
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
-# yabai -m rule --add app="^Safari$" space=^1
-# yabai -m rule --add app="^Warp$" space=^2
+
 

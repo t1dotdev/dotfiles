@@ -4,7 +4,7 @@ options=(
 	hidpi=on
 	active_color=0xff905aff
 	inactive_color=0xcc121212
-  blacklist="Simulator"
+  blacklist="Simulator,iPhone Mirroring"
 )
 
 borders "${options[@]}"

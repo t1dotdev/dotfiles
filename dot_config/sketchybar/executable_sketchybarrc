@@ -49,7 +49,7 @@ do
     icon.padding_right=6
     background.color=0x40ffffff
     background.corner_radius=5
-    background.height=25
+    background.height=20
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
     click_script="yabai -m space --focus $sid"
@@ -65,7 +65,7 @@ sketchybar --add item chevron left \
            --set chevron icon=􀆊 label.drawing=off \
            --add item front_app left \
            --set front_app script="$PLUGIN_DIR/front_app.sh" \
-             icon.font="sketchybar-app-font:Regular:16.0" \
+             icon.font="sketchybar-app-font:Regular:15.0" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####

@@ -5,7 +5,7 @@ export WHITE=0xffffffff
 # -- Teal Scheme --
 export BAR_COLOR=0x40000000
 export ITEM_BG_COLOR=0x00003547
-export ACCENT_COLOR=0xff905aff
+export ACCENT_COLOR=0x40ffffff
 
 # -- Gray Scheme --
 # export BAR_COLOR=0xff101314

@@ -1,4 +1,5 @@
 #!/bin/bash
 
 sketchybar --add item network right \
-	--set network icon=􀆪 script="$PLUGIN_DIR/network.sh"
+	--set network icon=􀆪 script="$PLUGIN_DIR/network.sh" \
+	--subscribe network wifi_change

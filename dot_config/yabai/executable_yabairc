@@ -20,6 +20,7 @@ yabai -m config window_shadow off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
 
 
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"

@@ -21,8 +21,8 @@ sketchybar --bar height=36 \
 	blur_radius=30 \
 	position=top \
 	sticky=off \
-	padding_left=10 \
-	padding_right=10 \
+	padding_left=8 \
+	padding_right=8 \
 	color=$BAR_COLOR
 
 ##### Changing Defaults #####
@@ -45,6 +45,7 @@ sketchybar --default icon.font="SF Pro:Bold:15.0" \
 	icon.padding_right=6
 
 # -- Left Side Items --
+source $ITEM_DIR/apple.sh
 source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/front_app.sh
 

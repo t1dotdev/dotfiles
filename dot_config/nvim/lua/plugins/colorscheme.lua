@@ -31,6 +31,7 @@ return {
 				style = "night",
 				transparent = true,
 			})
+			vim.cmd("colorscheme tokyonight-night")
 		end,
 	},
 }

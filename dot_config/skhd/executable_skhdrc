@@ -47,7 +47,11 @@ ctrl + alt - l : yabai -m window --resize right:40:0
 alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
-
+# mirror tree y-axis
+alt - y : yabai -m space --mirror y-axis
+alt - x : yabai -m space --mirror x-axis
+# rotate tree
+alt - r : yabai -m space --rotate 90
 
 # create a new space and follow focus
 alt - n : yabai -m space --create && \

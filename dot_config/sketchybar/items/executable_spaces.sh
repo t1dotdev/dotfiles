@@ -9,7 +9,9 @@ for sid in "${SPACE_SIDS[@]}"; do
 		label.font="sketchybar-app-font:Regular:13.0" \
 		label.padding_right=20 \
 		label.y_offset=-1 \
-		script="$PLUGIN_DIR/space.sh"
+		script="$PLUGIN_DIR/space.sh" \
+		click_script="yabai -m space --focus $sid"
+
 done
 
 sketchybar --add item space_separator left \

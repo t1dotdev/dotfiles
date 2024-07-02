@@ -10,7 +10,7 @@ menu_defaults=(
 
 menu_item_defaults=(
 	padding_left=10
-	padding_right=10
+	padding_right=32
 	icon.padding_left=0
 	icon.color=0xffffffff
 	background.color=0x00000000
@@ -19,7 +19,9 @@ menu_item_defaults=(
 # 􀣺
 logo=(
 	"${menu_defaults[@]}"
-	icon=􀆔
+	icon=􀾉
+	icon.padding_left=10
+	icon.padding_right=10
 	label.drawing=off
 	popup.align=left
 	click_script="sketchybar --set logo popup.drawing=toggle"

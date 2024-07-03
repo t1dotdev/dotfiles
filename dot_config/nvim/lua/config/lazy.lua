@@ -18,8 +18,8 @@ require("lazy").setup({
 			import = "lazyvim.plugins",
 			opts = {
 				-- colorscheme = "github_dark_default",
-				-- colorscheme = "sonokai",
-				colorscheme = "tokyonight",
+				colorscheme = "sonokai",
+				-- colorscheme = "tokyonight",
 				news = {
 					lazyvim = true,
 					neovim = true,

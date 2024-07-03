@@ -6,11 +6,11 @@ yabai -m config layout bsp
 # Override default layout for space 2 only
 # yabai -m config --space 2 layout float
 
-# padding set to 20px
-yabai -m config top_padding 20
-yabai -m config bottom_padding 20
-yabai -m config left_padding 20
-yabai -m config right_padding 20
+# padding set to 80px
+yabai -m config top_padding 80
+yabai -m config bottom_padding 80
+yabai -m config left_padding 80
+yabai -m config right_padding 80
 yabai -m config window_gap 20
 
 yabai -m config external_bar all:24:0
@@ -18,7 +18,7 @@ yabai -m config external_bar all:24:0
 
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
-yabai -m rule --add app="^Music$" manage=off
+# yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 
@@ -31,8 +31,12 @@ yabai -m config window_opacity_duration 0.0
 yabai -m config active_window_opacity 1
 yabai -m config normal_window_opacity 0.7
 
+#top most
+yabai -m config window_layer topmost
+
 
 
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
-
+# Apply grid layout to every new window
+yabai -m signal --add event=window_created action="yabai -m window --grid 28:28:1:1:26:26"
 

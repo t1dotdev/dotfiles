@@ -28,7 +28,7 @@ return {
 				desc = "Lists files in your current working directory, respects .gitignore",
 			},
 			{
-				";r",
+				"<leader>fg",
 				function()
 					local builtin = require("telescope.builtin")
 					builtin.live_grep()

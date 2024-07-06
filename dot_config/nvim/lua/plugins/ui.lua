@@ -113,7 +113,7 @@ return {
 		"kdheepak/lazygit.nvim",
 		keys = {
 			{
-				";g",
+				"<leader>gg",
 				":LazyGit<Return>",
 				silent = true,
 				noremap = true,

@@ -9,7 +9,7 @@ terminal_colors:
     green: "#905aff"
     yellow: "#ffffff"
     blue: "#905aff"
-    magenta: "#ff8ffd"
+    magenta: "#905add"
     cyan: "#d0d1fe"
     white: "#f1f1f1"
   bright:
@@ -18,6 +18,6 @@ terminal_colors:
     green: "#d6fcb9"
     yellow: "#ffffff"
     blue: "#c1e3fe"
-    magenta: "#ffb1fe"
+    magenta: "#905aff"
     cyan: "#e5e6fe"
     white: "#feffff"

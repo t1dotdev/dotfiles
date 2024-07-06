@@ -303,8 +303,16 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.font = wezterm.font("JetBrainsMono Nerd Font")
-
+-- config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font_with_fallback({
+	"JetBrainsMono NF",
+	{
+		family = "Pridi",
+		weight = "Regular",
+		stretch = "Expanded",
+		harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+	},
+})
 -- config.font = wezterm.font_with_fallback({
 -- 	"JetBrainsMono Nerd Font",
 -- 	"Pridi",

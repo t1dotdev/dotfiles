@@ -54,6 +54,7 @@ ctrl + alt - l: yabai -m window --resize right:20:0; yabai -m window --resize le
 ctrl + alt - return :  yabai -m space --padding abs:20:20:20:20
  alt - return :  yabai -m space --padding abs:80:80:80:80 
 
+alt - t : yabai -m window --toggle float; 
 
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis

@@ -21,7 +21,7 @@ yabai -m rule --add app="^Raycast$" manage=off
 # yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
-
+yabai -m rule --add app="^Music$" manage=off
 
 # window opacity (default: off)
 # example: render all unfocused windows with 90% opacity 

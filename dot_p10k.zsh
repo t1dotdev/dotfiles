@@ -45,11 +45,15 @@
         typeset -g POWERLEVEL9K_CUSTOM_CLOSE_IP="echo -n ' %F{7}]%f'"
 
 
-  if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+#   if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+#   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(newline)
+#     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
+#
+# fi
+#
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(newline)
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
 
-fi
 
     typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{7}( ' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{99}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{7} )─[%f'"
   typeset -g POWERLEVEL9K_CUSTOM_CLOSE_BRACKET="echo -n '%F{7}]%f'"
@@ -171,7 +175,7 @@ fi
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX=
 
   # The left end of left prompt.
-  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\e[0;97m┌─\e[0m'
   # The right end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
@@ -226,7 +230,7 @@ fi
   # No line terminator if prompt_char is the last segment.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
   # No line introducer if prompt_char is the first segment.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\e[0;97m└─\e[0m'
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.

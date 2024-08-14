@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		tag = "v0.9.1",
+		-- tag = "v0.9.1",
 		opts = {
 			autotag = { enable = true },
 			ensure_installed = {
@@ -19,7 +19,7 @@ return {
 				"tsx",
 				"html",
 			},
-			ignore_install = { "xml", "printf" },
+			-- ignore_install = { "xml", "printf" },
 			query_linter = {
 				enable = true,
 				use_virtual_text = true,

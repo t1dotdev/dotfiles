@@ -144,6 +144,15 @@ echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 }
 
 
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+
  # idle() {
   # cmatrix
   # echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"

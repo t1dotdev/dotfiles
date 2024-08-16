@@ -14,6 +14,7 @@ alt - l : yabai -m window --focus east
 alt - s: yabai -m display --focus west
 alt - g: yabai -m display --focus east
 
+alt - tab: yabai -m space --focus recent
 
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2

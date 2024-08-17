@@ -5,6 +5,10 @@
 # 	--subscribe network wifi_change
 #
 #
+<<<<<<< Updated upstream
+=======
+# cc = $(osascript -e 'tell application "System Events" to click menu bar item 1 of menu bar 1 of application process "ControlCenter"')
+>>>>>>> Stashed changes
 
 sketchybar -m --add item network.logo right \
   --set network.logo script="$PLUGIN_DIR/network.sh" \

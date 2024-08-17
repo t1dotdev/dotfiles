@@ -13,7 +13,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
@@ -60,7 +60,7 @@ inner.horizontal = 20
 inner.vertical =   20
 outer.left =       20
 outer.bottom =     20
-outer.top =        20
+outer.top =        50
 outer.right =      20
 
 # 'main' binding mode declaration
@@ -112,12 +112,12 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
 
-alt-f = 'fullscreen'
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+
 alt-shift-space = 'layout floating tiling' 
+
+
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
@@ -167,7 +167,7 @@ alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
 alt-shift-e = 'move-node-to-workspace E'
-# alt-shift-f = 'move-node-to-workspace F'
+alt-shift-f = 'move-node-to-workspace F'
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = 'move-node-to-workspace M'
@@ -201,11 +201,16 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
-
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+
 
 
 [workspace-to-monitor-force-assignment]
@@ -215,3 +220,5 @@ alt-shift-l = ['join-with right', 'mode main']
 4 = 'secondary'                  # Non-main monitor in case when there are only two monitors
 5 = 'main'                  # Non-main monitor in case when there are only two monitors
 6 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+
+

@@ -18,6 +18,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
+
 # Start AeroSpace at login
 start-at-login = true
 
@@ -60,7 +61,8 @@ inner.horizontal = 20
 inner.vertical =   20
 outer.left =       20
 outer.bottom =     20
-outer.top =        50
+# outer.top =        50
+outer.top = [{ monitor.main = 20 }, { monitor.secondary = 50 }, 20]
 outer.right =      20
 
 # 'main' binding mode declaration
@@ -209,6 +211,7 @@ h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
+0 = 'balance-sizes'
 enter = 'mode main'
 
 

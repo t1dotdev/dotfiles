@@ -114,7 +114,6 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 alt-f = 'fullscreen'
-alt-shift-f = 'gaps'
 alt-shift-space = 'layout floating tiling' 
 
 
@@ -205,3 +204,11 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'                       # Main monitor
+2 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+3 = 'main'                  # Non-main monitor in case when there are only two monitors
+4 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+5 = 'main'                  # Non-main monitor in case when there are only two monitors
+6 = 'secondary'                  # Non-main monitor in case when there are only two monitors

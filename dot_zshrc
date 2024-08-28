@@ -88,7 +88,7 @@ export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
 eval "$(zoxide init zsh)"
-alias cd="z"
+# alias cd="z"
 
 # created by `pipx` on 2024-04-30 10:37:40
 export PATH="/users/petchx/.local/bin:$PATH"
@@ -117,7 +117,7 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
-source ~/.config/music/zshMusic.zsh
+# source ~/.config/music/zshMusic.zsh
 # source ~/.key.sh
 source ~/.lscolors.sh
 export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"

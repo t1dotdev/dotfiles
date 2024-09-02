@@ -27,7 +27,7 @@ keymap.set("n", "-", "<C-x>")
 -- keymap.set("n", "dw", 'vb"_d')
 --
 
-keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
+-- keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")

@@ -1,12 +1,4 @@
 return {
-	{
-		"nvimdev/dashboard-nvim",
-		enabled = false,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		enabled = false,
-	},
 	-- messages, cmdline and the popupmenu
 	{
 		"folke/noice.nvim",
@@ -48,6 +40,15 @@ return {
 				},
 			}
 
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "markdown",
+				callback = function(event)
+					vim.schedule(function()
+						require("noice.text.markdown").keys(event.buf)
+					end)
+				end,
+			})
+
 			opts.presets.lsp_doc_border = true
 		end,
 	},
@@ -56,9 +57,18 @@ return {
 		"rcarriga/nvim-notify",
 		opts = {
 			timeout = 5000,
-			background_colour = "#000000",
-			render = "wrapped-compact",
 		},
+	},
+
+	-- animations
+	{
+		"echasnovski/mini.animate",
+		event = "VeryLazy",
+		opts = function(_, opts)
+			opts.scroll = {
+				enable = false,
+			}
+		end,
 	},
 
 	-- buffer line
@@ -72,6 +82,7 @@ return {
 		opts = {
 			options = {
 				mode = "tabs",
+				-- separator_style = "slant",
 				show_buffer_close_icons = false,
 				show_close_icon = false,
 			},
@@ -81,34 +92,85 @@ return {
 	-- filename
 	{
 		"b0o/incline.nvim",
-		dependencies = {},
+		dependencies = { "craftzdog/solarized-osaka.nvim" },
 		event = "BufReadPre",
 		priority = 1200,
 		config = function()
-			local helpers = require("incline.helpers")
+			local colors = require("solarized-osaka.colors").setup()
 			require("incline").setup({
-				window = {
-					padding = 0,
-					margin = { horizontal = 0 },
+				highlight = {
+					groups = {
+						InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
+						InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
+					},
+				},
+				window = { margin = { vertical = 0, horizontal = 1 } },
+				hide = {
+					cursorline = true,
 				},
 				render = function(props)
 					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-					local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
-					local modified = vim.bo[props.buf].modified
-					local buffer = {
-						ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) }
-							or "",
-						" ",
-						{ filename, gui = modified and "bold,italic" or "bold" },
-						" ",
-						guibg = "#363944",
-					}
-					return buffer
+					if vim.bo[props.buf].modified then
+						filename = "[+] " .. filename
+					end
+
+					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+					return { { icon, guifg = color }, { " " }, { filename } }
 				end,
 			})
 		end,
 	},
-	-- LazyGit integration with Telescope
+
+	-- statusline
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = function(_, opts)
+			local LazyVim = require("lazyvim.util")
+			opts.sections.lualine_c[4] = {
+				LazyVim.lualine.pretty_path({
+					length = 0,
+					relative = "cwd",
+					modified_hl = "MatchParen",
+					directory_hl = "",
+					filename_hl = "Bold",
+					modified_sign = "",
+					readonly_icon = " 󰌾 ",
+				}),
+			}
+		end,
+	},
+
+	{
+		"folke/zen-mode.nvim",
+		cmd = "ZenMode",
+		opts = {
+			plugins = {
+				gitsigns = true,
+				tmux = true,
+				kitty = { enabled = false, font = "+2" },
+			},
+		},
+		keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+	},
+
+	{
+		"nvimdev/dashboard-nvim",
+		enable = false,
+		-- event = "VimEnter",
+		-- opts = function(_, opts)
+		-- 	local logo = [[
+		--       ██████╗ ███████╗██╗   ██╗ █████╗ ███████╗██╗     ██╗███████╗███████╗
+		--       ██╔══██╗██╔════╝██║   ██║██╔══██╗██╔════╝██║     ██║██╔════╝██╔════╝
+		--       ██║  ██║█████╗  ██║   ██║███████║███████╗██║     ██║█████╗  █████╗
+		--       ██║  ██║██╔══╝  ╚██╗ ██╔╝██╔══██║╚════██║██║     ██║██╔══╝  ██╔══╝
+		--       ██████╔╝███████╗ ╚████╔╝ ██║  ██║███████║███████╗██║██║     ███████╗
+		--       ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝     ╚══════╝
+		--     ]]
+		--
+		-- 	logo = string.rep("\n", 8) .. logo .. "\n\n"
+		-- 	opts.config.header = vim.split(logo, "\n")
+		-- end,
+	},
 	{
 		"kdheepak/lazygit.nvim",
 		keys = {
@@ -125,30 +187,9 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	{
-		"kristijanhusak/vim-dadbod-ui",
-		dependencies = {
-			{ "tpope/vim-dadbod", lazy = true },
-			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-		},
-		cmd = {
-			"DBUI",
-			"DBUIToggle",
-			"DBUIAddConnection",
-			"DBUIFindBuffer",
-		},
-		init = function()
-			-- Your DBUI configuration
-			vim.g.db_ui_use_nerd_fonts = 1
-		end,
-		keys = {
-			{
 
-				"<leader>d",
-				"<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
-			},
-		},
-	},
+	{ "neo-tree.nvim", enabled = false },
+
 	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
@@ -210,16 +251,6 @@ return {
 			if vim.fn.argc(-1) == 0 then
 				vim.cmd("NvimTreeFocus")
 			end
-		end,
-	},
-	{
-		"antosha417/nvim-lsp-file-operations",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-tree.lua",
-		},
-		config = function()
-			require("lsp-file-operations").setup()
 		end,
 	},
 }

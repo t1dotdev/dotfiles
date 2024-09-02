@@ -1,40 +1,54 @@
+local discipline = require("craftzdog.discipline")
+
+-- discipline.cowboy()
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
--- Shift + h to move to top of the screen
--- keymap.set("n", "<S-h>", "H")
--- keymap.set("n", "<S-l>", "L")
+keymap.set("n", "<Leader>p", '"0p')
+keymap.set("n", "<Leader>P", '"0P')
+keymap.set("v", "<Leader>p", '"0p')
+keymap.set("n", "<Leader>c", '"_c')
+keymap.set("n", "<Leader>C", '"_C')
+keymap.set("v", "<Leader>c", '"_c')
+keymap.set("v", "<Leader>C", '"_C')
+keymap.set("n", "<Leader>d", '"_d')
+keymap.set("n", "<Leader>D", '"_D')
+keymap.set("v", "<Leader>d", '"_d')
+keymap.set("v", "<Leader>D", '"_D')
 
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
+-- Delete a word backwards
+-- keymap.set("n", "dw", 'vb"_d')
+--
+
+keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
--- Save file and quit
--- keymap.set("n", "<Leader>w", ":update<Return>", opts)
-keymap.set("n", "<Leader>q", ":qa<Return>", opts)
--- keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
+-- Save with root permission (not working for now)
+--vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- File explorer with NvimTree
-keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
-keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
+-- Disable continuations
+keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
+keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 
--- close buffer
-keymap.set("n", "<Leader>w", ":bd<Return>", opts)
+-- Jumplist
+keymap.set("n", "<C-m>", "<C-i>", opts)
 
--- Tabs
+-- New tab
 keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<Tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-Tab>", ":tabprev<Return>", opts)
-keymap.set("n", "tw", ":tabclose<Return>", opts)
-
+keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
-
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
@@ -42,23 +56,20 @@ keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
 
 -- Resize window
--- keymap.set("n", "<C-h>", "<C-w><")
--- keymap.set("n", "<C-l>", "<C-w>>")
--- keymap.set("n", "<C-k>", "<C-w>+")
--- keymap.set("n", "<C-j>", "<C-w>-")
---
--- Move lines
-keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "<C-d>", "<C-d>zz")
-
--- vim.api.nvim_set_keymap("n", "//<CR>", 'copilot#Accept("<Tab>")', { silent = true, expr = true })
---
-
-keymap.set("n", "<leader>r", require("telescope").extensions.flutter.commands, { desc = "Open command Flutter" })
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostics
--- keymap.set("n", "<C-j>", function()
--- 	vim.diagnostic.goto_next()
--- end, opts)
+keymap.set("n", "<C-j>", function()
+	vim.diagnostic.goto_next()
+end, opts)
+
+keymap.set("n", "<leader>r", function()
+	require("craftzdog.hsl").replaceHexWithHSL()
+end)
+
+keymap.set("n", "<leader>i", function()
+	require("craftzdog.lsp").toggleInlayHints()
+end)

@@ -88,7 +88,7 @@ export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
 eval "$(zoxide init zsh)"
-# alias cd="z"
+alias cd="z"
 
 # created by `pipx` on 2024-04-30 10:37:40
 export PATH="/users/petchx/.local/bin:$PATH"
@@ -109,14 +109,14 @@ alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
 # alias y='yazi'
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+# function yy() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 # source ~/.config/music/zshMusic.zsh
 # source ~/.key.sh
 source ~/.lscolors.sh
@@ -142,15 +142,6 @@ echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 #get ip
 # ipconfig getifaddr en0 || ipconfig getifaddr en1
 }
-
-
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
-fi
 
 
  # idle() {

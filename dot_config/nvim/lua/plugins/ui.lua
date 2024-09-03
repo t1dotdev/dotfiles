@@ -100,7 +100,7 @@ return {
 			require("incline").setup({
 				highlight = {
 					groups = {
-						InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
+						InclineNormal = { guibg = "#905aff", guifg = colors.base04 },
 						InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
 					},
 				},
@@ -115,7 +115,7 @@ return {
 					end
 
 					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-					return { { icon, guifg = color }, { " " }, { filename } }
+					return { { icon, guifg = colors.base04 }, { " " }, { filename } }
 				end,
 			})
 		end,

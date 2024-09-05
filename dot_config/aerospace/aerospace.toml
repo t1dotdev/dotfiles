@@ -57,12 +57,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 20
-inner.vertical =   20
-outer.left =       [{ monitor.'build-in'= 20 }, { monitor.'mi'= 40 }, 20]
-outer.bottom = [{ monitor.'build-in'= 20 }, { monitor.'mi'= 40 }, 20]
-outer.top = [{ monitor.'build-in'= 20 }, { monitor.'mi'= 70 }, 20]
-outer.right = [{ monitor.'build-in'= 20 }, { monitor.'mi'= 40 }, 20]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       [{ monitor.'build-in'= 10 }, { monitor.'mi'= 40 }, 10]
+outer.bottom = [{ monitor.'build-in'= 10 }, { monitor.'mi'= 40 }, 10]
+outer.top = [{ monitor.'build-in'= 10 }, { monitor.'mi'= 70 }, 10]
+outer.right = [{ monitor.'build-in'= 10 }, { monitor.'mi'= 40 }, 10]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -106,7 +106,7 @@ alt-l = 'focus right'
 alt-enter= 'exec-and-forget open -a "Warp.app"'
 alt-shift-enter= 'exec-and-forget open -a "Safari.app"'
 
-alt-ctrl-shift-cmd-w = 'exec-and-forget open -a "Warp.app"'
+alt-ctrl-shift-cmd-enter = 'exec-and-forget open -a "Warp.app"'
 alt-ctrl-shift-cmd-s = 'exec-and-forget open -a "Safari.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'
 alt-ctrl-shift-cmd-m = 'exec-and-forget open -a "Music.app"'

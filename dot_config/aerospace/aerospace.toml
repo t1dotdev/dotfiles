@@ -106,10 +106,13 @@ alt-l = 'focus right'
 alt-enter= 'exec-and-forget open -a "Warp.app"'
 alt-shift-enter= 'exec-and-forget open -a "Safari.app"'
 
-alt-ctrl-shift-cmd-enter = 'exec-and-forget open -a "Warp.app"'
-alt-ctrl-shift-cmd-s = 'exec-and-forget open -a "Safari.app"'
+alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Warp.app"'
+alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Safari.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'
 alt-ctrl-shift-cmd-m = 'exec-and-forget open -a "Music.app"'
+
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move

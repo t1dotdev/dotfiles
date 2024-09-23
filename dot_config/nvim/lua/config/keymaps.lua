@@ -61,9 +61,6 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
--- save on press esc
-keymap.set("i", "<Esc>", "<Esc>:w<CR>", opts)
-
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()

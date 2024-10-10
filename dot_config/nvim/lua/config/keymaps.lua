@@ -32,9 +32,16 @@ keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("n", "J", "mzJ`z")
+keymap.set("n", "n", "nzzv")
+keymap.set("n", "N", "Nzzv")
+keymap.set("n", "Y", "y$")
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
 -- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)

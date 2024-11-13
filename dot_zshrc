@@ -106,6 +106,7 @@ alias ni="npm install"
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias p="petchx"
+alias f='fuck'
 alias t='tmux'
 alias ta='tmux attach -t'
 alias td='tmux detach'
@@ -148,17 +149,27 @@ echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 }
 
 
- # idle() {
-  # cmatrix
-  # echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
+#  idle() {
+#   cmatrix
+#   echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
 # }
-
-# Set up a trap to execute the function after a certain period of idleness
+#
+# # Set up a trap to execute the function after a certain period of idleness
 # trap 'idle' ALRM
-
-# Set up a timer to send an alarm signal after 5 seconds of idleness
+#
+# # Set up a timer to send an alarm signal after 5 seconds of idleness
 # TMOUT=3
 
 # eval "$(dircolors ~/.dircolors)"
 
+
+
+
+
+
+
+
 eval $(thefuck --alias)
+
+# bun completions
+[ -s "/Users/petchx/.bun/_bun" ] && source "/Users/petchx/.bun/_bun"

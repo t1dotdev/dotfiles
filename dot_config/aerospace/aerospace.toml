@@ -13,10 +13,10 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget sketchybar']
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+# after-startup-command = ['exec-and-forget sketchybar']
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+# ]
 
 
 # Start AeroSpace at login
@@ -39,15 +39,21 @@ default-root-container-layout = 'tiles'
 #               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
+
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-key-mapping.preset = 'qwerty'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+preset = 'qwerty'
+
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -57,12 +63,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = [{ monitor.'build-in'= 0 }, { monitor.'mi'= 20 }, 0]
-inner.vertical =   [{ monitor.'build-in'= 0 }, { monitor.'mi'= 20 }, 0]
-outer.left =       [{ monitor.'build-in'= 0 }, { monitor.'mi'= 60 }, 0]
-outer.bottom = [{ monitor.'build-in'= 0 }, { monitor.'mi'= 60 }, 0]
-outer.top = [{ monitor.'build-in'= 0 }, { monitor.'mi'= 80 }, 0]
-outer.right = [{ monitor.'build-in'= 0 }, { monitor.'mi'= 60 }, 0]
+inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 0]
+inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 0]
+outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 0]
+outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 0]
+outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 80 }, 0]
+outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 0]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -103,17 +109,18 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
-alt-enter= 'exec-and-forget open -a "Warp.app"'
-alt-shift-enter= 'exec-and-forget open -a "Safari.app"'
+
+# alt-enter = 'exec-and-forget open -a "Warp.app"'
+# alt-shift-enter = 'exec-and-forget open -a "Safari.app"'
 
 alt-ctrl-shift-cmd-enter = 'exec-and-forget open -a "Warp.app"'
 alt-ctrl-shift-cmd-s = 'exec-and-forget open -a "Safari.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'
 alt-ctrl-shift-cmd-m = 'exec-and-forget open -a "Music.app"'
-alt-ctrl-shift-cmd-a  = 'exec-and-forget open -a "Arc.app"'
+alt-ctrl-shift-cmd-a = 'exec-and-forget open -a "Arc.app"'
 
-cmd-h = [] # Disable "hide application"
-cmd-alt-h = [] # Disable "hide others"
+# cmd-h = []     # Disable "hide application"
+# cmd-alt-h = [] # Disable "hide others"
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
@@ -124,11 +131,12 @@ alt-shift-l = 'move right'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
 
-alt-shift-space = 'layout floating tiling' 
 
-alt-ctrl-shift-h = 'resize width +50'
-
+# alt-shift-space = 'layout floating tiling'
+# alt-ctrl-shift-h = 'resize width +50'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
@@ -154,7 +162,7 @@ alt-n = 'workspace N'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
 alt-q = 'workspace Q'
-# alt-r = 'workspace R'
+alt-r = 'workspace R'
 alt-s = 'workspace S'
 alt-t = 'workspace T'
 alt-u = 'workspace U'
@@ -187,7 +195,7 @@ alt-shift-n = 'move-node-to-workspace N'
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P'
 alt-shift-q = 'move-node-to-workspace Q'
-# alt-shift-r = 'move-node-to-workspace R'
+alt-shift-r = 'move-node-to-workspace R'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-u = 'move-node-to-workspace U'
@@ -203,7 +211,8 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-r = 'mode service'
+# alt-r = 'mode service'
+alt-shift-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -211,27 +220,30 @@ alt-r = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
+# h = 'resize width -50'
+# j = 'resize height +50'
+# k = 'resize height -50'
+# l = 'resize width +50'
 0 = ['balance-sizes', 'mode main']
+down = 'volume down'
+up = 'volume up'
+shift-down = ['volume set 0', 'mode main']
 enter = 'mode main'
 
 
-
 [workspace-to-monitor-force-assignment]
-1 = 'main'                       # Main monitor
-2 = 'secondary'                  # Non-main monitor in case when there are only two monitors
-3 = 'main'                  # Non-main monitor in case when there are only two monitors
-4 = 'secondary'                  # Non-main monitor in case when there are only two monitors
-5 = 'main'                  # Non-main monitor in case when there are only two monitors
-6 = 'secondary'                  # Non-main monitor in case when there are only two monitors
-
-
+1 = 'main'      # Main monitor
+2 = 'secondary' # Non-main monitor in case when there are only two monitors
+3 = 'main'      # Non-main monitor in case when there are only two monitors
+4 = 'secondary' # Non-main monitor in case when there are only two monitors
+5 = 'main'      # Non-main monitor in case when there are only two monitors
+6 = 'secondary' # Non-main monitor in case when there are only two monitors

@@ -8,14 +8,14 @@
             "description": "Enter → Hyper Key (⌃⌥⇧⌘) (Enter if alone)",
             "manipulators": [
               {
-                "from": { "key_code": "enter" },
+                "from": { "key_code": "return_or_enter" },
                 "to": [
                   {
                     "key_code": "left_shift",
                     "modifiers": ["left_command", "left_control", "left_option"]
                   }
                 ],
-                "to_if_alone": [{ "key_code": "enter" }],
+                "to_if_alone": [{ "key_code": "return_or_enter" }],
                 "type": "basic"
               }
             ]
@@ -42,4 +42,3 @@
     }
   ]
 }
-

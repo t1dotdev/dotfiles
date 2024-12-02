@@ -29,7 +29,6 @@
 -- keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
 --
 -- -- Select all
--- keymap.set("n", "<C-a>", "gg<S-v>G")
 --
 -- -- Move vertically centered
 -- keymap.set("n", "<C-u>", "<C-u>zz")
@@ -84,6 +83,7 @@ local map = LazyVim.safe_keymap_set
 map("n", "<Leader>e", ":NvimTreeToggle<Return>")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-a>", "gg<S-v>G")
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })

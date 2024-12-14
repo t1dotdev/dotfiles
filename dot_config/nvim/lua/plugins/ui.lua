@@ -151,18 +151,27 @@ return {
 		config = function(_, opts)
 			require("snacks").setup(opts)
 
-			-- Set highlight groups for Snacks Dashboard
-			vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#905aff", bold = true })
-			vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = "#ffffff", bold = true })
-			vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { fg = "#905aff", italic = true })
-			vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = "#ffffff", bold = true }) -- Pink for icons
-			vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = "#ffffff", italic = true })
-			vim.api.nvim_set_hl(0, "SnacksDashboardProjects", { fg = "#905aff", bold = true })
+			-- Function to set highlight groups
+			local function set_snacks_highlights()
+				vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#905aff", bold = true })
+				vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = "#ffffff", bold = true })
+				vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { fg = "#905aff", italic = true })
+				vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = "#ffffff", bold = true }) -- Pink for icons
+				vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = "#ffffff", italic = true })
+				vim.api.nvim_set_hl(0, "SnacksDashboardProjects", { fg = "#905aff", bold = true })
+				vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = "#ffffff", bold = true }) -- Gold color for titles
+				vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = "#905aff" }) -- Spring green for icons
+				vim.api.nvim_set_hl(0, "SnacksDashboardFile", { fg = "#ffffff", bold = true }) -- Gold color for files
+				vim.api.nvim_set_hl(0, "SnacksDashboardDir", { fg = "#905aff" }) -- Hot pink for directories
+			end
 
-			vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = "#ffffff", bold = true }) -- Gold color for titles
-			vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = "#905aff" }) -- Spring green for icons
-			vim.api.nvim_set_hl(0, "SnacksDashboardFile", { fg = "#ffffff", bold = true }) -- Gold color for files
-			vim.api.nvim_set_hl(0, "SnacksDashboardDir", { fg = "#905aff" }) -- Hot pink for directories
+			-- Apply highlights immediately
+			set_snacks_highlights()
+
+			-- Reapply highlights after colorscheme changes
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				callback = set_snacks_highlights,
+			})
 		end,
 	},
 

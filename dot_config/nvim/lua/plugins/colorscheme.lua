@@ -1,14 +1,4 @@
 return {
-	-- {
-	-- 	"craftzdog/solarized-osaka.nvim",
-	-- 	lazy = true,
-	-- 	priority = 1000,
-	-- 	opts = function()
-	-- 		return {
-	-- 			transparent = true,
-	-- 		}
-	-- 	end,
-	-- },
 	{
 		"sainnhe/sonokai",
 		priority = 1000,
@@ -18,5 +8,11 @@ return {
 			vim.g.sonokai_style = "andromeda"
 			vim.cmd.colorscheme("sonokai")
 		end,
+	},
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			-- 	colorscheme = "sonokai",
+		},
 	},
 }

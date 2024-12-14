@@ -1,80 +1,3 @@
--- -- local discipline = require("craftzdog.discipline")
--- --
--- -- discipline.cowboy()
---
--- local keymap = vim.keymap
--- local opts = { noremap = true, silent = true }
---
--- -- Do things without affecting the registers
--- keymap.set("n", "x", '"_x')
--- keymap.set("n", "<Leader>p", '"0p')
--- keymap.set("n", "<Leader>P", '"0P')
--- keymap.set("v", "<Leader>p", '"0p')
--- keymap.set("n", "<Leader>c", '"_c')
--- keymap.set("n", "<Leader>C", '"_C')
--- keymap.set("v", "<Leader>c", '"_c')
--- keymap.set("v", "<Leader>C", '"_C')
--- keymap.set("n", "<Leader>d", '"_d')
--- keymap.set("n", "<Leader>D", '"_D')
--- keymap.set("v", "<Leader>d", '"_d')
--- keymap.set("v", "<Leader>D", '"_D')
---
--- -- Increment/decrement
--- keymap.set("n", "+", "<C-a>")
--- keymap.set("n", "-", "<C-x>")
---
--- -- Delete a word backwards
--- -- keymap.set("n", "dw", 'vb"_d')
---
--- keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
---
--- -- Select all
--- keymap.set("n", "<C-a>", "gg<S-v>G")
---
--- -- Move vertically centered
--- keymap.set("n", "<C-u>", "<C-u>zz")
--- keymap.set("n", "<C-d>", "<C-d>zz")
---
--- keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- keymap.set("v", "K", ":m '<-2<CR>gv=gv")
---
--- -- keymap.set("n", "J", "mzJ`z")
--- keymap.set("n", "n", "nzz")
--- keymap.set("n", "N", "Nzz")
--- -- keymap.set("n", "Y", "y$")
--- -- Save with root permission (not working for now)
--- --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
--- -- Disable continuations
--- -- keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
--- -- keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
---
--- -- Jumplist
--- -- keymap.set("n", "<C-m>", "<C-i>", opts)
---
--- -- New tab
--- keymap.set("n", "te", ":tabedit")
--- keymap.set("n", "<tab>", ":tabnext<Return>", opts)
--- keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
--- -- Split window
--- keymap.set("n", "ss", ":split<Return>", opts)
--- keymap.set("n", "sv", ":vsplit<Return>", opts)
--- -- Move window
--- keymap.set("n", "sh", "<C-w>h")
--- keymap.set("n", "sk", "<C-w>k")
--- keymap.set("n", "sj", "<C-w>j")
--- keymap.set("n", "sl", "<C-w>l")
---
--- -- Resize window
--- keymap.set("n", "<C-w><left>", "<C-w><")
--- keymap.set("n", "<C-w><right>", "<C-w>>")
--- keymap.set("n", "<C-w><up>", "<C-w>+")
--- keymap.set("n", "<C-w><down>", "<C-w>-")
---
--- -- Diagnostics
--- keymap.set("n", "<C-j>", function()
--- 	vim.diagnostic.goto_next()
--- end, opts)
-
 -- This file is automatically loaded by lazyvim.config.init
 
 -- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
@@ -96,7 +19,6 @@ map("n", "<Leader>d", '"_d')
 map("n", "<Leader>D", '"_D')
 map("v", "<Leader>d", '"_d')
 map("v", "<Leader>D", '"_D')
-
 map("n", "<leader>a", "gg<S-v>G")
 
 -- better up/down
@@ -217,14 +139,22 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- toggle options
 LazyVim.format.snacks_toggle():map("<leader>uf")
 LazyVim.format.snacks_toggle(true):map("<leader>uF")
-Snacks.toggle.option("spell", { name = "Spelling"}):map("<leader>us")
-Snacks.toggle.option("wrap", {name = "Wrap"}):map("<leader>uw")
-Snacks.toggle.option("relativenumber", { name = "Relative Number"}):map("<leader>uL")
+Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
 Snacks.toggle.diagnostics():map("<leader>ud")
 Snacks.toggle.line_number():map("<leader>ul")
-Snacks.toggle.option("conceallevel", {off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2}):map("<leader>uc")
+Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>uc")
+Snacks.toggle.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" }):map("<leader>uA")
 Snacks.toggle.treesitter():map("<leader>uT")
-Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background"}):map("<leader>ub")
+Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background" }):map("<leader>ub")
+Snacks.toggle.dim():map("<leader>uD")
+Snacks.toggle.animate():map("<leader>ua")
+Snacks.toggle.indent():map("<leader>ug")
+Snacks.toggle.scroll():map("<leader>uS")
+Snacks.toggle.profiler():map("<leader>dpp")
+Snacks.toggle.profiler_highlights():map("<leader>dph")
+
 if vim.lsp.inlay_hint then
   Snacks.toggle.inlay_hints():map("<leader>uh")
 end
@@ -241,7 +171,7 @@ end
 map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
 map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
 map({"n", "x" }, "<leader>gY", function()
-  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end })
+  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
 
 -- quit
@@ -269,7 +199,8 @@ map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
-LazyVim.ui.maximize():map("<leader>wm")
+Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
+Snacks.toggle.zen():map("<leader>uz")
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })

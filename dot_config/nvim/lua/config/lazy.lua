@@ -20,31 +20,15 @@ require("lazy").setup({
 		{
 			"LazyVim/LazyVim",
 			import = "lazyvim.plugins",
-			opts = {
-				-- colorscheme = "solarized-osaka",
-				colorscheme = "sonokai",
-				news = {
-					lazyvim = true,
-					neovim = true,
-				},
-			},
 		},
-		-- import any extras modules here
+		-- import/override with your plugins
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
-		-- { import = "lazyvim.plugins.extras.lang.markdown" },
-		{ import = "lazyvim.plugins.extras.lang.rust" },
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
-		-- { import = "lazyvim.plugins.extras.coding.copilot" },
-		-- { import = "lazyvim.plugins.extras.dap.core" },
-		-- { import = "lazyvim.plugins.extras.vscode" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-		-- { import = "lazyvim.plugins.extras.test.core" },
-		-- { import = "lazyvim.plugins.extras.coding.yanky" },
-		-- { import = "lazyvim.plugins.extras.editor.mini-files" },
-		-- { import = "lazyvim.plugins.extras.util.project" },
+		{ import = "lazyvim.plugins.extras.editor.inc-rename" },
 		{ import = "plugins" },
 	},
 	defaults = {
@@ -56,18 +40,11 @@ require("lazy").setup({
 		version = false, -- always use the latest git commit
 		-- version = "*", -- try installing the latest stable version for plugins that support semver
 	},
-	-- dev = {
-	-- 	path = "~/.ghq/github.com",
-	-- },
 	checker = {
 		enabled = true, -- check for plugin updates periodically
 		notify = false, -- notify on update
 	}, -- automatically check for plugin updates
 	performance = {
-		-- cache = {
-		-- 	enabled = true,
-		-- 	-- disable_events = {},
-		-- },
 		rtp = {
 			-- disable some rtp plugins
 			disabled_plugins = {
@@ -75,7 +52,6 @@ require("lazy").setup({
 				-- "matchit",
 				-- "matchparen",
 				-- "netrwPlugin",
-				-- "rplugin",
 				"tarPlugin",
 				"tohtml",
 				"tutor",
@@ -83,12 +59,4 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- ui = {
-	-- 	custom_keys = {
-	-- 		["<localleader>d"] = function(plugin)
-	-- 			dd(plugin)
-	-- 		end,
-	-- 	},
-	-- },
-	-- debug = false,
 })

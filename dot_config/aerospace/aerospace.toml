@@ -11,6 +11,9 @@ after-login-command = []
 after-startup-command = [
  'exec-and-forget borders active_color=0xff905aff inactive_color=0xff494d64 width=8.0'
 ]
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+# ]
 #open warp.app
 
 # You can use it to add commands that run after AeroSpace startup.

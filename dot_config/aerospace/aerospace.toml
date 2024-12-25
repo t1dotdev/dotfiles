@@ -69,12 +69,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 0]
-inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 0]
-outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 0]
-outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 0]
-outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 0]
-outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 0]
+inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 10]
+inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 10]
+outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 10]
+outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 10]
+outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 10]
+outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 10]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

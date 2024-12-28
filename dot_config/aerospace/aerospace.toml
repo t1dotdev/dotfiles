@@ -119,8 +119,9 @@ alt-l = 'focus right'
 # alt-enter = 'exec-and-forget open -a "Warp.app"'
 # alt-shift-enter = 'exec-and-forget open -a "Safari.app"'
 
-alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "Warp.app"'
+# alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "Warp.app"'
 # alt-ctrl-shift-cmd-s = 'exec-and-forget open -a "Safari.app"'
+alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "Ghostty.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'
 alt-ctrl-shift-cmd-m = 'exec-and-forget open -a "Music.app"'
 alt-ctrl-shift-cmd-b = 'exec-and-forget open -a "Arc.app"'
@@ -146,9 +147,10 @@ alt-shift-equal = 'resize smart +50'
 alt-shift-0 = 'balance-sizes'
 
 
-# alt-shift-space = 'layout floating tiling'
 # alt-ctrl-shift-h = 'resize width +50'
 
+alt-f = 'fullscreen'
+alt-shift-space = 'layout floating tiling'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -165,7 +167,7 @@ alt-b = 'workspace B'
 alt-c = 'workspace C'
 alt-d = 'workspace D'
 alt-e = 'workspace E'
-alt-f = 'workspace F'
+# alt-f = 'workspace F'
 alt-g = 'workspace G'
 alt-i = 'workspace I'
 alt-m = 'workspace M'
@@ -198,7 +200,7 @@ alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
 alt-shift-e = 'move-node-to-workspace E'
-alt-shift-f = 'move-node-to-workspace F'
+# alt-shift-f = 'move-node-to-workspace F'
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = 'move-node-to-workspace M'
@@ -258,3 +260,10 @@ enter = 'mode main'
 4 = 'secondary' # Non-main monitor in case when there are only two monitors
 5 = 'main'      # Non-main monitor in case when there are only two monitors
 6 = 'secondary' # Non-main monitor in case when there are only two monitors
+
+
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = [
+  "layout floating",
+]

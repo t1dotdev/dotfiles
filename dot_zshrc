@@ -117,8 +117,8 @@ alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
 
-alias os = 'ollama serve'
-alias oc = 'ollama run codellama'
+alias os='ollama serve'
+alias oc='ollama run codellama'
 
 # alias y='yazi'
 # function yy() {

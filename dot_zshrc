@@ -97,22 +97,29 @@ alias g="lazygit"
 alias gc="git commit -m"
 alias n="nvim"
 alias s="spf ."
+
 alias bd="bun run dev"
 alias bi="bun install"
 alias bb="bun run build"
 alias bl="bun run lint"
 alias nd="npm run dev"
 alias ni="npm install"
+
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias p="petchx"
 alias f='fuck'
+
 alias t='tmux'
 alias ta='tmux attach -t'
 alias td='tmux detach'
 alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
+
+alias os = 'ollama serve'
+alias oc = 'ollama run codellama'
+
 # alias y='yazi'
 # function yy() {
 # 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

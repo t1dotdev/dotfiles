@@ -3,7 +3,7 @@
 # variables such as path) in this file or in files sourced from it.
 #
 # documentation: https://github.com/romkatv/zsh4humans/blob/v5/readme.md.
-
+ZSH_AUTOSUGGEST_HISTORY_IGNORE=*
 # periodic auto-update on zsh startup: 'ask' or 'no'.
 # you can manually run `z4h update` to update everything.
 zstyle ':z4h:' auto-update      'no'
@@ -173,3 +173,7 @@ eval $(thefuck --alias)
 
 # bun completions
 [ -s "/Users/petchx/.bun/_bun" ] && source "/Users/petchx/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

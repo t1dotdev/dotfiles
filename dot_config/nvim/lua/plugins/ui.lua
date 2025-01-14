@@ -187,4 +187,11 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+
+	{ "nvzone/volt", lazy = true },
+
+	{
+		"nvzone/minty",
+		cmd = { "Shades", "Huefy" },
+	},
 }

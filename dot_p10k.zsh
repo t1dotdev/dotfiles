@@ -31,9 +31,9 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # os_icon                 # os identifier
-    custom_open
+    # custom_open
     dir                     # current directory
-    custom_close_bracket
+    # custom_close_bracket
     # ip
     # custom_open_ip
     vcs                     # git status
@@ -42,7 +42,7 @@
     # prompt_char             # prompt symbol
   )
     typeset -g POWERLEVEL9K_CUSTOM_OPEN_IP="echo -n '%F{7}─[ '"
-        typeset -g POWERLEVEL9K_CUSTOM_CLOSE_IP="echo -n ' %F{7}]%f'"
+    typeset -g POWERLEVEL9K_CUSTOM_CLOSE_IP="echo -n ' %F{7}]%f'"
 
 
 #   if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
@@ -51,11 +51,11 @@
 #
 # fi
 #
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(newline)
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
+  # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(newline)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
 
 
-    typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{7}( ' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{99}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{7} )─[%f'"
+  typeset -g POWERLEVEL9K_CUSTOM_OPEN="echo -n '%F{7}( ' && if [ $(whoami) = 'root' ]; then echo -n '%F{red}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; else echo -n '%F{99}%B$(whoami)@$(uname -n | cut -d '.' -f 1)%b%f'; fi  && echo  '%F{7} )─[%f'"
   typeset -g POWERLEVEL9K_CUSTOM_CLOSE_BRACKET="echo -n '%F{7}]%f'"
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -111,7 +111,7 @@
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
+    # chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
@@ -175,7 +175,7 @@
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX=
 
   # The left end of left prompt.
-  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\e[0;97m┌─\e[0m'
+  # typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\e[0;97m┌─\e[0m'
   # The right end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
@@ -361,7 +361,7 @@
   # parameter. For example, if POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_FOREGROUND is not set, it falls
   # back to POWERLEVEL9K_DIR_FOREGROUND.
   #
-  # typeset -g POWERLEVEL9K_DIR_CLASSES=()
+  typeset -g POWERLEVEL9K_DIR_CLASSES=()
 
   # Custom prefix.
   # typeset -g POWERLEVEL9K_DIR_PREFIX='%fin '

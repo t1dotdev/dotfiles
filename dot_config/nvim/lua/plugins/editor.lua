@@ -238,6 +238,7 @@ return {
 			{ "<leader>sh", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
 			{ "<leader>sH", "<cmd>FzfLua highlights<cr>", desc = "Search Highlight Groups" },
 			{ "<leader>sj", "<cmd>FzfLua jumps<cr>", desc = "Jumplist" },
+
 			{ "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "Key Maps" },
 			{ "<leader>sl", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
 			{ "<leader>sM", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
@@ -331,7 +332,7 @@ return {
 			sources = { "filesystem", "buffers", "git_status" },
 			open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
 			filesystem = {
-				bind_to_cwd = false,
+				bind_to_cwd = true,
 				follow_current_file = { enabled = true },
 				use_libuv_file_watcher = true,
 			},

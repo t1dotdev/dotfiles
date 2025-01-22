@@ -7,13 +7,13 @@ vim.g.autoformat = true
 
 -- Snacks animations
 -- Set to `false` to globally disable all snacks animations
-vim.g.snacks_animate = true
+vim.g.snacks_animate = false
 
 -- LazyVim picker to use.
 -- Can be one of: telescope, fzf
 -- Leave it to "auto" to automatically use the picker
 -- enabled with `:LazyExtras`
-vim.g.lazyvim_picker = "auto"
+vim.g.lazyvim_picker = "telescope"
 
 -- LazyVim completion engine to use.
 -- Can be one of: nvim-cmp, blink.cmp
@@ -24,7 +24,7 @@ vim.g.lazyvim_cmp = "nvim-cmp"
 
 -- if the completion engine supports the AI source,
 -- use that instead of inline suggestions
-vim.g.ai_cmp = true
+vim.g.ai_cmp = false
 
 -- LazyVim root dir detection
 -- Each entry can be:

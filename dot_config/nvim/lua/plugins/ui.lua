@@ -1,11 +1,5 @@
 return {
 	-- messages, cmdline and the popupmenu
-	{
-		"snacks.nvim",
-		opts = {
-			scroll = { enabled = false },
-		},
-	},
 
 	-- buffer line
 	{
@@ -187,12 +181,5 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-	},
-
-	{ "nvzone/volt", lazy = true },
-
-	{
-		"nvzone/minty",
-		cmd = { "Shades", "Huefy" },
 	},
 }

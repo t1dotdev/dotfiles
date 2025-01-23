@@ -1,11 +1,4 @@
 return {
-	-- {
-	-- 	"navarasu/onedark.nvim",
-	-- 	opts = {
-	-- 		transparent = true,
-	-- 		style = "deep",
-	-- 	},
-	-- },
 	{
 		"sainnhe/sonokai",
 		priority = 1000,
@@ -16,32 +9,10 @@ return {
 			vim.cmd.colorscheme("sonokai")
 		end,
 	},
-	-- {
-	-- 	"Mofiqul/dracula.nvim",
-	-- 	opts = {
-	-- 		transparent_bg = true,
-	-- 	},
-	-- },
-	-- {
-	-- 	"olimorris/onedarkpro.nvim",
-	-- 	config = function()
-	-- 		require("onedarkpro").setup({
-	-- 			options = {
-	-- 				transparency = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	-- opts = {
-	-- 	-- 	transparency = true,
-	-- 	-- },
-	-- },
 	{
 		"LazyVim/LazyVim",
 		opts = {
 			colorscheme = "sonokai",
-			-- colorscheme = "onedark_dark",
-			-- colorscheme = "onedark",
-			-- colorscheme = "dracula",
 		},
 	},
 }

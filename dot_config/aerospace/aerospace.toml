@@ -262,8 +262,17 @@ enter = 'mode main'
 6 = 'secondary' # Non-main monitor in case when there are only two monitors
 
 
-# [[on-window-detected]]
-# if.app-id = "com.mitchellh.ghostty"
-# run = [
-#   "layout floating",
-# ]
+[[on-window-detected]]
+if.app-id = "com.apple.Music"
+run = [
+  # "layout floating",
+  "move-node-to-workspace M"
+]
+
+[[on-window-detected]]
+if.app-id = "com.hnc.Discord"
+run = [
+  # "layout floating",
+  "move-node-to-workspace D"
+]
+

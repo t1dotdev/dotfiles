@@ -24,7 +24,7 @@ vim.g.lazyvim_cmp = "auto"
 
 -- if the completion engine supports the AI source,
 -- use that instead of inline suggestions
-vim.g.ai_cmp = false
+vim.g.ai_cmp = true
 
 -- LazyVim root dir detection
 -- Each entry can be:

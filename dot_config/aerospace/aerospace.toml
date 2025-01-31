@@ -124,10 +124,12 @@ alt-l = 'focus right'
 alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "Ghostty.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'
 alt-ctrl-shift-cmd-m = 'exec-and-forget open -a "Music.app"'
-alt-ctrl-shift-cmd-b = 'exec-and-forget open -a "Arc.app"'
+# alt-ctrl-shift-cmd-b = 'exec-and-forget open -a "Arc.app"'
+alt-ctrl-shift-cmd-b = 'exec-and-forget open -a "Zen Browser.app"'
 # alt-ctrl-shift-cmd-n = 'exec-and-forget open -a "Notion.app"'
 alt-ctrl-shift-cmd-n = 'exec-and-forget open -a "Obsidian.app"'
 alt-ctrl-shift-cmd-f = 'exec-and-forget open -a "Finder.app"'
+
 
 
 cmd-h = []     # Disable "hide application"
@@ -275,5 +277,13 @@ if.app-id = "com.hnc.Discord"
 run = [
   # "layout floating",
   "move-node-to-workspace D"
+]
+
+
+[[on-window-detected]]
+if.app-id = "app.zen-browser.zen"
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = [
+  "layout floating",
 ]
 

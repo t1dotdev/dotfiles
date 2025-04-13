@@ -1,4 +1,4 @@
-background = 000000
+background = 16161e
 foreground = ffffff
 palette = 0=#51576d
 palette = 1=#e78284
@@ -28,7 +28,7 @@ window-padding-balance = true
 
 
 background-opacity = 0.85
-background-blur-radius = 20
+background-blur-radius = 25
 
 
 macos-titlebar-style = "hidden"

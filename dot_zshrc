@@ -122,15 +122,14 @@ alias tka='tmux kill-server'
 alias os='ollama serve'
 alias oc='ollama run codellama'
 
-# alias y='yazi'
-# function yy() {
-# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-# 	yazi "$@" --cwd-file="$tmp"
-# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-# 		cd -- "$cwd"
-# 	fi
-# 	rm -f -- "$tmp"
-# }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 # source ~/.config/music/zshMusic.zsh
 # source ~/.key.sh
 source ~/.lscolors.sh

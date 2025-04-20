@@ -1,0 +1,4 @@
+[[manager.prepend_keymap]]
+on   = "<Enter>"
+run  = [ "enter", "open" ]
+desc = "Cd into hovered directory, then open it in editor"

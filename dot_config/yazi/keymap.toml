@@ -1,4 +1,5 @@
+# ~/.config/yazi/keymap.toml
 [[manager.prepend_keymap]]
 on   = "<Enter>"
-run  = [ "enter", "open" ]
-desc = "Cd into hovered directory, then open it in editor"
+run  = [ "open", "enter" ]
+desc = "Open hovered directory in $EDITOR, then cd into it"

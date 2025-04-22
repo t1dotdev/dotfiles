@@ -2,6 +2,10 @@ return {
 	{ "neo-tree.nvim", enabled = false },
 	{
 		"nvim-tree/nvim-tree.lua",
+		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+		keys = {
+			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
+		},
 		config = function()
 			require("nvim-tree").setup({
 				disable_netrw = true,

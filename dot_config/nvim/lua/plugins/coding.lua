@@ -203,4 +203,13 @@ return {
 			end, 100)
 		end,
 	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"echasnovski/mini.pairs",
+		enabled = false,
+	},
 }

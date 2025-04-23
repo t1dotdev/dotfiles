@@ -48,6 +48,7 @@ require("lazy").setup({
 		notify = false, -- notify on update
 	}, -- automatically check for plugin updates
 	ui = {
+		border = "rounded",
 		icons = {
 			ft = "",
 			lazy = "󰂠 ",
@@ -100,3 +101,12 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", fg = "#875fff" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "#875fff" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE", fg = "#875fff" })
+vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#875fff", fg = "#16161e" })
+vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#875fff" })
+
+vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", { bg = "NONE", fg = "#875fff" })
+vim.api.nvim_set_hl(0, "BlinkCmpLabelDescription", { bg = "NONE", fg = "#ffffff" })

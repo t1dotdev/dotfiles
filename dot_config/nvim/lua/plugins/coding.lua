@@ -182,25 +182,7 @@ return {
 				end
 			end
 
-			-- Setup Blink first
 			require("blink.cmp").setup(opts)
-
-			-- Then override highlights after UI is initialized
-			vim.defer_fn(function()
-				vim.cmd([[
-    " Transparent float menus with purple border
-    highlight! Pmenu guibg=NONE guifg=#875fff blend=0
-    highlight! PmenuSel guifg=#16161e  guibg=#875fff blend=0
-    highlight! NormalFloat guibg=NONE guifg=#875fff blend=0
-    highlight! PmenuThumb guibg=#875fff
-
-    highlight! BlinkCmpLabelMatch guifg=#875fff guibg=NONE
-    highlight! BlinkCmpLabelDescription guifg=#ffffff guibg=NONE
-
-
-
-  ]])
-			end, 100)
 		end,
 	},
 	{

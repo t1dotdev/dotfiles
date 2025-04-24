@@ -9,7 +9,7 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 after-startup-command = [
- 'exec-and-forget borders active_color=0xff875fff inactive_color=0xff494d64 width=7.0'
+ 'exec-and-forget borders active_color=0xff875fff inactive_color=0xff494d64 width=7.5'
 ]
 # exec-on-workspace-change = ['/bin/bash', '-c',
 #  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
@@ -116,11 +116,13 @@ alt-k = 'focus up'
 alt-l = 'focus right'
 
 
-alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "WezTerm.app"'
+# alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "WezTerm.app"'
+alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Ghostty.app"'
 alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Arc.app"'
 alt-ctrl-shift-cmd-3 = 'exec-and-forget open -a "ChatGPT.app"'
 
-alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "WezTerm.app"'
+# alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "WezTerm.app"'
+alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "Ghostty.app"'
 alt-ctrl-shift-cmd-b = 'exec-and-forget open -a "Arc.app"'
 alt-ctrl-shift-cmd-c = 'exec-and-forget open -a "ChatGPT.app"'
 alt-ctrl-shift-cmd-d = 'exec-and-forget open -a "Discord.app"'

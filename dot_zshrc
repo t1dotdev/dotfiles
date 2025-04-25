@@ -1,87 +1,108 @@
-# zsh4humans config: https://github.com/romkatv/zsh4humans
-
+# ─────────────────────────────────────────────────────────────
+# 🚀 Zsh4Humans Base Configuration
+# https://github.com/romkatv/zsh4humans
+# ─────────────────────────────────────────────────────────────
 ZSH_AUTOSUGGEST_HISTORY_IGNORE=*
-zstyle ':z4h:' auto-update 'no'
-zstyle ':z4h:' auto-update-days '28'
-zstyle ':z4h:bindkey' keyboard 'mac'
-zstyle ':z4h:' start-tmux no
-zstyle ':z4h:' prompt-at-bottom no
-zstyle ':z4h:' term-shell-integration 'yes'
+
+zstyle ':z4h:' auto-update             'no'
+zstyle ':z4h:' auto-update-days       '28'
+zstyle ':z4h:bindkey' keyboard         'mac'
+zstyle ':z4h:' start-tmux              'no'
+zstyle ':z4h:' prompt-at-bottom        'no'
+zstyle ':z4h:' term-shell-integration  'yes'
 zstyle ':z4h:autosuggestions' forward-char 'accept'
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
-zstyle ':z4h:direnv' enable 'no'
+
+zstyle ':z4h:direnv'         enable 'no'
 zstyle ':z4h:direnv:success' notify 'yes'
 
-zstyle ':z4h:ssh:*' enable 'no'
-zstyle ':z4h:ssh:example-hostname1' enable 'yes'
+zstyle ':z4h:ssh:*'                   enable 'no'
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
 zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
 z4h install ohmyzsh/ohmyzsh || return
 z4h init || return
 
-# PATH & Env
+# ─────────────────────────────────────────────────────────────
+# 🌱 Path & Environment
+# ─────────────────────────────────────────────────────────────
 path=(~/bin $path)
-export PATH="$PATH:/users/petchx/development/flutter/bin"
-export PATH="/users/petchx/.local/bin:$PATH"
-export GEM_HOME="$HOME/.gem"
-export PATH="$GEM_HOME/bin:$PATH"
 
-# Editor
 export EDITOR="nvim"
+export primary="#875fff"
+export GEM_HOME="$HOME/.gem"
+export PATH="$PATH:/users/petchx/development/flutter/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$GEM_HOME/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Aliases
+# ─────────────────────────────────────────────────────────────
+# ⚙️ Tool Initialization
+# ─────────────────────────────────────────────────────────────
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# ─────────────────────────────────────────────────────────────
+# 📁 Aliases
+# ─────────────────────────────────────────────────────────────
+alias cd="z"
 alias tree='tree -a -i .git'
 alias ls="eza -l --icons --git --hyperlink --git-repos --color-scale-mode=gradient"
 alias ss="open /System/Library/CoreServices/ScreenSaverEngine.app"
-alias cd="z"
 
-# Git & Dev Shortcuts
+# Git & Dev
 alias g="lazygit"
 alias gc="git commit -m"
 alias n="nvim"
 alias s="spf ."
+alias f="fuck"
+
+# Bun & NPM
 alias bd="bun run dev"
 alias bi="bun install"
 alias bb="bun run build"
 alias bl="bun run lint"
 alias nd="npm run dev"
 alias ni="npm install"
+
+# Misc
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
-alias f='fuck'
 
 # Tmux
-alias t='tmux'
-alias ta='tmux attach -t'
-alias td='tmux detach'
-alias tl='tmux ls'
-alias tk='tmux kill-session -t'
-alias tka='tmux kill-server'
+alias t="tmux"
+alias ta="tmux attach -t"
+alias td="tmux detach"
+alias tl="tmux ls"
+alias tk="tmux kill-session -t"
+alias tka="tmux kill-server"
 
 # Ollama
-alias os='ollama serve'
-alias oc='ollama run codellama'
+alias os="ollama serve"
+alias oc="ollama run codellama"
 
-# Functions
+# ─────────────────────────────────────────────────────────────
+# 🔧 Functions
+# ─────────────────────────────────────────────────────────────
 autoload -Uz zmv
-function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+
+function md() {
+  [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1"
+}
 compdef _directories md
 
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd "$cwd"
-	fi
-	rm -f "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(<"$tmp")" && [[ -n $cwd && $cwd != "$PWD" ]]; then
+    cd "$cwd"
+  fi
+  rm -f "$tmp"
 }
 
-# Named dirs
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-
-# Branding & IP
-export primary="#875fff"
 function p() {
   echo -e "
 \e[38;5;99m██████╗ ███████╗████████╗ ██████╗██╗  ██╗██╗  ██╗\e[0m
@@ -90,19 +111,25 @@ function p() {
 \e[38;5;99m██╔═══╝ ██╔══╝     ██║   ██║     ██╔══██║ ██╔██╗ \e[0m
 \e[38;5;99m██║     ███████╗   ██║   ╚██████╗██║  ██║██╔╝ ██╗\e[0m
 \e[38;5;99m╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝\e[0m"
-  echo -e "\n\e[38;5;99mIP -❯ \e[0m$(ipconfig getifaddr en0 || ipconfig getifaddr en1)"
+  echo -e "\n\e[38;5;99mIP -❯ \e[0m$(ip)"
   echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 }
 
-# Colors
+# ─────────────────────────────────────────────────────────────
+# 🎨 Theme & Highlighting
+# ─────────────────────────────────────────────────────────────
 source ~/.lscolors.sh
+
 export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=99,underline 
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=99
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=99 
 # ZSH_HIGHLIGHT_STYLES[path]=none
 
-# FZF colors
+ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=99,underline"
+ZSH_HIGHLIGHT_STYLES[precommand]="fg=99"
+ZSH_HIGHLIGHT_STYLES[arg0]="fg=99"
+
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:#8751ff
   --color=fg+:#ffffff,bg+:-1,hl+:#875aff
@@ -110,10 +137,7 @@ export FZF_DEFAULT_OPTS="
   --color=marker:#875aff,spinner:#875aff,header:#8751ff
 "
 
-# TheFuck
-eval "$(thefuck --alias)"
-
-# Bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# ─────────────────────────────────────────────────────────────
+# 📂 Named Directories
+# ─────────────────────────────────────────────────────────────
+[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home

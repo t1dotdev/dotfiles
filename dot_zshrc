@@ -1,117 +1,57 @@
-# Personal Zsh configuration file. It is strongly recommended to keep all
-# shell customization and configuration (including exported environment
-# variables such as path) in this file or in files sourced from it.
-#
-# documentation: https://github.com/romkatv/zsh4humans/blob/v5/readme.md.
+# zsh4humans config: https://github.com/romkatv/zsh4humans
+
 ZSH_AUTOSUGGEST_HISTORY_IGNORE=*
-# periodic auto-update on zsh startup: 'ask' or 'no'.
-# you can manually run `z4h update` to update everything.
-zstyle ':z4h:' auto-update      'no'
-# ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update 'no'
 zstyle ':z4h:' auto-update-days '28'
-
-# keyboard type: 'mac' or 'pc'.
-zstyle ':z4h:bindkey' keyboard  'mac'
-
-# don't start tmux. system / no
-zstyle ':z4h:' start-tmux      no 
+zstyle ':z4h:bindkey' keyboard 'mac'
+zstyle ':z4h:' start-tmux no
 zstyle ':z4h:' prompt-at-bottom no
-
-
-# mark up shell's output with semantic information.
 zstyle ':z4h:' term-shell-integration 'yes'
-
-# right-arrow key accepts one character ('partial-accept') from
-# command autosuggestions or the whole thing ('accept')?
 zstyle ':z4h:autosuggestions' forward-char 'accept'
-
-# recursively traverse directories when tab-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
-
-# enable direnv to automatically source .envrc files.
-zstyle ':z4h:direnv'         enable 'no'
-# show "loading" and "unloading" notifications from direnv.
+zstyle ':z4h:direnv' enable 'no'
 zstyle ':z4h:direnv:success' notify 'yes'
 
-# enable ('yes') or disable ('no') automatic teleportation of z4h over
-# ssh when connecting to these hosts.
-zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*' enable 'no'
+zstyle ':z4h:ssh:example-hostname1' enable 'yes'
 zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
-# the default value if none of the overrides above match the hostname.
-zstyle ':z4h:ssh:*'                   enable 'no'
-
-# send these files over to the remote host when connecting over ssh to the
-# enabled hosts.
 zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
-# clone additional git repositories from github.
-#
-# this doesn't do anything apart from cloning the repository and keeping it
-# up-to-date. cloned files can be used after `z4h init`. this is just an
-# example. if you don't plan to use oh my zsh, delete this line.
 z4h install ohmyzsh/ohmyzsh || return
-
-# install or update core components (fzf, zsh-autosuggestions, etc.) and
-# initialize zsh. after this point console i/o is unavailable until zsh
-# is fully initialized. everything that requires user interaction or can
-# perform network i/o must be done above. everything else is best done below.
 z4h init || return
 
-# extend path.
+# PATH & Env
 path=(~/bin $path)
-
-# autoload functions.
-autoload -Uz zmv
-
-# define functions and completions.
-function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
-compdef _directories md
-
-# define named directories: ~w <=> windows home directory on wsl.
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-
-# define aliases.
-alias tree='tree -a -i .git'
-
-# set shell options: http://zsh.sourceforge.net/doc/release/options.html.
-setopt glob_dots     # no special treatment for file names with a leading dot
-setopt no_auto_menu  # require an extra tab press to open the completion menu
-
-
-export primary=#875fff
-# add flags to existing aliases.
-alias ls="eza -l --icons --git --hyperlink --git-repos --color-scale-mode=gradient"
-alias ss="open /system/library/coreservices/screensaverengine.app"
-
 export PATH="$PATH:/users/petchx/development/flutter/bin"
-
-# cocoapod
+export PATH="/users/petchx/.local/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
-eval "$(zoxide init zsh)"
+# Editor
+export EDITOR="nvim"
+
+# Aliases
+alias tree='tree -a -i .git'
+alias ls="eza -l --icons --git --hyperlink --git-repos --color-scale-mode=gradient"
+alias ss="open /System/Library/CoreServices/ScreenSaverEngine.app"
 alias cd="z"
 
-# created by `pipx` on 2024-04-30 10:37:40
-export PATH="/users/petchx/.local/bin:$PATH"
-
+# Git & Dev Shortcuts
 alias g="lazygit"
 alias gc="git commit -m"
 alias n="nvim"
 alias s="spf ."
-
 alias bd="bun run dev"
 alias bi="bun install"
 alias bb="bun run build"
 alias bl="bun run lint"
 alias nd="npm run dev"
 alias ni="npm install"
-
 alias i="interpreter -y"
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
-alias p="petchx"
 alias f='fuck'
 
+# Tmux
 alias t='tmux'
 alias ta='tmux attach -t'
 alias td='tmux detach'
@@ -119,30 +59,30 @@ alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
 
+# Ollama
 alias os='ollama serve'
 alias oc='ollama run codellama'
+
+# Functions
+autoload -Uz zmv
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
+	if cwd="$(cat "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd "$cwd"
 	fi
-	rm -f -- "$tmp"
+	rm -f "$tmp"
 }
-# source ~/.config/music/zshMusic.zsh
-# source ~/.key.sh
-source ~/.lscolors.sh
-export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=99,underline 
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=99
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=99 
-# ZSH_HIGHLIGHT_STYLES[path]=none
 
-# export EDITOR="nvim"
-export EDITOR="nvim"
+# Named dirs
+[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
-petchx(){
+# Branding & IP
+export primary="#875fff"
+function p() {
   echo -e "
 \e[38;5;99m██████╗ ███████╗████████╗ ██████╗██╗  ██╗██╗  ██╗\e[0m
 \e[38;5;99m██╔══██╗██╔════╝╚══██╔══╝██╔════╝██║  ██║╚██╗██╔╝\e[0m
@@ -150,12 +90,19 @@ petchx(){
 \e[38;5;99m██╔═══╝ ██╔══╝     ██║   ██║     ██╔══██║ ██╔██╗ \e[0m
 \e[38;5;99m██║     ███████╗   ██║   ╚██████╗██║  ██║██╔╝ ██╗\e[0m
 \e[38;5;99m╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝\e[0m"
-echo -e "\n\e[38;5;99mIP -❯ \e[0m$(ipconfig getifaddr en0 || ipconfig getifaddr en1)"
-echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
-#get ip
-# ipconfig getifaddr en0 || ipconfig getifaddr en1
+  echo -e "\n\e[38;5;99mIP -❯ \e[0m$(ipconfig getifaddr en0 || ipconfig getifaddr en1)"
+  echo -e "\e[38;5;99mPrimary -❯ \e[0m${primary}\n"
 }
 
+# Colors
+source ~/.lscolors.sh
+export EXA_COLORS="da=38;5;7:uu=38;5;99:sn=38;5;99:ur=38;5;99:uw=38;5;99:ux=38;5;99:ue=38;5;99:gr=38;5;99:gw=38;5;99:gx=38;5;99:tr=38;5;99:tw=38;5;99:tx=38;5;99:xa=38;5;99"
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=99,underline 
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=99
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=99 
+# ZSH_HIGHLIGHT_STYLES[path]=none
+
+# FZF colors
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:#8751ff
   --color=fg+:#ffffff,bg+:-1,hl+:#875aff
@@ -163,32 +110,10 @@ export FZF_DEFAULT_OPTS="
   --color=marker:#875aff,spinner:#875aff,header:#8751ff
 "
 
+# TheFuck
+eval "$(thefuck --alias)"
 
-#  idle() {
-#   cmatrix
-#   echo -n "\033[38;5;99m└─❯ " && echo -n -e "\033[m"
-# }
-#
-# # Set up a trap to execute the function after a certain period of idleness
-# trap 'idle' ALRM
-#
-# # Set up a timer to send an alarm signal after 5 seconds of idleness
-# TMOUT=3
-
-# eval "$(dircolors ~/.dircolors)"
-
-
-
-
-
-
-
-
-eval $(thefuck --alias)
-
-# bun completions
-[ -s "/Users/petchx/.bun/_bun" ] && source "/Users/petchx/.bun/_bun"
-
-# bun
+# Bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

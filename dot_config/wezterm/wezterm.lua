@@ -1,101 +1,69 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 local colors = require("colors")
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
-
 local config = wezterm.config_builder()
 
+-- === Colors ===
 config.colors = {
 	foreground = colors.fg,
 	background = colors.bg,
-	tab_bar = {
-		background = colors.bg,
-		active_tab = {
-			bg_color = colors.primary,
-			fg_color = colors.bg,
-		},
-		inactive_tab = {
-			bg_color = colors.bg,
-			fg_color = colors.fg,
-		},
-		new_tab = {
-			bg_color = colors.bg,
-			fg_color = colors.fg,
-		},
-	},
 	cursor_bg = colors.fg,
 	cursor_border = colors.fg,
 	cursor_fg = colors.bg,
 	selection_bg = colors.primary,
 	selection_fg = colors.fg,
+	tab_bar = {
+		background = colors.bg,
+		active_tab = { bg_color = colors.primary, fg_color = colors.bg },
+		inactive_tab = { bg_color = colors.bg, fg_color = colors.fg },
+		new_tab = { bg_color = colors.bg, fg_color = colors.fg },
+	},
 	ansi = {
-		"#51576d", -- 0
-		"#e78284", -- 1
-		"#875fff", -- 2
-		"#e5c890", -- 3
-		"#8caaee", -- 4
-		"#f4b8e4", -- 5
-		"#81c8be", -- 6
-		"#ffffff", -- 7
+		"#51576d",
+		"#e78284",
+		"#875fff",
+		"#e5c890",
+		"#8caaee",
+		"#f4b8e4",
+		"#81c8be",
+		"#ffffff",
 	},
 	brights = {
-		"#626880", -- 8
-		"#e67172", -- 9
-		"#875fff", -- 10
-		"#d9ba73", -- 11
-		"#7b9ef0", -- 12
-		"#f2a4db", -- 13
-		"#5abfb5", -- 14
-		"#ffffff", -- 15
+		"#626880",
+		"#e67172",
+		"#875fff",
+		"#d9ba73",
+		"#7b9ef0",
+		"#f2a4db",
+		"#5abfb5",
+		"#ffffff",
 	},
 }
 
+-- === Font ===
+config.font = wezterm.font_with_fallback({
+	{ family = "JetBrainsMono NF", weight = "Bold" },
+	{ family = "Pridi", weight = "Regular" },
+})
+config.font_size = 15
+config.line_height = 1
+
+-- === Window ===
+config.window_padding = { top = 20, bottom = 0 }
+config.text_background_opacity = 0.9
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = false
+config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
+
+-- === Keybindings ===
 config.keys = {
-	{
-		key = "w",
-		mods = "CMD",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
-	-- {
-	-- 	key = "l",
-	-- 	mods = "CTRL",
-	-- 	action = wezterm.action.ActivatePaneDirection("Right"),
-	-- },
-	-- {
-	-- 	key = "h",
-	-- 	mods = "CTRL",
-	-- 	action = wezterm.action.ActivatePaneDirection("Left"),
-	-- },
-	-- {
-	-- 	key = "k",
-	-- 	mods = "CTRL",
-	-- 	action = wezterm.action.ActivatePaneDirection("Up"),
-	-- },
-	-- {
-	-- 	key = "j",
-	-- 	mods = "CTRL",
-	-- 	action = wezterm.action.ActivatePaneDirection("Down"),
-	-- },
-	{
-		key = "h",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
-	},
-	{
-		key = "l",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
-	},
-	{
-		key = "k",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
-	},
-	{
-		key = "j",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
-	},
+	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+	{ key = "h", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "l", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
+	{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "j", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
 	{
 		key = "K",
 		mods = "CMD|SHIFT",
@@ -104,80 +72,99 @@ config.keys = {
 			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
-
-	{
-		key = "|",
-		mods = "CMD|SHIFT",
-		action = wezterm.action.SplitPane({
-			direction = "Right",
-		}),
-	},
-	{
-		key = "-",
-		mods = "CMD",
-		action = wezterm.action.SplitPane({
-			direction = "Down",
-		}),
-	},
+	{ key = "|", mods = "CMD|SHIFT", action = wezterm.action.SplitPane({ direction = "Right" }) },
+	{ key = "-", mods = "CMD", action = wezterm.action.SplitPane({ direction = "Down" }) },
 }
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local title = tab.tab_index + 1
-	title = wezterm.truncate_right(title, max_width - 2)
-	return {
-		{ Text = " " },
-		{ Text = title },
-		{ Text = " " },
-	}
+-- === Tab Title ===
+wezterm.on("format-tab-title", function(tab, _, _, _, _, max_width)
+	local title = wezterm.truncate_right(tab.tab_index + 1, max_width - 2)
+	return { { Text = " " .. title .. " " } }
 end)
 
-config.window_padding = {
-	top = 20,
-	bottom = 0,
-}
+-- === Right Status Bar ===
+wezterm.on("update-right-status", function(window, pane)
+	local cells = {}
+	-- table.insert(cells, wezterm.nerdfonts.md_apple)
 
-config.font = wezterm.font_with_fallback({
-	{
-		family = "JetBrainsMono NF",
-		weight = "Bold",
-	},
-	{
-		-- ภาษาไทย
-		family = "Pridi",
-		weight = "Regular",
-	},
-})
+	local cwd_uri = pane:get_current_working_dir()
+	if cwd_uri then
+		local cwd, hostname = "", ""
+		if type(cwd_uri) == "userdata" then
+			cwd = cwd_uri.file_path
+			hostname = cwd_uri.host or wezterm.hostname()
+		else
+			cwd_uri = cwd_uri:sub(8)
+			local slash = cwd_uri:find("/")
+			if slash then
+				hostname = cwd_uri:sub(1, slash - 1)
+				cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+					return string.char(tonumber(hex, 16))
+				end)
+			end
+		end
+		local dot = hostname:find("[.]")
+		if dot then
+			hostname = hostname:sub(1, dot - 1)
+		end
+		if hostname == "" then
+			hostname = wezterm.hostname()
+		end
+		table.insert(cells, cwd)
+	end
 
-config.font_size = 15
-config.line_height = 1
+	local handle = io.popen("ipconfig getifaddr en0 || ipconfig getifaddr en1")
+	local local_ip = handle:read("*a"):gsub("\n", "")
+	handle:close()
+	-- table.insert(cells, wezterm.nerdfonts.cod_globe .. " " .. local_ip)
 
-config.text_background_opacity = 0.9
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
-config.use_fancy_tab_bar = false
-config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
-config.hide_tab_bar_if_only_one_tab = false
+	for _, b in ipairs(wezterm.battery_info()) do
+		local icons = {
+			wezterm.nerdfonts.md_battery_10,
+			wezterm.nerdfonts.md_battery_20,
+			wezterm.nerdfonts.md_battery_30,
+			wezterm.nerdfonts.md_battery_40,
+			wezterm.nerdfonts.md_battery_50,
+			wezterm.nerdfonts.md_battery_60,
+			wezterm.nerdfonts.md_battery_70,
+			wezterm.nerdfonts.md_battery_80,
+			wezterm.nerdfonts.md_battery_90,
+			wezterm.nerdfonts.md_battery,
+			wezterm.nerdfonts.md_battery_charging,
+		}
+		local level = math.floor(b.state_of_charge * 10)
+		local icon = b.state == "Charging" and icons[11] or icons[level]
+		if b.state ~= "Empty" then
+			table.insert(cells, icon .. " " .. string.format("%.0f%%", b.state_of_charge * 100))
+		end
+	end
 
--- you can put the rest of your Wezterm config here
+	local text_fg, bg = "#121212", colors.primary
+	local elements, count = {}, 0
+	local function push(text, is_last)
+		count = count + 1
+		table.insert(elements, { Foreground = { Color = text_fg } })
+		table.insert(elements, { Background = { Color = bg } })
+		table.insert(elements, { Text = " " .. text .. " " })
+	end
+
+	while #cells > 0 do
+		push(table.remove(cells, 1), #cells == 0)
+	end
+
+	window:set_right_status(wezterm.format(elements))
+end)
+
+-- === Smart Splits ===
 smart_splits.apply_to_config(config, {
-	-- the default config is here, if you'd like to use the default keys,
-	-- you can omit this configuration table parameter and just use
-	-- smart_splits.apply_to_config(config)
-
-	-- directional keys to use in order of: left, down, up, right
-	direction_keys = { "h", "j", "k", "l" },
-	-- if you want to use separate direction keys for move vs. resize, you
-	-- can also do this:
 	direction_keys = {
 		move = { "h", "j", "k", "l" },
 		resize = { "LeftArrow", "DownArrow", "UpArrow", "RightArrow" },
 	},
-	-- modifier keys to combine with direction_keys
 	modifiers = {
-		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
-		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
+		move = "CTRL",
+		resize = "META",
 	},
-	-- log level to use: info, warn, error
 	log_level = "info",
 })
 

@@ -1,8 +1,8 @@
-#!/bin/bash
-
-# cc = $(osascript -e 'tell application "System Events" to click menu bar item 1 of menu bar 1 of application process "ControlCenter"')
+#!/usr/bin/env bash
 
 sketchybar --add item calendar right \
-  --set calendar icon=􀧞 \
-  update_freq=1 script="$PLUGIN_DIR/calendar.sh" \
-  --set calendar click_script="$PLUGIN_DIR/control-center.sh"
+  --set calendar \
+  icon=􀧞 \
+  update_freq=60 \
+  script="$PLUGIN_DIR/calendar.sh" \
+  click_script="$PLUGIN_DIR/notification-center.sh"

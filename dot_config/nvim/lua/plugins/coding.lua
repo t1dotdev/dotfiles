@@ -26,6 +26,12 @@ return {
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			-- only enable blink in buffers *not* matching these filetypes
+			enabled = function()
+				local disabled_filetypes = { "DressingInput" }
+				return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+			end,
+
 			snippets = {
 				expand = function(snippet, _)
 					return LazyVim.cmp.expand(snippet)

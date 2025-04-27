@@ -117,8 +117,8 @@ alt-l = 'focus right'
 
 
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "WezTerm.app"'
-alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Ghostty.app"'
-alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Arc.app"'
+alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Arc.app"'
+alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Ghostty.app"'
 alt-ctrl-shift-cmd-3 = 'exec-and-forget open -a "ChatGPT.app"'
 
 # alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "WezTerm.app"'

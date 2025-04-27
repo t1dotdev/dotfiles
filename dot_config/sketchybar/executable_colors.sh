@@ -3,7 +3,7 @@
 export WHITE=0xffffffff
 
 # -- Teal Scheme --
-export BAR_COLOR=0x40000000
+export BAR_COLOR=0xE616161e
 export ITEM_BG_COLOR=0x00003547
 export ACCENT_COLOR=0x40ffffff
 

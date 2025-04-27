@@ -5,7 +5,6 @@ LAYOUT="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSel
 
 # specify short layouts individually.
 case "$LAYOUT" in
-"Dvorak") SHORT_LAYOUT="DV" ;;
 "ABC") SHORT_LAYOUT="ABC" ;;
 "Thai") SHORT_LAYOUT="TH" ;;
 

@@ -3,6 +3,34 @@ vim.keymap.set("v", "<leader>ae", ":CodeCompanion<CR>", { desc = "[A]i [E]dit" }
 
 return {
 	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		build = ":Copilot auth",
+		event = "BufReadPost",
+		opts = {
+			suggestion = {
+				enabled = not vim.g.ai_cmp,
+				auto_trigger = true,
+				hide_during_completion = vim.g.ai_cmp,
+				keymap = {
+					accept = false, -- handled by nvim-cmp / blink.cmp
+					next = "<M-]>",
+					prev = "<M-[>",
+				},
+			},
+			panel = { enabled = false },
+			filetypes = {
+				markdown = true,
+				help = true,
+			},
+			config = function()
+				require("copilot").setup({
+					copilot_model = "gpt-4o-copilot",
+				})
+			end,
+		},
+	},
+	{
 		"olimorris/codecompanion.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",

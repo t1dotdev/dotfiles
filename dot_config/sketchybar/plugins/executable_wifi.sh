@@ -78,13 +78,19 @@ render_bar_item() {
 }
 
 render_popup() {
-  args=(--set wifi.ssid label="$LABEL")
-  if [[ -n $LABEL2 ]]; then
-    args+=(--set wifi.ipaddress label="$LABEL2"
-      --set wifi click_script="printf $LABEL2 | pbcopy; sketchybar --set wifi popup.drawing=toggle")
+  if [ "$SSID" != "" ]; then
+    args=(
+      --set wifi.ssid label="$SSID"
+      --set wifi.ipaddress label="$IP_WIFI"
+      click_script="printf $IP_WIFI | pbcopy;sketchybar --set wifi popup.drawing=toggle"
+    )
   else
-    args+=(--set wifi.ipaddress label="—")
+    args=(
+      --set wifi.ssid label="Not connected"
+      --set wifi.ipaddress label="No IP"
+    )
   fi
+
   sketchybar "${args[@]}" >/dev/null
 }
 

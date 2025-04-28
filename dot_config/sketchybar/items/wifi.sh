@@ -9,10 +9,8 @@ wifi=(
   popup.align=right
   update_freq=5
   script="$PLUGIN_DIR/wifi.sh"
+  click_script="open 'x-apple.systempreferences:com.apple.preference.network?Wi-Fi';"
   --subscribe wifi wifi_change
-  mouse.clicked
-  mouse.exited
-  mouse.exited.global
 )
 
 sketchybar \
@@ -29,4 +27,4 @@ sketchybar \
   icon.padding_right=6 \
   label="IP Address" \
   "${menu_item_defaults[@]}" \
-  click_script="echo \"$IP_ADDRESS\"|pbcopy;$POPUP_OFF"
+  click_script="echo \"$IP_ADDRESS\" | pbcopy; $POPUP_OFF"

@@ -48,14 +48,15 @@ if [[ $IS_VPN != "Disconnected" ]]; then
   ICON=$ICON_VPN
   LABEL="VPN"
   LABEL2=""
-elif [[ -n $WIRED_IFACE ]]; then
-  ICON=$ICON_ETH
-  LABEL="$WIRED_IFACE"
-  LABEL2="$WIRED_IP"
 elif [[ $SSID == "T1’s IPhone" ]]; then
   ICON=$ICON_TETHER
   LABEL="$SSID"
   LABEL2="$IP_WIFI"
+
+elif [[ -n $WIRED_IFACE ]]; then
+  ICON=$ICON_ETH
+  LABEL="$WIRED_IFACE"
+  LABEL2="$WIRED_IP"
 elif [[ -n $SSID ]]; then
   ICON=$ICON_WIFI
   LABEL="$SSID"

@@ -1,4 +1,5 @@
-vim.keymap.set({ "n", "v", "x" }, "<leader>aa", "<cmd>CodeCompanionAction<CR>", { desc = "[A]i [A]ction" })
+vim.keymap.set({ "n", "v" }, "<leader>aa", ":CodeCompanionAction<CR>", { desc = "[A]i [A]ction" })
+vim.keymap.set("v", "<leader>ae", ":CodeCompanion<CR>", { desc = "[A]i [E]dit" })
 
 return {
 	{
@@ -14,7 +15,7 @@ return {
 						return require("codecompanion.adapters").extend("copilot", {
 							schema = {
 								model = {
-									default = "gpt-4o-mini",
+									default = "gemini-2.0-flash-001",
 								},
 							},
 						})

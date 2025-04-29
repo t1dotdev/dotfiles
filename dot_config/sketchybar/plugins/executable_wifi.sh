@@ -52,15 +52,14 @@ elif [[ $SSID == "T1’s IPhone" ]]; then
   ICON=$ICON_TETHER
   LABEL="$SSID"
   LABEL2="$IP_WIFI"
-
-elif [[ -n $WIRED_IFACE ]]; then
-  ICON=$ICON_ETH
-  LABEL="$WIRED_IFACE"
-  LABEL2="$WIRED_IP"
 elif [[ -n $SSID ]]; then
   ICON=$ICON_WIFI
   LABEL="$SSID"
   LABEL2="$IP_WIFI"
+elif [[ -n $WIRED_IFACE ]]; then
+  ICON=$ICON_ETH
+  LABEL="$WIRED_IFACE"
+  LABEL2="$WIRED_IP"
 elif echo "$CURRENT_WIFI" | grep -q "AirPort: Off"; then
   ICON=$ICON_AIRPORT_OFF
   LABEL="AirPort Off"

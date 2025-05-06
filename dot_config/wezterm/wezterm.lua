@@ -72,8 +72,8 @@ config.keys = {
 			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
-	{ key = "|", mods = "CMD|SHIFT", action = wezterm.action.SplitPane({ direction = "Right" }) },
-	{ key = "-", mods = "CMD", action = wezterm.action.SplitPane({ direction = "Down" }) },
+	{ key = "d", mods = "CMD", action = wezterm.action.SplitPane({ direction = "Right" }) },
+	{ key = "d", mods = "CMD|SHIFT", action = wezterm.action.SplitPane({ direction = "Down" }) },
 }
 
 -- === Tab Title ===

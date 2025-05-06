@@ -126,30 +126,30 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Smart tmux rename in Neovim
-local function augroup(name)
-	return vim.api.nvim_create_augroup("tmux_" .. name, { clear = true })
-end
-
-if vim.env.TMUX then
-	-- Rename tmux pane when entering a buffer
-	vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
-		group = augroup("nvim_filename"),
-		callback = function()
-			local filename = vim.fn.expand("%:t")
-			if filename == "" then
-				filename = "[No Name]"
-			end
-			-- Rename tmux pane title to just filename
-			vim.fn.system('tmux select-pane -T "' .. filename .. '"')
-		end,
-	})
-
-	-- Reset tmux pane title when leaving Neovim
-	vim.api.nvim_create_autocmd("VimLeavePre", {
-		group = augroup("reset_title"),
-		callback = function()
-			-- Reset pane title back to shell (or empty)
-			vim.fn.system('tmux select-pane -T "shell"')
-		end,
-	})
-end
+-- local function augroup(name)
+-- 	return vim.api.nvim_create_augroup("tmux_" .. name, { clear = true })
+-- end
+--
+-- if vim.env.TMUX then
+-- 	-- Rename tmux pane when entering a buffer
+-- 	vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
+-- 		group = augroup("nvim_filename"),
+-- 		callback = function()
+-- 			local filename = vim.fn.expand("%:t")
+-- 			if filename == "" then
+-- 				filename = "[No Name]"
+-- 			end
+-- 			-- Rename tmux pane title to just filename
+-- 			vim.fn.system('tmux select-pane -T "' .. filename .. '"')
+-- 		end,
+-- 	})
+--
+-- 	-- Reset tmux pane title when leaving Neovim
+-- 	vim.api.nvim_create_autocmd("VimLeavePre", {
+-- 		group = augroup("reset_title"),
+-- 		callback = function()
+-- 			-- Reset pane title back to shell (or empty)
+-- 			vim.fn.system('tmux select-pane -T "shell"')
+-- 		end,
+-- 	})
+-- end

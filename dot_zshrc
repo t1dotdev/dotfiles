@@ -54,6 +54,7 @@ eval "$(thefuck --alias)"
 # 📁 Aliases
 # ─────────────────────────────────────────────────────────────
 alias cd="z"
+alias cdi="zi"
 alias tree='tree -a -i .git'
 alias ls="eza -l --icons --git --hyperlink --git-repos --color-scale-mode=gradient"
 alias ss="open /System/Library/CoreServices/ScreenSaverEngine.app"
@@ -142,6 +143,8 @@ export FZF_DEFAULT_OPTS="
   --color=info:#ffffff,prompt:#875fff,pointer:#875aff
   --color=marker:#875aff,spinner:#875aff,header:#8751ff
 "
+export FZF_DEFAULT_OPTS='--preview-window=down:30%:sharp'
+
 
 # ─────────────────────────────────────────────────────────────
 # 📂 Named Directories

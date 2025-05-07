@@ -12,9 +12,9 @@ after-startup-command = [
  'exec-and-forget borders active_color=0xff875fff inactive_color=0xff494d64 width=5',
  'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
-exec-on-workspace-change = ['/bin/bash', '-c',
- 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+# ]
 #open warp.app
 
 # You can use it to add commands that run after AeroSpace startup.
@@ -74,7 +74,7 @@ inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
 inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
 outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 12]
 outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 12]
-outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 14]
+outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 60 }, 16]
 outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 40 }, 12]
 
 # 'main' binding mode declaration

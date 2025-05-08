@@ -1,3 +1,4 @@
+
 return {
 	{
 		"onsails/lspkind.nvim",
@@ -199,7 +200,3 @@ return {
 		end,
 	},
 	{
-		"echasnovski/mini.pairs",
-		enabled = false,
-	},
-}

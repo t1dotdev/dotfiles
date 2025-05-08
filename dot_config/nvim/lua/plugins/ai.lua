@@ -23,11 +23,7 @@ return {
         markdown = true,
         help = true,
       },
-      config = function()
-        require("copilot").setup({
-          copilot_model = "gpt-4o-copilot",
-        })
-      end,
+      copilot_model = "gpt-4o-copilot",
     },
   },
   {

@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 vim.g.snacks_animate = false
--- vim.g.ai_cmp = false
+vim.g.ai_cmp = false
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", fg = "#875fff" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "#875fff" })

@@ -263,11 +263,14 @@ enter = 'mode main'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'      # Main monitor
-2 = 'secondary' # Non-main monitor in case when there are only two monitors
-3 = 'main'      # Non-main monitor in case when there are only two monitors
-4 = 'secondary' # Non-main monitor in case when there are only two monitors
-5 = 'main'      # Non-main monitor in case when there are only two monitors
+2 = 'main'      # Main monitor
+3 = 'main'      # Main monitor
+4 = 'main'      # Main monitor
+5 = 'main'      # Main monitor
 6 = 'secondary' # Non-main monitor in case when there are only two monitors
+7 = 'secondary' # Non-main monitor in case when there are only two monitors
+8 = 'secondary' # Non-main monitor in case when there are only two monitors
+9 = 'secondary' # Non-main monitor in case when there are only two monitors
 
 
 [[on-window-detected]]

@@ -34,7 +34,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		main = "nvim-treesitter.configs",
 		opts = options,
 	},

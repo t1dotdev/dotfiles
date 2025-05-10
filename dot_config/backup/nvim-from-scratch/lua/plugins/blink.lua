@@ -16,11 +16,12 @@ api.nvim_create_autocmd("User", {
 return {
 	{
 		"onsails/lspkind.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 	},
 
 	{
 		"saghen/blink.cmp",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		-- optional: provides snippets for the snippet source
 		dependencies = {
 			dependencies = {

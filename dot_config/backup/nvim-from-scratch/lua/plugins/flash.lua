@@ -1,6 +1,6 @@
 return {
 	"folke/flash.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	vscode = true,
 	---@type Flash.Config
 	opts = {},

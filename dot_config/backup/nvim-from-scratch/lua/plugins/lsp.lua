@@ -157,5 +157,6 @@ return {
 		"saghen/blink.cmp",
 		-- 'hrsh7th/cmp-nvim-lsp',
 	},
+	event = { "BufReadPre", "BufNewFile" },
 	config = _config,
 }

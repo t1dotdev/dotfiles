@@ -28,10 +28,10 @@ return {
       -- Soft modern color palette
       local colors = {
         primary = "#875fff", -- soft violet
-        blue = "#60a5fa", -- soft blue
+        blue = "#2563eb", -- soft blue
         green = "#34d399", -- teal-green
         violet = "#f472b6", -- pink-violet
-        yellow = "#facc15", -- warm yellow
+        yellow = "#f59e0b", -- warm yellow
         red = "#f87171", -- soft red
         fg = "#cbd5e1", -- slate-200
         bg = nil, -- transparent

@@ -32,6 +32,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
+    event = "LazyFile",
     config = function()
       require("codecompanion").setup({
         adapters = {

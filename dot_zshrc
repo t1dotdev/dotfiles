@@ -47,7 +47,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # ⚙️ Tool Initialization
 # ─────────────────────────────────────────────────────────────
 eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # ─────────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ alias g="lazygit"
 alias gc="git commit -m"
 alias n="nvim"
 alias s="spf ."
-alias f="fuck"
+# alias f="fuck"
 alias c="codex"
 
 # Bun & NPM

@@ -112,6 +112,13 @@ return {
         end,
         desc = "File Explorer",
       },
+      {
+        "<leader><leader>",
+        function()
+          Snacks.picker.git_files()
+        end,
+        desc = "Find Git Files",
+      },
     },
     opts = {
       -- your configuration comes here

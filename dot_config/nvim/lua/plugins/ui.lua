@@ -15,6 +15,75 @@ return {
     },
   },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    event = "VeryLazy",
+    keys = {
+      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
+    },
+    config = function()
+      require("nvim-tree").setup({
+        disable_netrw = true,
+        hijack_cursor = true,
+        sync_root_with_cwd = true,
+        actions = {
+          open_file = {
+            quit_on_open = true,
+          },
+        },
+        update_focused_file = {
+          enable = true,
+          update_root = false,
+        },
+        sort = {
+          sorter = "case_sensitive",
+        },
+        view = {
+          preserve_window_proportions = true,
+          width = 30,
+          adaptive_size = true,
+          relativenumber = true,
+        },
+        renderer = {
+          root_folder_label = false,
+          highlight_git = true,
+          indent_markers = { enable = true },
+          icons = {
+            glyphs = {
+              default = "󰈚",
+              folder = {
+                default = "",
+                empty = "",
+                empty_open = "",
+                open = "",
+                symlink = "",
+              },
+              git = { unmerged = "" },
+            },
+          },
+        },
+        filters = {
+          dotfiles = true,
+          custom = {
+            "node_modules/.*",
+          },
+        },
+        log = {
+          enable = true,
+          truncate = true,
+          types = {
+            diagnostics = true,
+            git = true,
+            profile = true,
+            watcher = true,
+          },
+        },
+      })
+      vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle File Explorer" })
+    end,
+  },
+
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
@@ -98,53 +167,53 @@ return {
     end,
   },
 
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    event = "VeryLazy",
-    ---@type snacks.Config
-    keys = {
-      {
-        "<leader>e",
-        function()
-          Snacks.explorer()
-        end,
-        desc = "File Explorer",
-      },
-      -- {
-      --   "<leader><leader>",
-      --   function()
-      --     Snacks.picker.git_files()
-      --   end,
-      --   desc = "Find Git Files",
-      -- },
-    },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      bigfile = { enabled = true },
-      dashboard = { enabled = true },
-      explorer = { enabled = true },
-      indent = { enabled = true },
-      input = { enabled = true },
-      picker = {
-        enabled = true,
-        sources = {
-          explorer = {
-            auto_close = true,
-          },
-        },
-      },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      scope = { enabled = true },
-      scroll = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
-    },
-  },
+  -- {
+  --   "folke/snacks.nvim",
+  --   priority = 1000,
+  --   lazy = false,
+  --   event = "VeryLazy",
+  --   ---@type snacks.Config
+  --   keys = {
+  --     {
+  --       "<leader>e",
+  --       function()
+  --         Snacks.explorer()
+  --       end,
+  --       desc = "File Explorer",
+  --     },
+  --     -- {
+  --     --   "<leader><leader>",
+  --     --   function()
+  --     --     Snacks.picker.git_files()
+  --     --   end,
+  --     --   desc = "Find Git Files",
+  --     -- },
+  --   },
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --     bigfile = { enabled = true },
+  --     dashboard = { enabled = true },
+  --     explorer = { enabled = true },
+  --     indent = { enabled = true },
+  --     input = { enabled = true },
+  --     picker = {
+  --       enabled = true,
+  --       sources = {
+  --         explorer = {
+  --           auto_close = true,
+  --         },
+  --       },
+  --     },
+  --     notifier = { enabled = true },
+  --     quickfile = { enabled = true },
+  --     scope = { enabled = true },
+  --     scroll = { enabled = true },
+  --     statuscolumn = { enabled = true },
+  --     words = { enabled = true },
+  --   },
+  -- },
 
   {
     "snacks.nvim",

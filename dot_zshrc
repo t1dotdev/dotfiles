@@ -137,13 +137,7 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=99,underline"
 ZSH_HIGHLIGHT_STYLES[precommand]="fg=99"
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=99"
 
-export FZF_DEFAULT_OPTS="
-  --color=fg:-1,bg:-1,hl:#8751ff
-  --color=fg+:#ffffff,bg+:-1,hl+:#875aff
-  --color=info:#ffffff,prompt:#875fff,pointer:#875aff
-  --color=marker:#875aff,spinner:#875aff,header:#8751ff
-"
-export FZF_DEFAULT_OPTS='--preview-window=down:30%:sharp'
+export FZF_DEFAULT_OPTS="--color=fg:-1,bg:-1,hl:#8751ff,fg+:#000000,bg+:#ffffff,hl+:#875aff,info:#ffffff,prompt:#875fff,pointer:#875aff,marker:#875aff,spinner:#875aff,header:#8751ff --preview-window=down:30%:sharp"
 
 
 # ─────────────────────────────────────────────────────────────

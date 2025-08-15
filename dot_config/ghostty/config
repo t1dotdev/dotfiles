@@ -18,7 +18,8 @@ palette = 14=#5abfb5
 palette = 15=#b5bfe2
 
 
-font-family = "JetBrainsMono Nerd Font"
+font-family = "JetBrains Mono"
+font-family = "Courier MonoThai"
 font-size = 15
 font-thicken = true
 

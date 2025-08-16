@@ -1,7 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", fg = "#875fff" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", fg = "NONE" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "#875fff" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE", fg = "#875fff" })
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#875fff", fg = "#16161e" })

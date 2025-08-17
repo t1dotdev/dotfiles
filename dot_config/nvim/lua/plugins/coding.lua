@@ -198,4 +198,23 @@ return {
       require("nvim-autopairs").setup({})
     end,
   },
+  -- If using lazy.nvim
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "nu", "lua", "vim", "vimdoc" }, -- add other languages you need
+        auto_install = true,
+        highlight = {
+          enable = true,
+        },
+      })
+    end,
+  },
+  {
+    "LhKipp/nvim-nu",
+    build = ":TSInstall nu",
+    opts = {},
+  },
 }

@@ -1,0 +1,228 @@
+rm -rf nushell/
+ls
+rm nushell
+ls
+open .
+rm nushell/
+rm nushell
+ls
+$nu.config-path
+nvim .zshrc
+cd
+clear
+$nu.config-path
+$nu.env-path
+$nu.config-path
+ls
+cd .config/
+ls
+cd nushell/
+ls
+n
+nvim
+cd
+n
+t
+ls
+cd nvim
+z nvim
+cd .config/nvim/
+n
+source nu
+tka
+tmux kill all
+tmux kill-session all
+tmux
+t
+cd .config/nushell/
+n
+cd ../nvim/
+n
+ls
+cd ..
+cd nushell/
+n
+cd ..
+cd starship/
+curl -sS https://starship.rs/install.sh | sh
+brew install starship
+n
+cd ../nushell/
+config-edit
+config edit
+edit config
+ls
+config nu 
+cd ..
+cd starship/
+$env.STARSHIP_CONFIG
+cd ~/.config/starship/starship.toml
+cd ~/.config/starship/
+ls
+n
+z
+z sortskin
+cd
+z sortskin
+cd src/
+cd app/
+cd signin/
+cd 
+clear
+cd
+clear
+$nu.data-dir
+config nu
+cd nu
+z nushell
+<\n># Starship prompt<\n>mkd
+starship 
+starship --version
+ls
+starship init nu 
+use starship.nu
+ls
+n
+tka
+n
+cd
+t ls
+ta 3
+n
+tka
+t
+clear
+cd starship/
+z starship
+ls
+n
+cd ../nushell/
+n
+cd ../starship/
+n
+ls
+clear
+ls
+claude 
+cd Desktop/
+claude
+ls
+cd Attractions/
+ls
+cd
+z starship
+ls
+l
+sls
+ls
+clear
+ls
+clear
+t
+tmux
+ls
+cd tmux
+z tmux
+t
+t
+cd tmux
+z tmux
+t
+ls
+t
+clear
+z tmux
+tka
+cd .config/starship/
+ls
+cd Development/
+l
+ls
+cd ../nushell/
+ls
+cd .config/ghostty/
+ls
+n
+clear
+ls
+n
+clear
+ls
+cd star
+z starship
+ls
+cd 
+cd Development/
+cd sortskin/
+ld
+ls
+n .zshrc
+cd
+zsh
+ls
+cd 
+cd Development/
+ls
+c
+ls
+cd
+cd Development/
+cd sortskin/
+ls
+z sortskin
+z sor
+z sortskin
+n
+clear
+t
+ls
+cd Development/
+ls
+cd ..
+cd .config/starship/
+n
+clear
+;s
+ls
+cd 
+cd Development/
+ls
+clear
+ls
+claude
+clear
+cd .config/starship/
+ls
+n
+clear
+ls
+clear
+ls
+cd .config/starship/
+ls
+cd Deve
+cd
+cd Development/
+ls
+cd 
+cd .config/starship/
+ls
+clear
+ls
+cd .config/starship/
+n
+ls
+neofetch
+clear
+ls
+cat
+clear
+ls
+n
+chezmoi add .
+cd nvim
+z nvim
+chezmoi add .
+z tmux
+chezmoi add .
+z nushell

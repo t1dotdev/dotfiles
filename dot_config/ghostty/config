@@ -8,8 +8,8 @@ font-family = "Courier MonoThai"
 font-size = 16
 font-thicken = true
 
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 6
+window-padding-y = 6
 window-padding-balance = true
 
 

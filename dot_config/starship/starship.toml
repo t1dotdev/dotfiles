@@ -22,10 +22,10 @@ format = '[$path]($style) '
 style = 'bold white'
 
 [character]
-# success_symbol = '[➜](bold primary)'
-# error_symbol = '[➜](bold red) '
-success_symbol = '[❯](bold primary)'
-error_symbol = '[❯](bold red)'
+success_symbol = '[➜](bold primary)'
+error_symbol = '[➜](bold red) '
+# success_symbol = '[❯](bold primary)'
+# error_symbol = '[❯](bold red)'
 
 
 

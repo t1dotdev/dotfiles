@@ -89,6 +89,7 @@ $env.config = {
 
 }
 
+
 # Aliases
 alias n = nvim
 alias g = lazygit

@@ -70,8 +70,41 @@ return {
         ft = { "NvimTree", "neo-tree", "oil", "minifiles" },
       },
       -- Diff management
-      { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+      { "ga", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
       { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     },
+    opts = {
+      terminal = {
+        split_side = "right", -- "left" or "right"
+        split_width_percentage = 0.40,
+        provider = "auto", -- "auto", "snacks", "native", "external", or custom provider table
+        auto_close = true,
+        snacks_win_opts = {}, -- Opts to pass to `Snacks.terminal.open()` - see Floating Window section below
+
+        -- Provider-specific options
+        provider_opts = {
+          external_terminal_cmd = nil, -- Command template for external terminal provider (e.g., "alacritty -e %s")
+        },
+      },
+    },
+  },
+  {
+    "NickvanDyke/opencode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    ---@type opencode.Config
+    opts = {
+      -- Your configuration, if any
+    },
+  -- stylua: ignore
+  keys = {
+    { '<leader>ot', function() require('opencode').toggle() end, desc = 'Toggle embedded opencode', },
+    { '<leader>oa', function() require('opencode').ask('@cursor: ') end, desc = 'Ask opencode', mode = 'n', },
+    { '<leader>oa', function() require('opencode').ask('@selection: ') end, desc = 'Ask opencode about selection', mode = 'v', },
+    { '<leader>op', function() require('opencode').select_prompt() end, desc = 'Select prompt', mode = { 'n', 'v', }, },
+    { '<leader>on', function() require('opencode').command('session_new') end, desc = 'New session', },
+    { '<leader>oy', function() require('opencode').command('messages_copy') end, desc = 'Copy last message', },
+    { '<S-C-u>',    function() require('opencode').command('messages_half_page_up') end, desc = 'Scroll messages up', },
+    { '<S-C-d>',    function() require('opencode').command('messages_half_page_down') end, desc = 'Scroll messages down', },
+  },
   },
 }

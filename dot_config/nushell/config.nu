@@ -1,4 +1,3 @@
-source ~/.zoxide.nu
 
 
 let theme = {
@@ -107,4 +106,4 @@ alias tka = tmux kill-server
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-
+source ~/.zoxide.nu

@@ -4,3 +4,5 @@
 ./dot_config/nvim/dot_git/
 ./dot_config/tmux/plugins/
 ./README.md
+./dot_config/nushell/history.txt
+

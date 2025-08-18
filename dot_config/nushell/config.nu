@@ -92,7 +92,6 @@ $env.config = {
 # Aliases
 alias n = nvim
 alias g = lazygit
-alias cd = z
 
 
 alias t = tmux
@@ -107,3 +106,4 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 source ~/.zoxide.nu
+alias cd = z

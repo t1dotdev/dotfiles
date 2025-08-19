@@ -132,6 +132,10 @@ return {
           a = { fg = "#94a3b8", bg = colors.bg, gui = "bold" },
           c = { fg = colors.fg, bg = colors.bg },
         },
+        -- terminal = {
+        --   a = { bg = colors.primary, fg = colors.bg, gui = "bold" },
+        --   c = { fg = colors.fg, bg = colors.bg },
+        -- },
       }
 
       lualine.setup({

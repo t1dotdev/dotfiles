@@ -99,7 +99,7 @@ def ip [] {
     sys net | where ip != [] | each {|interface| 
         $interface.ip | each {|ip| 
             {
-                name: ($interface.name | fill --alignment left --width 10 | $"(ansi {fg: '#875fff'})($in)(ansi reset)")
+                name: ($interface.name | fill --alignment left --width 10 | $"(ansi purple)($in)(ansi reset)")
                 ip: $ip.address
             }
         }

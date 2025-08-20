@@ -56,7 +56,7 @@ return {
     config = true,
     keys = {
       { "<leader>a", nil, desc = "AI/Claude Code" },
-      { "<C-,>", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+      { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
       { "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
       { "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
       { "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
@@ -78,8 +78,8 @@ return {
         ---@module "snacks"
         ---@type snacks.win.Config|{}
         snacks_win_opts = {
-          position = "float",
-          width = 0.9,
+          position = "right",
+          width = 0.3,
           height = 0.9,
           keys = {
             claude_hide = {

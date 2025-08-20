@@ -79,7 +79,7 @@ return {
         ---@type snacks.win.Config|{}
         snacks_win_opts = {
           position = "right",
-          width = 0.3,
+          width = 0.4,
           height = 0.9,
           keys = {
             claude_hide = {

@@ -11,7 +11,7 @@ let theme = {
     # eg) {|| if $in { 'light_cyan' } else { 'light_gray' } }
     bool: light_cyan
     int: white
-    filesize: "#875aff"
+    filesize: cyan
     duration: white
     date: white
     range: white

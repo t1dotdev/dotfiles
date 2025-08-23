@@ -1,5 +1,8 @@
 
+
 theme = catppuccin-mocha
+
+palette = 5=#875aff
 
 
 font-family = "Berkeley Mono"

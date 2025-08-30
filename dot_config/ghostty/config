@@ -1,28 +1,6 @@
 
-palette = 0=#1E1D2D
-palette = 1=#F38BA8
-palette = 2=#ABE9B3
-palette = 3=#FAE3B0
-palette = 4=#89B4FA
-palette = 5=#CBA6F7
-palette = 6=#89DCEB
-palette = 7=#bfc6d4
-palette = 8=#383747
-palette = 9=#F38BA8
-palette = 10=#ABE9B3
-palette = 11=#FAE3B0
-palette = 12=#89B4FA
-palette = 13=#CBA6F7
-palette = 14=#89DCEB
-palette = 15=#ccd3e1
-background = #1E1D2D
-foreground = #bfc6d4
-cursor-color = #89B4FA
-selection-background = #383747
-selection-foreground = #bfc6d4
-
-palette = 5=#A48CF2
-
+theme = catppuccin-mocha
+palette = 5=#875fff
 
 font-family = "Berkeley Mono"
 font-family = "JetBrains Mono"

@@ -1,7 +1,7 @@
 return {
 	{
 		"saghen/blink.cmp",
-		lazy = false,
+		event = "InsertEnter",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"giuxtaposition/blink-cmp-copilot",

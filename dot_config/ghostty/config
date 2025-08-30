@@ -1,27 +1,27 @@
 
-palette = 0=#171928
-palette = 1=#F16C75
-palette = 2=#F1FC79
-palette = 3=#F7C67F
-palette = 4=#7081D0
-palette = 5=#A48CF2
-palette = 6=#04D1F9
-palette = 7=#ABB4DA
-palette = 8=#3B4261
-palette = 9=#F16C75
-palette = 10=#F1FC79
-palette = 11=#F7C67F
-palette = 12=#7081D0
-palette = 13=#A48CF2
-palette = 14=#04D1F9
-palette = 15=#EBFAFA
-background = #171928
-foreground = #ABB4DA
-cursor-color = #7081D0
-selection-background = #3B4261
-selection-foreground = #ABB4DA
+palette = 0=#1E1D2D
+palette = 1=#F38BA8
+palette = 2=#ABE9B3
+palette = 3=#FAE3B0
+palette = 4=#89B4FA
+palette = 5=#CBA6F7
+palette = 6=#89DCEB
+palette = 7=#bfc6d4
+palette = 8=#383747
+palette = 9=#F38BA8
+palette = 10=#ABE9B3
+palette = 11=#FAE3B0
+palette = 12=#89B4FA
+palette = 13=#CBA6F7
+palette = 14=#89DCEB
+palette = 15=#ccd3e1
+background = #1E1D2D
+foreground = #bfc6d4
+cursor-color = #89B4FA
+selection-background = #383747
+selection-foreground = #bfc6d4
 
-palette = 5=#875aff
+palette = 5=#A48CF2
 
 
 font-family = "Berkeley Mono"

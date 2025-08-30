@@ -60,6 +60,9 @@ vim.opt.mouse = "a"
 -- Hide mode since we have a statusline
 vim.opt.showmode = false
 
+-- Hide statusline
+vim.opt.laststatus = 0
+
 -- Keep cursor away from screen edges
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
@@ -90,5 +93,3 @@ vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "
 -- Disable some builtin providers
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-
-

@@ -119,3 +119,4 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 source ~/.zoxide.nu
 alias cd = z
+source $"($nu.home-path)/.cargo/env.nu"

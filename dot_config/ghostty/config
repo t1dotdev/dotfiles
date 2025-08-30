@@ -1,6 +1,25 @@
 
-
-theme = catppuccin-mocha
+palette = 0=#171928
+palette = 1=#F16C75
+palette = 2=#F1FC79
+palette = 3=#F7C67F
+palette = 4=#7081D0
+palette = 5=#A48CF2
+palette = 6=#04D1F9
+palette = 7=#ABB4DA
+palette = 8=#3B4261
+palette = 9=#F16C75
+palette = 10=#F1FC79
+palette = 11=#F7C67F
+palette = 12=#7081D0
+palette = 13=#A48CF2
+palette = 14=#04D1F9
+palette = 15=#EBFAFA
+background = #171928
+foreground = #ABB4DA
+cursor-color = #7081D0
+selection-background = #3B4261
+selection-foreground = #ABB4DA
 
 palette = 5=#875aff
 

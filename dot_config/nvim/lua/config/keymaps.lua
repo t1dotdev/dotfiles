@@ -48,3 +48,5 @@ map("n", "<C-a>", "gg<S-v>G")
 -- split
 -- map("n", "<leader>|")
 -- map("n", "<leader>-")
+
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })

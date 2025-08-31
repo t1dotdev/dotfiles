@@ -41,7 +41,15 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		-- scroll = { enabled = true },
-		statuscolumn = { enabled = true },
+		statuscolumn = { 
+			enabled = true,
+			left = { "mark", "sign" }, -- Include signs in statuscolumn
+			right = { "fold", "git" },
+			folds = {
+				open = false,
+				git_hl = false,
+			},
+		},
 		words = { enabled = true },
 		styles = {
 			notification = {

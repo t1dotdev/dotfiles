@@ -38,9 +38,13 @@ require("lazy").setup({
 
 		{
 			"nvchad/base46",
-			lazy = true,
-			build = function()
-				require("base46").load_all_highlights()
+			lazy = false,
+			priority = 1000,
+			config = function()
+				local ok, base46 = pcall(require, "base46")
+				if ok then
+					base46.load_all_highlights()
+				end
 			end,
 		},
 		"nvchad/volt",
@@ -53,4 +57,9 @@ require("lazy").setup({
 	install = { colorscheme = { "nvchad" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+	ui = {
+		border = "rounded",
+		-- Set custom border highlights
+		backdrop = 100,
+	},
 })

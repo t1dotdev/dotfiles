@@ -11,6 +11,11 @@ M.base46 = {
 		FloatBorder = { bg = "NONE", fg = "#875fff" },
 		FloatTitle = { fg = "#ffffff", bg = "#875fff" },
 		Pmenu = { bg = "NONE", fg = "#875fff" },
+		BlinkCmpMenuBorder = { bg = "NONE", fg = "#875fff" },
+		BlinkCmpDocBorder = { bg = "NONE", fg = "#875fff" },
+		BlinkCmpSignatureHelpBorder = { bg = "NONE", fg = "#875fff" },
+		LazyBorder = { fg = "#875fff" },
+		LazyNormal = { link = "Normal" },
 
 		--     vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE", fg = "#875fff" })
 		-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#875fff", fg = "#16161e" })

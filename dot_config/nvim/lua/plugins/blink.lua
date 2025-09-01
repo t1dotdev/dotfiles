@@ -124,6 +124,7 @@ return {
 				menu = {
 					enabled = true,
 					border = "rounded",
+					winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
 					draw = {
 						treesitter = { "lsp" },
 						columns = {
@@ -149,6 +150,7 @@ return {
 					auto_show_delay_ms = 200,
 					window = {
 						border = "rounded",
+						winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 					},
 				},
 				ghost_text = {
@@ -160,6 +162,7 @@ return {
 				enabled = true,
 				window = {
 					border = "rounded",
+					winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",
 				},
 			},
 		},

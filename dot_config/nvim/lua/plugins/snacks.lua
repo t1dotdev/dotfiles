@@ -41,7 +41,7 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		-- scroll = { enabled = true },
-		statuscolumn = { 
+		statuscolumn = {
 			enabled = true,
 			left = { "mark", "sign" }, -- Include signs in statuscolumn
 			right = { "fold", "git" },

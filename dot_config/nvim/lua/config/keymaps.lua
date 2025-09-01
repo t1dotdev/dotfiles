@@ -50,3 +50,7 @@ map("n", "<C-a>", "gg<S-v>G")
 -- map("n", "<leader>-")
 
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+
+map("n", "<c-/>", function()
+	Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal (Root Dir)" })

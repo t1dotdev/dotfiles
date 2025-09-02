@@ -94,7 +94,7 @@ opt.formatoptions = "jcroqlnt" -- tcqj
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 -- Shorter messages
-opt.shortmess:append({ W = true, I = true, c = true, C = true })
+-- opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
 -- Spell
 opt.spelllang = { "en" }

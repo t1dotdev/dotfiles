@@ -7,6 +7,7 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = {
+			enabled = false,
 			preset = {
         -- stylua: ignore
         ---@type snacks.dashboard.Item[]

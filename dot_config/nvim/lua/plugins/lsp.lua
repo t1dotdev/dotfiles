@@ -1,513 +1,308 @@
 return {
-  "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    { "j-hui/fidget.nvim", opts = {} },
-    "b0o/schemastore.nvim",
-    {
-      "saghen/blink.cmp",
-      -- Ensure blink.cmp is loaded before lspconfig for capabilities
-      lazy = false,
-      priority = 100,
-    },
-  },
-  config = function()
-    -- Setup Mason first
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
+	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"saghen/blink.cmp",
+		"nvim-tree/nvim-web-devicons",
+		"b0o/schemastore.nvim",
+	},
+	config = function()
+		local lspconfig = require("lspconfig")
 
-    -- Define the on_attach function with all keymaps
-    local on_attach = function(client, bufnr)
-      local map = function(keys, func, desc)
-        vim.keymap.set(
-          "n",
-          keys,
-          func,
-          { buffer = bufnr, noremap = true, silent = true, desc = "LSP: " .. desc }
-        )
-      end
+		-- LSP diagnostic signs
+		local signs = {
+			Error = " ",
+			Warn = " ",
+			Hint = " ",
+			Info = " ",
+		}
 
-      -- Navigation
-      map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-      map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-      map("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-      map("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
-      map("gt", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+		end
 
-      -- Documentation
-      map("K", vim.lsp.buf.hover, "Hover Documentation")
-      map("<leader>sh", vim.lsp.buf.signature_help, "[S]ignature [H]elp")
+		-- Diagnostic configuration
+		vim.diagnostic.config({
+			virtual_text = {
+				prefix = "�",
+				source = "if_many",
+			},
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
+		})
 
-      -- Actions
-      map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-      map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+		-- LSP handlers
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+			border = "rounded",
+		})
 
-      -- Diagnostics
-      map("<leader>ld", vim.diagnostic.open_float, "Show [D]iagnostics")
-      map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
-      map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
-      map("<leader>q", vim.diagnostic.setloclist, "Diagnostic [Q]uickfix")
+		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+			border = "rounded",
+		})
 
-      -- Workspace
-      map("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-      map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-      map("<leader>wl", function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, "[W]orkspace [L]ist Folders")
+		-- LSP on_attach function
+		local on_attach = function(client, bufnr)
+			local opts = { noremap = true, silent = true, buffer = bufnr }
 
-      -- Toggle inlay hints if supported
-      if client.server_capabilities.inlayHintProvider then
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        map("<leader>th", function()
-          local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
-          vim.lsp.inlay_hint.enable(not is_enabled, { bufnr = bufnr })
-        end, "[T]oggle Inlay [H]ints")
-      end
+			-- LSP keymaps
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "<leader>f", function()
+				vim.lsp.buf.format({ async = true })
+			end, opts)
 
-      -- Format on save if the client supports it
-      if client.supports_method("textDocument/formatting") then
-        local format_group = vim.api.nvim_create_augroup("LspFormat_" .. bufnr, { clear = true })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          group = format_group,
-          callback = function()
-            vim.lsp.buf.format({
-              bufnr = bufnr,
-              timeout_ms = 2000,
-              filter = function(formatter_client)
-                -- Only use null-ls/none-ls for formatting if available
-                if formatter_client.name == "null-ls" or formatter_client.name == "none-ls" then
-                  return true
-                end
-                -- Otherwise use the LSP if no formatter is available
-                local formatters = { "null-ls", "none-ls" }
-                local clients = vim.lsp.get_clients({ bufnr = bufnr })
-                for _, c in ipairs(clients) do
-                  if vim.tbl_contains(formatters, c.name) then
-                    return false -- Don't use this LSP for formatting
-                  end
-                end
-                return true -- Use this LSP for formatting
-              end,
-            })
-          end,
-        })
-      end
-    end
+			-- Diagnostic keymaps
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
-    -- Get capabilities from blink.cmp
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    local blink_ok, blink = pcall(require, "blink.cmp")
-    if blink_ok then
-      -- Merge blink.cmp capabilities
-      capabilities = blink.get_lsp_capabilities(capabilities)
-    else
-      vim.notify("Blink.cmp not found, using default LSP capabilities", vim.log.levels.WARN)
-    end
+			-- Enable inlay hints if available
+			if client.server_capabilities.inlayHintProvider then
+				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+			end
 
-    -- Define server configurations
-    local servers = {
-      -- TypeScript/JavaScript
-      ts_ls = {
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-            format = {
-              enable = false, -- Let prettier/eslint handle formatting
-            },
-          },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-            format = {
-              enable = false,
-            },
-          },
-        },
-        on_attach = function(client, bufnr)
-          on_attach(client, bufnr)
-          -- Disable tsserver formatting in favor of prettier/eslint
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      },
+			-- Document highlighting
+			if client.server_capabilities.documentHighlightProvider then
+				vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+				vim.api.nvim_clear_autocmds({ buffer = bufnr, group = "lsp_document_highlight" })
+				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+					group = "lsp_document_highlight",
+					buffer = bufnr,
+					callback = vim.lsp.buf.document_highlight,
+				})
+				vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+					group = "lsp_document_highlight",
+					buffer = bufnr,
+					callback = vim.lsp.buf.clear_references,
+				})
+			end
+		end
 
-      -- Tailwind CSS
-      tailwindcss = {
-        settings = {
-          tailwindCSS = {
-            experimental = {
-              classRegex = {
-                { "cva\\(([^)]*)\\)",  "[\"'`]([^\"'`]*).*?[\"'`]" },
-                { "cn\\(([^)]*)\\)",   "[\"'`]([^\"'`]*).*?[\"'`]" },
-                { "clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-              },
-            },
-            validate = true,
-          },
-        },
-      },
+		-- Default capabilities with blink.cmp integration
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
-      -- ESLint
-      eslint = {
-        on_attach = function(client, bufnr)
-          on_attach(client, bufnr)
-          -- Auto-fix on save
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-              local ok, _ = pcall(vim.cmd, "silent! EslintFixAll")
-              if not ok then
-                -- Silently fail if EslintFixAll is not available
-              end
-            end,
-          })
-        end,
-        settings = {
-          workingDirectories = { mode = "auto" },
-        },
-      },
+		-- Server-specific configurations
+		local servers = {
+			-- Lua
+			lua_ls = {
+				settings = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						diagnostics = {
+							globals = { "vim" },
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+							checkThirdParty = false,
+						},
+						telemetry = {
+							enable = false,
+						},
+						hint = {
+							enable = true,
+						},
+					},
+				},
+			},
 
-      -- JSON
-      jsonls = {
-        settings = {
-          json = {
-            schemas = require("schemastore").json.schemas(),
-            validate = { enable = true },
-          },
-        },
-      },
+			-- TypeScript/JavaScript
+			ts_ls = {
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+				},
+			},
 
-      -- YAML
-      yamlls = {
-        settings = {
-          yaml = {
-            schemaStore = {
-              enable = false,
-              url = "",
-            },
-            schemas = require("schemastore").yaml.schemas(),
-            validate = true,
-            hover = true,
-            completion = true,
-          },
-        },
-      },
+			-- Python
+			pyright = {
+				settings = {
+					python = {
+						analysis = {
+							autoSearchPaths = true,
+							diagnosticMode = "workspace",
+							useLibraryCodeForTypes = true,
+						},
+					},
+				},
+			},
 
-      -- Lua
-      lua_ls = {
-        settings = {
-          Lua = {
-            runtime = {
-              version = "LuaJIT",
-            },
-            diagnostics = {
-              globals = { "vim", "require" },
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file("", true),
-              checkThirdParty = false,
-            },
-            telemetry = { enable = false },
-            format = {
-              enable = true,
-              defaultConfig = {
-                indent_style = "tab",
-                indent_size = "2",
-              },
-            },
-            hint = {
-              enable = true,
-              arrayIndex = "Auto",
-              await = true,
-              paramName = "All",
-              paramType = true,
-              semicolon = "SameLine",
-              setType = true,
-            },
-          },
-        },
-      },
+			-- Go
+			gopls = {
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+						hints = {
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							compositeLiteralTypes = true,
+							constantValues = true,
+							functionTypeParameters = true,
+							parameterNames = true,
+							rangeVariableTypes = true,
+						},
+					},
+				},
+			},
 
-      -- Python
-      pyright = {
-        settings = {
-          python = {
-            analysis = {
-              autoSearchPaths = true,
-              typeCheckingMode = "standard",
-              useLibraryCodeForTypes = true,
-              diagnosticMode = "workspace",
-              autoImportCompletions = true,
-            },
-          },
-        },
-      },
+			-- Rust
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						assist = {
+							importEnforceGranularity = true,
+							importPrefix = "crate",
+						},
+						cargo = {
+							allFeatures = true,
+						},
+						checkOnSave = {
+							command = "clippy",
+						},
+						inlayHints = {
+							lifetimeElisionHints = {
+								enable = true,
+								useParameterNames = true,
+							},
+						},
+					},
+				},
+			},
 
-      -- Alternative: Ruff for Python (faster linting)
-      ruff = {
-        init_options = {
-          settings = {
-            args = {}, -- Add any extra CLI arguments for ruff here
-          },
-        },
-      },
+			-- C/C++
+			clangd = {
+				cmd = {
+					"clangd",
+					"--background-index",
+					"--clang-tidy",
+					"--header-insertion=iwyu",
+					"--completion-style=detailed",
+					"--function-arg-placeholders",
+					"--fallback-style=llvm",
+				},
+				init_options = {
+					usePlaceholders = true,
+					completeUnimported = true,
+					clangdFileStatus = true,
+				},
+			},
 
-      -- Go
-      gopls = {
-        settings = {
-          gopls = {
-            gofumpt = true,
-            codelenses = {
-              gc_details = false,
-              generate = true,
-              regenerate_cgo = true,
-              run_govulncheck = true,
-              test = true,
-              tidy = true,
-              upgrade_dependency = true,
-              vendor = true,
-            },
-            hints = {
-              assignVariableTypes = true,
-              compositeLiteralFields = true,
-              compositeLiteralTypes = true,
-              constantValues = true,
-              functionTypeParameters = true,
-              parameterNames = true,
-              rangeVariableTypes = true,
-            },
-            analyses = {
-              fieldalignment = true,
-              nilness = true,
-              unusedparams = true,
-              unusedwrite = true,
-              useany = true,
-            },
-            usePlaceholders = true,
-            completeUnimported = true,
-            staticcheck = true,
-            directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-            semanticTokens = true,
-          },
-        },
-      },
+			-- Web development
+			html = {},
+			cssls = {},
+			jsonls = {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			},
+			eslint = {
+				settings = {
+					codeAction = {
+						disableRuleComment = {
+							enable = true,
+							location = "separateLine",
+						},
+						showDocumentation = {
+							enable = true,
+						},
+					},
+					codeActionOnSave = {
+						enable = false,
+						mode = "all",
+					},
+					format = true,
+					nodePath = "",
+					onIgnoredFiles = "off",
+					packageManager = "npm",
+					quiet = false,
+					rulesCustomizations = {},
+					run = "onType",
+					useESLintClass = false,
+					validate = "on",
+					workingDirectory = {
+						mode = "location",
+					},
+				},
+			},
 
-      -- Rust
-      rust_analyzer = {
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = {
-              command = "clippy",
-            },
-            cargo = {
-              allFeatures = true,
-              loadOutDirsFromCheck = true,
-            },
-            procMacro = {
-              enable = true,
-            },
-            inlayHints = {
-              chainingHints = { enable = true },
-              closureReturnTypeHints = { enable = "always" },
-              lifetimeElisionHints = { enable = "always" },
-              parameterHints = { enable = true },
-              typeHints = { enable = true },
-            },
-          },
-        },
-      },
+			-- Other servers
+			tailwindcss = {},
+			prismals = {},
+			dockerls = {},
+			yamlls = {
+				settings = {
+					yaml = {
+						schemaStore = {
+							enable = false,
+							url = "",
+						},
+						schemas = require("schemastore").yaml.schemas(),
+					},
+				},
+			},
+			bashls = {},
+			vimls = {},
+		}
 
-      -- C/C++
-      clangd = {
-        cmd = {
-          "clangd",
-          "--background-index",
-          "--clang-tidy",
-          "--header-insertion=iwyu",
-          "--completion-style=detailed",
-          "--function-arg-placeholders",
-          "--fallback-style=llvm",
-        },
-        init_options = {
-          usePlaceholders = true,
-          completeUnimported = true,
-          clangdFileStatus = true,
-        },
-        capabilities = vim.tbl_deep_extend("force", capabilities, {
-          offsetEncoding = { "utf-16" },
-        }),
-      },
-
-      -- Web development
-      html = {
-        settings = {
-          html = {
-            format = {
-              enable = true,
-            },
-          },
-        },
-      },
-      cssls = {
-        settings = {
-          css = {
-            validate = true,
-          },
-          less = {
-            validate = true,
-          },
-          scss = {
-            validate = true,
-          },
-        },
-      },
-      emmet_ls = {
-        filetypes = {
-          "html",
-          "css",
-          "scss",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "vue",
-          "svelte",
-        },
-      },
-
-      -- Docker
-      dockerls = {},
-      docker_compose_language_service = {},
-
-      -- Bash
-      bashls = {},
-
-      -- Vim
-      vimls = {},
-
-      -- Prisma
-      prismals = {},
-
-      -- GraphQL
-      graphql = {
-        filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-      },
-
-      -- Svelte
-      svelte = {
-        settings = {
-          svelte = {
-            plugin = {
-              svelte = {
-                compilerWarnings = {
-                  ["a11y-no-onchange"] = "ignore",
-                },
-              },
-            },
-          },
-        },
-      },
-
-      -- Astro
-      astro = {},
-    }
-
-    -- Setup mason-lspconfig with ensure_installed
-    local mason_lspconfig = require("mason-lspconfig")
-
-    -- Get list of servers to ensure installed
-    local ensure_installed = vim.tbl_keys(servers)
-
-    mason_lspconfig.setup({
-      ensure_installed = ensure_installed,
-      automatic_installation = true,
-    })
-
-    -- Get lspconfig
-    local lspconfig = require("lspconfig")
-
-    -- Setup each server
-    for server_name, server_config in pairs(servers) do
-      -- Only set on_attach if not already defined
-      if not server_config.on_attach then
-        server_config.on_attach = on_attach
-      end
-      -- Only set capabilities if not already defined
-      if not server_config.capabilities then
-        server_config.capabilities = capabilities
-      end
-      server_config.flags = {
-        debounce_text_changes = 150,
-      }
-
-      -- Setup the server
-      lspconfig[server_name].setup(server_config)
-    end
-
-    -- Configure diagnostics
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-
-    vim.diagnostic.config({
-      virtual_text = {
-        prefix = "●",
-        spacing = 4,
-        source = "if_many",
-      },
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = signs.Error,
-          [vim.diagnostic.severity.WARN] = signs.Warn,
-          [vim.diagnostic.severity.HINT] = signs.Hint,
-          [vim.diagnostic.severity.INFO] = signs.Info,
-        },
-      },
-      update_in_insert = false,
-      underline = true,
-      severity_sort = true,
-      float = {
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-        focusable = false,
-      },
-    })
-
-    -- Show line diagnostics automatically in hover window
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-      group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-      callback = function()
-        vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
-      end,
-    })
-
-    -- Set updatetime for CursorHold
-    vim.o.updatetime = 250
-  end,
+		-- Setup servers
+		local mason_lspconfig = require("mason-lspconfig")
+		mason_lspconfig.setup_handlers({
+			function(server_name)
+				local server_config = servers[server_name] or {}
+				server_config.capabilities = capabilities
+				server_config.on_attach = on_attach
+				lspconfig[server_name].setup(server_config)
+			end,
+		})
+	end,
 }
+

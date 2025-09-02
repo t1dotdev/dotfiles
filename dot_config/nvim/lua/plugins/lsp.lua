@@ -295,13 +295,15 @@ return {
 
 		-- Setup servers
 		local mason_lspconfig = require("mason-lspconfig")
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				local server_config = servers[server_name] or {}
-				server_config.capabilities = capabilities
-				server_config.on_attach = on_attach
-				lspconfig[server_name].setup(server_config)
-			end,
+		mason_lspconfig.setup({
+			handlers = {
+				function(server_name)
+					local server_config = servers[server_name] or {}
+					server_config.capabilities = capabilities
+					server_config.on_attach = on_attach
+					lspconfig[server_name].setup(server_config)
+				end,
+			},
 		})
 	end,
 }

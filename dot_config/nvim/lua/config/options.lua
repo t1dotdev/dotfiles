@@ -1,95 +1,116 @@
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = "\\"
+-- lua/config/options.lua
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
--- Line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Auto format
+vim.g.autoformat = true
 
--- Tabs & indentation
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+-- Root dir detection patterns for plugins that support it
+vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
--- Search settings
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- Hide deprecation warnings
+vim.g.deprecation_warnings = false
 
--- Appearance
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.cursorline = true
+local opt = vim.opt
 
--- Backspace
-vim.opt.backspace = "indent,eol,start"
+-- General
+opt.autowrite = true -- Enable auto write
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 2 -- Hide * markup for bold and italic
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.mouse = "a" -- Enable mouse mode
+opt.undofile = true -- Enable persistent undo
+opt.undolevels = 10000
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.timeoutlen = 300 -- Time to wait for a mapped sequence to complete
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.jumpoptions = "view" -- Better jump behavior
 
--- Clipboard
-vim.opt.clipboard:append("unnamedplus")
+-- UI
+opt.cursorline = true -- Enable highlighting of the current line
+opt.laststatus = 3 -- Global statusline
+opt.linebreak = true -- Wrap lines at convenient points
+opt.list = true -- Show some invisible characters
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.number = true -- Print line number
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.relativenumber = true -- Relative line numbers
+opt.ruler = false -- Disable the default ruler
+opt.scrolloff = 4 -- Lines of context
+opt.showmode = false -- Don't show mode since we have a statusline
+opt.sidescrolloff = 8 -- Columns of context
+opt.signcolumn = "yes" -- Always show the signcolumn
+opt.splitbelow = true -- Put new windows below current
+opt.splitkeep = "screen" -- Keep the same relative cursor position when splitting
+opt.splitright = true -- Put new windows right of current
+opt.termguicolors = true -- True color support
+opt.winminwidth = 5 -- Minimum window width
+opt.wrap = false -- Disable line wrap
 
--- Split windows
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+-- Fillchars for better UI
+opt.fillchars = {
+	fold = " ",
+	foldopen = "v", -- or use "-"
+	foldclose = ">",
+	foldsep = " ",
+	diff = "/",
+	eob = " ",
+}
 
--- Consider - as part of word
-vim.opt.iskeyword:append("-")
+-- Folding
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+if vim.fn.has("nvim-0.10") == 1 then
+	opt.smoothscroll = true
+	opt.foldmethod = "expr"
+	opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use treesitter for folding if you have it
+	opt.foldtext = ""
+else
+	opt.foldmethod = "indent"
+end
 
--- Disable swapfile
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.writebackup = false
+-- Indentation
+opt.expandtab = true -- Use spaces instead of tabs
+opt.shiftround = true -- Round indent
+opt.shiftwidth = 2 -- Size of an indent
+opt.smartindent = true -- Insert indents automatically
+opt.tabstop = 2 -- Number of spaces tabs count for
 
--- Undo
-vim.opt.undofile = true
-vim.opt.undolevels = 10000
+-- Search
+opt.ignorecase = true -- Ignore case
+opt.smartcase = true -- Don't ignore case with capitals
+opt.inccommand = "nosplit" -- Preview incremental substitute
+opt.grepformat = "%f:%l:%c:%m"
+if vim.fn.executable("rg") == 1 then
+	opt.grepprg = "rg --vimgrep"
+end
 
--- Better completion experience
-vim.opt.completeopt = "menu,menuone,noselect"
-
--- Time in milliseconds to wait for a mapped sequence
-vim.opt.timeoutlen = 300
-
--- Enable mouse support
-vim.opt.mouse = "a"
-
--- Hide mode since we have a statusline
-vim.opt.showmode = false
-
--- Hide statusline
-vim.opt.laststatus = 0
-
--- Keep cursor away from screen edges
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-
--- Faster completion
-vim.opt.updatetime = 250
-
--- Hide tabline
-vim.opt.showtabline = 0
-
--- Command line height
-vim.opt.cmdheight = 1
-
--- Confirm to save changes before exiting modified buffer
-vim.opt.confirm = true
-
--- Splits
-vim.opt.splitkeep = "screen"
-
--- Fold settings
-vim.opt.foldlevel = 99
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- Format options
+opt.formatoptions = "jcroqlnt" -- tcqj
 
 -- Session options
-vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
--- Disable some builtin providers
+-- Shorter messages
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+
+-- Spell
+opt.spelllang = { "en" }
+
+-- Wild menu
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
+
+-- Disable some default providers
+vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- Add binaries installed by mason.nvim to path
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH

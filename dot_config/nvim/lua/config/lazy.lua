@@ -27,27 +27,24 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 		"nvim-lua/plenary.nvim",
-		{ "nvim-tree/nvim-web-devicons", lazy = true },
-
 		{
-			"nvchad/ui",
-			config = function()
-				require("nvchad")
-			end,
+			"nvim-tree/nvim-web-devicons",
+			lazy = true,
+			event = "VeryLazy", -- or specific events when you need icons
 		},
 
 		{
 			"nvchad/base46",
 			lazy = false,
 			priority = 1000,
+			dependencies = {
+				"nvchad/ui",
+				"nvchad/volt",
+			},
 			config = function()
-				local ok, base46 = pcall(require, "base46")
-				if ok then
-					base46.load_all_highlights()
-				end
+				require("nvchad")
 			end,
 		},
-		"nvchad/volt",
 	},
 	defaults = {
 		lazy = true,
@@ -61,5 +58,16 @@ require("lazy").setup({
 		border = "rounded",
 		-- Set custom border highlights
 		backdrop = 100,
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
 	},
 })

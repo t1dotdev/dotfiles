@@ -1,5 +1,5 @@
-return -- lazy.nvim
-{
+-- lazy.nvim
+return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {

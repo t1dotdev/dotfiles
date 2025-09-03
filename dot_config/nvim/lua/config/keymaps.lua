@@ -47,7 +47,7 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line down" })
 -- select all
 map("n", "<C-a>", "gg<S-v>G")
 
-map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+-- map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
 -- Better indenting
 map("v", "<", "<gv")

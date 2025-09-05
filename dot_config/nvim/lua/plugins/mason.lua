@@ -15,22 +15,16 @@ return {
 		dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
 		opts = {
 			ensure_installed = {
-				"ts_ls",
+				"vtsls",
 				"tailwindcss",
 				"eslint",
 				"cssls",
 				"html",
 				"jsonls",
-				"prismals",
 				"lua_ls",
 				"pyright",
-				"gopls",
-				"rust_analyzer",
-				"dockerls",
 				"yamlls",
 				"bashls",
-				"vimls",
-				"clangd",
 			},
 			automatic_installation = true,
 		},
@@ -38,18 +32,15 @@ return {
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = { "williamboman/mason.nvim" },
-		opts = {
-			ensure_installed = {
+		opts = function(_, opts)
+			opts.ensure_installed = opts.ensure_installed or {
 				"prettier",
 				"eslint_d",
 				"stylua",
-				"black",
-				"isort",
-				"goimports",
-				"gofumpt",
 				"shfmt",
-				"rustfmt",
-			},
-		},
+			}
+			table.insert(opts.ensure_installed, "js-debug-adapter")
+			return opts
+		end,
 	},
 }

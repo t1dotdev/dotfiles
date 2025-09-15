@@ -44,7 +44,7 @@ return {
     })
 
     -- Diagnostic signs
-    local signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
+    local signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -408,7 +408,7 @@ return {
         -- Disable conflicting TypeScript servers
         ["tsserver"] = function() end,
         ["ts_ls"] = function() end,
-        
+
         -- Custom handler for vtsls to ensure on_attach is preserved
         ["vtsls"] = function()
           local config = server_configs.vtsls or {}

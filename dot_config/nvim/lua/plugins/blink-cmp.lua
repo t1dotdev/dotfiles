@@ -70,16 +70,33 @@ return {
     -- Fuzzy matching with Rust implementation for better performance
     fuzzy = {
       implementation = "prefer_rust_with_warning",
-      -- Custom sorting to ensure snippets always appear before LSP
+      -- Context-aware sorting: prioritize LSP for imports, snippets for code
       sorts = {
-        -- First sort by source priority
+        -- Smart source priority based on context
         function(a, b)
-          local source_priority = {
-            snippets = 4,
-            lsp = 3,
-            path = 2,
-            buffer = 1,
-          }
+          -- Get current line number
+          local current_line_num = vim.api.nvim_win_get_cursor(0)[1]
+
+          -- Dynamic priority based on context
+          local source_priority
+          if current_line_num == 1 then
+            -- Only prioritize snippets on the first line
+            source_priority = {
+              snippets = 4,
+              lsp = 3,
+              path = 2,
+              buffer = 1,
+            }
+          else
+            -- Prioritize LSP everywhere else
+            source_priority = {
+              lsp = 4,
+              path = 3,
+              snippets = 2,
+              buffer = 1,
+            }
+          end
+
           local a_priority = source_priority[a.source_id] or 0
           local b_priority = source_priority[b.source_id] or 0
           if a_priority ~= b_priority then

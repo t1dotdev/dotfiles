@@ -1,5 +1,5 @@
 
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 palette = 5=#875fff
 
 font-family = "Berkeley Mono"

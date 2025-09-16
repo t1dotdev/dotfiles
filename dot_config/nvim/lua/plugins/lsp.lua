@@ -58,8 +58,8 @@ return {
       vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
       -- Global keymaps
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Goto Declaration" }))
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Goto Definition" }))
+      -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Goto Declaration" }))
+      -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Goto Definition" }))
       vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover" }))
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation,
         vim.tbl_extend("force", opts, { desc = "Goto Implementation" }))

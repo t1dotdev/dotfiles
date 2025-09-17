@@ -119,7 +119,8 @@ alt-l = 'focus right'
 
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "WezTerm.app"'
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Twilight.app"'
-alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Dia.app"'
+# alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Dia.app"'
+alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Safari.app"'
 alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Ghostty.app"'
 # alt-ctrl-shift-cmd-3 = 'exec-and-forget open -a "ChatGPT.app"'
 

@@ -4,7 +4,7 @@ let theme = {
     # color for nushell primitives
     separator: white
     leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
-    header: { fg: '#ffffff' attr: b } # bold headerb 
+    header: { fg: '#ffffff' attr: b } # bold headerb
     empty: blue
     # Closures can be used to choose colors for specific values.
     # The value (in this case, a bool) is piped into the closure.
@@ -96,8 +96,8 @@ alias g = lazygit
 # alias ip = (sys net | where ip != [] | each {|interface| $interface.ip | each {|ip| {name: $interface.name, ip: $ip.address}}} | flatten)
 
 def ip [] {
-    sys net | where ip != [] | each {|interface| 
-        $interface.ip | each {|ip| 
+    sys net | where ip != [] | each {|interface|
+        $interface.ip | each {|ip|
             {
                 name: ($interface.name | fill --alignment left --width 10 | $"(ansi purple)($in)(ansi reset)")
                 ip: $ip.address
@@ -118,5 +118,5 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 source ~/.zoxide.nu
-alias cd = z
+# alias cd = z
 source $"($nu.home-path)/.cargo/env.nu"

@@ -2,7 +2,11 @@ vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 
 -- Load options first
 require("config.options")
+-- Load modular autocmd files
+require("config.commands")
 require("config.autocmds")
+require("config.autocmds.entrypoint")
+require("config.autocmds.lsp-attach")
 require("config.lazy")
 require("config.keymaps")
 

@@ -1,0 +1,38 @@
+return {
+	cmd = { "harper-ls", "--stdio" },
+	filetypes = {
+		-- 'c', 'cpp',
+		-- 'cs',
+		-- 'svelte',
+		-- 'gitcommit',
+		-- 'go',
+		-- 'html',
+		-- 'java',
+		-- 'javascript',
+		-- 'lua',
+		"markdown",
+		-- 'nix',
+		-- 'python',
+		-- 'ruby',
+		-- 'rust',
+		-- 'swift',
+		-- 'toml',
+		-- 'typescript',
+		-- 'typescriptreact',
+		-- 'haskell',
+		-- 'cmake',
+		-- 'typst',
+		-- 'php',
+		-- 'dart',
+		-- 'clojure',
+		-- 'sh',
+	},
+	settings = {
+		["harper-ls"] = {
+			linters = {
+				-- SentenceCapitalization = false, SpellCheck = false,
+			},
+		},
+	},
+	root_markers = { ".git" },
+}

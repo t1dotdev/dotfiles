@@ -118,6 +118,11 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 source ~/.zoxide.nu
-# alias cd = z
+alias cd = z
 # source $"($nu.home-path)/.cargo/env.nu"
-$env.PATH = ($env.PATH | prepend ($env.HOME | path join ".local/bin"))
+# $env.PATH = ($env.PATH | prepend ($env.HOME | path join ".local/bin"))
+$env.PATH = (
+    $env.PATH
+    | prepend ($env.HOME | path join ".cargo/bin")
+    | prepend ($env.HOME | path join ".local/bin")
+)

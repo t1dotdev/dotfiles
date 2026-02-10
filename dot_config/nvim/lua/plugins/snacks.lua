@@ -1,13 +1,13 @@
 return {
-  "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false, -- Keep false since it provides core functionality
-  event = "VimEnter",
-  ---@type snacks.Config
-  opts = {
-    bigfile = { enabled = true },
-    dashboard = {
-      preset = {
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false, -- Keep false since it provides core functionality
+	event = "VimEnter",
+	---@type snacks.Config
+	opts = {
+		bigfile = { enabled = true },
+		dashboard = {
+			preset = {
         -- stylua: ignore
         ---@type snacks.dashboard.Item[]
         keys = {
@@ -23,42 +23,42 @@ return {
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
-      },
-    },
-    explorer = { enabled = true },
-    indent = { enabled = true },
-    input = { enabled = true },
-    notifier = {
-      enabled = true,
-      timeout = 3000,
-    },
-    picker = {
-      enabled = true,
-      sources = {
-        explorer = {
-          auto_close = true,
-        },
-      },
-    },
-    quickfile = { enabled = true },
-    scope = { enabled = true },
-    -- scroll = { enabled = true },
-    statuscolumn = {
-      enabled = true,
-      left = { "mark", "sign" }, -- Include signs in statuscolumn
-      right = { "fold", "git" },
-      folds = {
-        open = false,
-        git_hl = false,
-      },
-    },
-    words = { enabled = true },
-    styles = {
-      notification = {
-        -- wo = { wrap = true } -- Wrap notifications
-      },
-    },
-  },
+			},
+		},
+		explorer = { enabled = false },
+		indent = { enabled = true },
+		input = { enabled = true },
+		notifier = {
+			enabled = true,
+			timeout = 3000,
+		},
+		picker = {
+			enabled = true,
+			sources = {
+				explorer = {
+					auto_close = true,
+				},
+			},
+		},
+		quickfile = { enabled = true },
+		scope = { enabled = true },
+		-- scroll = { enabled = true },
+		statuscolumn = {
+			enabled = true,
+			left = { "mark", "sign" }, -- Include signs in statuscolumn
+			right = { "fold", "git" },
+			folds = {
+				open = false,
+				git_hl = false,
+			},
+		},
+		words = { enabled = true },
+		styles = {
+			notification = {
+				-- wo = { wrap = true } -- Wrap notifications
+			},
+		},
+	},
   -- stylua: ignore
   keys = {
     -- stylua: ignore
@@ -153,37 +153,37 @@ return {
       end,
     }
   },
-  init = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "VeryLazy",
-      callback = function()
-        -- Setup some globals for debugging (lazy-loaded)
-        -- _G.dd = function(...)
-        -- 	require("snacks").debug.inspect(...)
-        -- end
-        -- _G.bt = function()
-        -- 	require("snacks").debug.backtrace()
-        -- end
-        -- vim.print = _G.dd -- Override print to use snacks for `:=` command
+	init = function()
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "VeryLazy",
+			callback = function()
+				-- Setup some globals for debugging (lazy-loaded)
+				-- _G.dd = function(...)
+				-- 	require("snacks").debug.inspect(...)
+				-- end
+				-- _G.bt = function()
+				-- 	require("snacks").debug.backtrace()
+				-- end
+				-- vim.print = _G.dd -- Override print to use snacks for `:=` command
 
-        -- Create some toggle mappings
-        local snacks = require("snacks")
-        snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-        snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-        snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
-        snacks.toggle.diagnostics():map("<leader>ud")
-        snacks.toggle.line_number():map("<leader>ul")
-        snacks.toggle
-            .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
-            :map("<leader>uc")
-        snacks.toggle.treesitter():map("<leader>uT")
-        snacks.toggle
-            .option("background", { off = "light", on = "dark", name = "Dark Background" })
-            :map("<leader>ub")
-        snacks.toggle.inlay_hints():map("<leader>uh")
-        snacks.toggle.indent():map("<leader>ug")
-        snacks.toggle.dim():map("<leader>uD")
-      end,
-    })
-  end,
+				-- Create some toggle mappings
+				local snacks = require("snacks")
+				snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+				snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+				snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
+				snacks.toggle.diagnostics():map("<leader>ud")
+				snacks.toggle.line_number():map("<leader>ul")
+				snacks.toggle
+					.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
+					:map("<leader>uc")
+				snacks.toggle.treesitter():map("<leader>uT")
+				snacks.toggle
+					.option("background", { off = "light", on = "dark", name = "Dark Background" })
+					:map("<leader>ub")
+				snacks.toggle.inlay_hints():map("<leader>uh")
+				snacks.toggle.indent():map("<leader>ug")
+				snacks.toggle.dim():map("<leader>uD")
+			end,
+		})
+	end,
 }

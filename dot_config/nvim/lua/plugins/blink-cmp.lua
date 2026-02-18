@@ -19,6 +19,14 @@ api.nvim_create_autocmd("User", {
 	end,
 })
 
+api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+	callback = function(args)
+		if vim.bo[args.buf].buftype == "prompt" then
+			vim.b[args.buf].completion = false
+		end
+	end,
+})
+
 return {
 	"saghen/blink.cmp",
 
@@ -33,6 +41,22 @@ return {
 	version = "v1.*",
 
 	opts = {
+		enabled = function()
+			if vim.bo.filetype == "dap-repl" then
+				return true
+			end
+
+			if vim.bo.buftype == "prompt" then
+				return false
+			end
+
+			if vim.bo.filetype == "snacks_input" or vim.bo.filetype == "opencode_ask" then
+				return false
+			end
+
+			return vim.b.completion ~= false
+		end,
+
 		-- Keymap configuration
 		keymap = {
 			preset = "default",
@@ -257,6 +281,7 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
+				opencode_ask = {},
 				-- Special sources for specific filetypes
 				codecompanion = { "codecompanion" },
 

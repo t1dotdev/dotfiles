@@ -32,5 +32,9 @@ return {
 				end,
 			},
 		},
+		idle = {
+			enabled = false,
+			details = "Vibing ✨",
+		},
 	},
 }

@@ -32,8 +32,11 @@ return {
 		vim.g.opencode_opts = {
 			-- Your configuration, if any; goto definition on the type or field for details
 			provider = {
-				enabled = "tmux", -- Which provider to use for executing code; `snacks` is recommended, but optional
-			}, -- Recommended, but optional (see `dependencies` above)
+				enabled = "tmux",
+				tmux = {
+					options = "-h -l 40%",
+				},
+			},
 			ask = {
 				snacks = {
 					win = {
@@ -54,7 +57,7 @@ return {
 		vim.keymap.set({ "n", "x" }, "<C-x>", function()
 			require("opencode").select()
 		end, { desc = "Execute opencode action…" })
-		vim.keymap.set({ "n", "t" }, "<C-.>", function()
+		vim.keymap.set({ "n", "t" }, "<leader>ot", function()
 			require("opencode").toggle()
 		end, { desc = "Toggle opencode" })
 

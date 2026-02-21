@@ -5,4 +5,9 @@
 ./dot_config/tmux/plugins/
 ./README.md
 ./dot_config/nushell/history.txt
+./dot_config/opencode/node_modules/
+./dot_config/opencode/package.json
+./dot_config/opencode/bun.lock
+./dot_config/opencode/.gitignore
+./dot_config/opencode/opencode.json.bak
 

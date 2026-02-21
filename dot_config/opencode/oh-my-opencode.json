@@ -2,12 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "anthropic/claude-sonnet-4-6",
-      "variant": "max",
-      "ultrawork": {
-        "model": "anthropic/claude-opus-4-6",
-        "variant": "max"
-      }
+      "model": "opencode/kimi-k2.5"
     },
     "hephaestus": {
       "model": "openai/gpt-5.3-codex",
@@ -18,20 +13,20 @@
       "variant": "high"
     },
     "librarian": {
-      "model": "opencode/big-pickle"
+      "model": "opencode/minimax-m2.5-free"
     },
     "explore": {
-      "model": "anthropic/claude-haiku-4-5"
+      "model": "opencode/minimax-m2.5-free"
     },
     "multimodal-looker": {
-      "model": "google/gemini-3-flash"
+      "model": "opencode/kimi-k2.5"
     },
     "prometheus": {
       "model": "anthropic/claude-opus-4-6",
       "variant": "max"
     },
     "metis": {
-      "model": "anthropic/claude-opus-4-6",
+      "model": "opencode/kimi-k2.5",
       "variant": "max"
     },
     "momus": {
@@ -39,12 +34,12 @@
       "variant": "medium"
     },
     "atlas": {
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "opencode/kimi-k2.5"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3-pro",
+      "model": "opencode/gemini-3.1-pro",
       "variant": "high"
     },
     "ultrabrain": {
@@ -56,17 +51,18 @@
       "variant": "medium"
     },
     "artistry": {
-      "model": "google/gemini-3-pro",
+      "model": "opencode/gemini-3.1-pro",
       "variant": "high"
     },
     "quick": {
-      "model": "anthropic/claude-haiku-4-5"
+      "model": "opencode/minimax-m2.5-free"
     },
     "unspecified-low": {
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium"
     },
     "unspecified-high": {
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "kimi-for-coding/k2p5"
     },
     "writing": {
       "model": "google/gemini-3-flash"

@@ -2,7 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "opencode/kimi-k2.5"
+      "model": "anthropic/claude-opus-4-6",
+      "variant": "max"
     },
     "hephaestus": {
       "model": "openai/gpt-5.3-codex",
@@ -13,20 +14,20 @@
       "variant": "high"
     },
     "librarian": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "anthropic/claude-haiku-4-5"
     },
     "explore": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "anthropic/claude-haiku-4-5"
     },
     "multimodal-looker": {
-      "model": "opencode/kimi-k2.5"
+      "model": "anthropic/claude-sonnet-4-6"
     },
     "prometheus": {
       "model": "anthropic/claude-opus-4-6",
       "variant": "max"
     },
     "metis": {
-      "model": "opencode/kimi-k2.5",
+      "model": "anthropic/claude-opus-4-6",
       "variant": "max"
     },
     "momus": {
@@ -34,12 +35,12 @@
       "variant": "medium"
     },
     "atlas": {
-      "model": "opencode/kimi-k2.5"
+      "model": "anthropic/claude-sonnet-4-6"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "opencode/gemini-3.1-pro",
+      "model": "google/antigravity-gemini-3.1-pro",
       "variant": "high"
     },
     "ultrabrain": {
@@ -51,21 +52,21 @@
       "variant": "medium"
     },
     "artistry": {
-      "model": "opencode/gemini-3.1-pro",
+      "model": "google/antigravity-gemini-3.1-pro",
       "variant": "high"
     },
     "quick": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "anthropic/claude-haiku-4-5"
     },
     "unspecified-low": {
       "model": "openai/gpt-5.3-codex",
       "variant": "medium"
     },
     "unspecified-high": {
-      "model": "kimi-for-coding/k2p5"
+      "model": "anthropic/claude-sonnet-4-6"
     },
     "writing": {
-      "model": "google/gemini-3-flash"
+      "model": "google/antigravity-gemini-3-flash"
     }
   }
 }

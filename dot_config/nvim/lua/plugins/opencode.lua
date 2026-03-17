@@ -28,14 +28,42 @@ return {
 	},
 	event = "VeryLazy",
 	config = function()
+		local opencode_pane_id = nil
+
+		local function find_opencode_pane()
+			local result = vim.fn.system("tmux list-panes -F '#{pane_id} #{pane_current_command}' 2>/dev/null")
+			for line in result:gmatch("[^\n]+") do
+				if line:match("opencode") then
+					return line:match("(%%[%d]+)")
+				end
+			end
+			return nil
+		end
+
 		---@type opencode.Opts
 		vim.g.opencode_opts = {
-			-- Your configuration, if any; goto definition on the type or field for details
-			provider = {
-				enabled = "tmux",
-				tmux = {
-					options = "-h -l 40%",
-				},
+			server = {
+				start = function()
+					vim.fn.system("tmux split-window -h -l 40% 'opencode --port'")
+					opencode_pane_id = find_opencode_pane()
+				end,
+				stop = function()
+					local pane = opencode_pane_id or find_opencode_pane()
+					if pane then
+						vim.fn.system("tmux kill-pane -t " .. pane)
+						opencode_pane_id = nil
+					end
+				end,
+				toggle = function()
+					local pane = opencode_pane_id or find_opencode_pane()
+					if pane then
+						vim.fn.system("tmux kill-pane -t " .. pane)
+						opencode_pane_id = nil
+					else
+						vim.fn.system("tmux split-window -h -l 40% 'opencode --port'")
+						opencode_pane_id = find_opencode_pane()
+					end
+				end,
 			},
 			ask = {
 				snacks = {

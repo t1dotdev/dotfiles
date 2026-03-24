@@ -1,0 +1,44 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+                format_left   "{mode}#[fg=#875fff,bold] topone "
+                format_center "{tabs}"
+                format_right  "{datetime}"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#3b2870]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "false"
+
+                mode_normal  "#[bg=#875fff,fg=#000000,bold]  NORMAL "
+                mode_locked  "#[bg=#3b2870,fg=#875fff,bold]  LOCKED "
+                mode_tmux    "#[bg=#ffc387,fg=#000000,bold]  TMUX "
+                mode_pane    "#[bg=#875fff,fg=#000000,bold]  PANE "
+                mode_tab     "#[bg=#875fff,fg=#000000,bold]  TAB "
+                mode_resize  "#[bg=#875fff,fg=#000000,bold]  RESIZE "
+                mode_move    "#[bg=#875fff,fg=#000000,bold]  MOVE "
+                mode_scroll  "#[bg=#875fff,fg=#000000,bold]  SCROLL "
+                mode_search  "#[bg=#875fff,fg=#000000,bold]  SEARCH "
+                mode_session "#[bg=#875fff,fg=#000000,bold]  SESSION "
+
+                tab_normal              "#[fg=#6C7086] {index} {name} "
+                tab_normal_fullscreen   "#[fg=#6C7086] {index} {name} [] "
+                tab_normal_sync         "#[fg=#6C7086] {index} {name} <> "
+                tab_active              "#[fg=#875fff,bold] {index} {name} "
+                tab_active_fullscreen   "#[fg=#875fff,bold] {index} {name} [] "
+                tab_active_sync         "#[fg=#875fff,bold] {index} {name} <> "
+
+                tab_separator           "#[fg=#3b2870] | "
+
+                datetime          "#[fg=#6C7086] {format} "
+                datetime_format   "%H:%M"
+                datetime_timezone "Asia/Bangkok"
+            }
+        }
+        children
+    }
+}

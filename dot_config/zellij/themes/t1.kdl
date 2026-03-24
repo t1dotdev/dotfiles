@@ -1,0 +1,61 @@
+
+themes {
+    t1 {
+        text_unselected {
+            base 200 200 210
+            background 0 0 0
+            emphasis_0 135 95 255
+            emphasis_1 175 150 255
+            emphasis_2 200 180 255
+            emphasis_3 108 112 134
+        }
+        text_selected {
+            base 255 255 255
+            background 45 30 80
+            emphasis_0 135 95 255
+            emphasis_1 175 150 255
+            emphasis_2 200 180 255
+            emphasis_3 108 112 134
+        }
+        ribbon_unselected {
+            base 175 150 255
+            background 45 30 80
+            emphasis_0 135 95 255
+            emphasis_1 200 180 255
+            emphasis_2 95 70 180
+            emphasis_3 175 150 255
+        }
+        ribbon_selected {
+            base 255 255 255
+            background 135 95 255
+            emphasis_0 200 180 255
+            emphasis_1 255 255 255
+            emphasis_2 175 150 255
+            emphasis_3 45 30 80
+        }
+        frame_unselected {
+            base 65 45 130
+            background 0
+            emphasis_0 95 70 180
+            emphasis_1 65 45 130
+            emphasis_2 45 30 80
+            emphasis_3 95 70 180
+        }
+        frame_selected {
+            base 135 95 255
+            background 0
+            emphasis_0 175 150 255
+            emphasis_1 255 255 255
+            emphasis_2 200 180 255
+            emphasis_3 95 70 180
+        }
+        frame_highlight {
+            base 175 150 255
+            background 0
+            emphasis_0 200 180 255
+            emphasis_1 135 95 255
+            emphasis_2 175 150 255
+            emphasis_3 95 70 180
+        }
+    }
+}

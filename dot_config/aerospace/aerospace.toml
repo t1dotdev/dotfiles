@@ -12,9 +12,9 @@ after-startup-command = [
  'exec-and-forget borders active_color=0xff875fff inactive_color=0xff494d64 width=6'
  # 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
-# exec-on-workspace-change = ['/bin/bash', '-c',
-#  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-# ]
+exec-on-workspace-change = ['/bin/bash', '-c',
+ 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 #open warp.app
 
 # You can use it to add commands that run after AeroSpace startup.
@@ -149,10 +149,10 @@ cmd-m = []     # Disable "minimize"
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+alt-shift-h = ['move left', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-j = ['move down', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-k = ['move up', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-l = ['move right', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
@@ -163,7 +163,7 @@ alt-0 = 'balance-sizes'
 
 # alt-ctrl-shift-h = 'resize width +50'
 
-alt-shift-space = 'layout floating tiling'
+alt-shift-space = ['layout floating tiling', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -199,15 +199,15 @@ alt-9 = 'workspace 9'
 # alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-1 = ['move-node-to-workspace 1', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-2 = ['move-node-to-workspace 2', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-3 = ['move-node-to-workspace 3', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-4 = ['move-node-to-workspace 4', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-5 = ['move-node-to-workspace 5', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-6 = ['move-node-to-workspace 6', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-7 = ['move-node-to-workspace 7', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-8 = ['move-node-to-workspace 8', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-9 = ['move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
@@ -244,17 +244,18 @@ alt-shift-semicolon = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
+r = ['flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = [
   'layout floating tiling',
   'mode main',
+  'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1',
 ] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-k = ['join-with up', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
+alt-shift-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change SORT_POSITIONS=1']
 # h = 'resize width -50'
 # j = 'resize height +50'
 # k = 'resize height -50'

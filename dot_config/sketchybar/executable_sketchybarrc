@@ -45,7 +45,16 @@ sketchybar --default icon.font="SF Pro:Bold:14.0" \
   icon.padding_right=4
 
 # -- Left Side Items --
-# source $ITEM_DIR/logo.sh
+sketchybar --add item front_logo left \
+  --set front_logo \
+  icon="󰬁󰬺" \
+  icon.font="Symbols Nerd Font Mono:Regular:12.0" \
+  icon.color=$WHITE \
+  icon.padding_left=8 \
+  icon.padding_right=8 \
+  label.drawing=off \
+  background.drawing=off
+
 source $ITEM_DIR/spaces.sh
 sketchybar --add item space_separator left \
   --set space_separator icon="􀆊" \
@@ -57,7 +66,6 @@ source $ITEM_DIR/front_app.sh
 
 # -- Right Side Items --
 source $ITEM_DIR/calendar.sh
-# source $ITEM_DIR/control-center.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/wifi.sh
 source $ITEM_DIR/keyboard.sh

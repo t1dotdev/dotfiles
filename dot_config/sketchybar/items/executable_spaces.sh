@@ -8,12 +8,12 @@ for sid in $(seq 1 9); do
       icon="$sid" \
       icon.font="SF Pro:Bold:13.0" \
       icon.color=$WHITE \
-      icon.padding_left=8 \
+      icon.padding_left=14 \
       icon.padding_right=4 \
       label.font="sketchybar-app-font:Regular:14.0" \
       label.color=$WHITE \
       label.padding_left=4 \
-      label.padding_right=8 \
+      label.padding_right=14 \
       background.color=$ACCENT_COLOR \
       background.corner_radius=5 \
       background.height=24 \

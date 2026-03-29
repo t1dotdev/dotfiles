@@ -1,9 +1,30 @@
 #!/usr/bin/env bash
 
 source "$CONFIG_DIR/colors.sh"
-. "$CONFIG_DIR/plugins/icon_map_fn.sh" > /dev/null 2>&1
 
 FOCUSED="${FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused 2>/dev/null)}"
+
+if [ -z "$SORT_POSITIONS" ] && [ "$SENDER" != "front_app_switched" ] && [ -f /tmp/.sb_prev_focused ]; then
+  PREV=$(</tmp/.sb_prev_focused)
+  if [ "$PREV" != "$FOCUSED" ]; then
+    PREV_HAS_WINDOWS=false
+    NEW_HAS_WINDOWS=false
+    [ -f "/tmp/.sb_ws_${PREV}_icons" ] && [ -s "/tmp/.sb_ws_${PREV}_icons" ] && PREV_HAS_WINDOWS=true
+    [ -f "/tmp/.sb_ws_${FOCUSED}_icons" ] && [ -s "/tmp/.sb_ws_${FOCUSED}_icons" ] && NEW_HAS_WINDOWS=true
+
+    if [ "$PREV_HAS_WINDOWS" = true ] && [ "$NEW_HAS_WINDOWS" = true ]; then
+      printf '%s' "$FOCUSED" > /tmp/.sb_prev_focused
+      sketchybar \
+        --set "space.$PREV" icon.color=0x55ffffff label.color=0x55ffffff background.drawing=off \
+        --set "space.$FOCUSED" icon.color=$WHITE label.color=$WHITE background.drawing=on
+      exit 0
+    fi
+  fi
+fi
+
+printf '%s' "$FOCUSED" > /tmp/.sb_prev_focused
+
+. "$CONFIG_DIR/plugins/icon_map_fn.sh" > /dev/null 2>&1
 
 "$CONFIG_DIR/plugins/window_sort" > /tmp/.sb_wpos 2>/dev/null &
 aerospace list-windows --all --format '%{workspace}|%{window-id}|%{app-name}' > /tmp/.sb_windows 2>/dev/null &
@@ -55,6 +76,24 @@ for SID in $(seq 1 9); do
   icons="${!varname}"
 
   if [ "$SID" = "$FOCUSED" ]; then
+    if [ "$SORT_POSITIONS" != "1" ] && [ -f "/tmp/.sb_ws_${SID}_icons" ]; then
+      cached=$(</tmp/.sb_ws_${SID}_icons)
+      cached_count=$(echo "$cached" | wc -w)
+      fresh_count=$(echo "$icons" | wc -w)
+      if [ "$fresh_count" = "$cached_count" ]; then
+        icons="$cached"
+      elif [ "$fresh_count" -gt "$cached_count" ] 2>/dev/null; then
+        new_icons=""
+        for icon in $icons; do
+          case " $cached " in
+            *" $icon "*) ;;
+            *) [ -n "$new_icons" ] && new_icons+=" $icon" || new_icons="$icon" ;;
+          esac
+        done
+        [ -n "$new_icons" ] && icons="$cached $new_icons" || icons="$cached"
+      fi
+    fi
+    printf '%s' "$icons" > "/tmp/.sb_ws_${SID}_icons"
     ARGS+=(--set "space.$SID"
       drawing=on
       icon="$SID"
@@ -63,6 +102,24 @@ for SID in $(seq 1 9); do
       label.color=$WHITE
       background.drawing=on)
   elif [ -n "$icons" ]; then
+    if [ -f "/tmp/.sb_ws_${SID}_icons" ]; then
+      cached=$(</tmp/.sb_ws_${SID}_icons)
+      cached_count=$(echo "$cached" | wc -w)
+      fresh_count=$(echo "$icons" | wc -w)
+      if [ "$fresh_count" = "$cached_count" ]; then
+        icons="$cached"
+      elif [ "$fresh_count" -gt "$cached_count" ] 2>/dev/null; then
+        new_icons=""
+        for icon in $icons; do
+          case " $cached " in
+            *" $icon "*) ;;
+            *) [ -n "$new_icons" ] && new_icons+=" $icon" || new_icons="$icon" ;;
+          esac
+        done
+        [ -n "$new_icons" ] && icons="$cached $new_icons" || icons="$cached"
+      fi
+    fi
+    printf '%s' "$icons" > "/tmp/.sb_ws_${SID}_icons"
     ARGS+=(--set "space.$SID"
       drawing=on
       icon="$SID"
@@ -71,6 +128,7 @@ for SID in $(seq 1 9); do
       label.color=0x55ffffff
       background.drawing=off)
   else
+    rm -f "/tmp/.sb_ws_${SID}_icons"
     ARGS+=(--set "space.$SID" drawing=off)
   fi
 done

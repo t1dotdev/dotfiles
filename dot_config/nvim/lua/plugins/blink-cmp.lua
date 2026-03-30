@@ -87,7 +87,6 @@ return {
 
 		-- Appearance
 		appearance = {
-			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
 
@@ -159,7 +158,7 @@ return {
 				show_on_accept_on_trigger_character = true,
 				show_on_insert_on_trigger_character = true,
 				show_on_x_blocked_trigger_characters = { "'", '"', "(" },
-				show_in_snippet = false,
+				show_in_snippet = true,
 			},
 
 			list = {
@@ -282,21 +281,7 @@ return {
 			default = { "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
 				opencode_ask = {},
-				-- Special sources for specific filetypes
 				codecompanion = { "codecompanion" },
-
-				-- Languages with different source priorities
-				lua = { "lsp", "path", "snippets", "buffer" },
-				python = { "lsp", "path", "snippets", "buffer" },
-				go = { "lsp", "path", "snippets", "buffer" },
-				rust = { "lsp", "path", "snippets", "buffer" },
-
-				-- Web development
-				javascript = { "lsp", "path", "snippets", "buffer" },
-				typescript = { "lsp", "path", "snippets", "buffer" },
-				typescriptreact = { "lsp", "path", "snippets", "buffer" },
-				javascriptreact = { "lsp", "path", "snippets", "buffer" },
-				vue = { "lsp", "path", "snippets", "buffer" },
 
 				-- Minimal sources for config files
 				yaml = { "path", "buffer" },
@@ -360,9 +345,7 @@ return {
 		-- Cmdline configuration
 		cmdline = {
 			enabled = true,
-			sources = {
-				default = { "path", "cmdline" },
-			},
+			sources = { "path", "cmdline" },
 			keymap = {
 				preset = "cmdline",
 				["<C-k>"] = { "select_prev", "fallback" },
@@ -424,29 +407,6 @@ return {
 		-- Setup blink.cmp
 		local blink = require("blink.cmp")
 		blink.setup(opts)
-
-		-- Setup Copilot if available (for native copilot.lua integration)
-		local ok, copilot = pcall(require, "copilot")
-		if ok then
-			copilot.setup({
-				suggestion = {
-					enabled = true,
-					auto_trigger = true,
-					debounce = 75,
-				},
-				panel = { enabled = false },
-				filetypes = {
-					["*"] = true,
-					yaml = false,
-					markdown = false,
-					help = false,
-					gitcommit = false,
-					gitrebase = false,
-					["."] = false,
-					[""] = false,
-				},
-			})
-		end
 
 		-- Define custom highlight groups
 		-- local highlights = {

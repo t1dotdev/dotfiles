@@ -2,6 +2,7 @@
 
 sketchybar --add item battery right \
   --set battery \
+    icon="􀪯" \
     icon.font="SF Pro:Bold:15.0" \
     icon.padding_left=10 \
     icon.padding_right=4 \

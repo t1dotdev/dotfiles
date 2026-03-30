@@ -83,7 +83,9 @@ battery:subscribe({ "routine", "power_source_change", "system_woke", "forced" },
   sbar.exec("pmset -g batt", function(result)
     if not result then return end
     local pct = result:match("(%d+)%%")
+
     if not pct then return end
+
     local n = tonumber(pct)
     local charging = result:find("AC Power") ~= nil
 
@@ -123,11 +125,12 @@ battery_memory:subscribe("routine", function()
     sbar.exec(
       "vm_stat | awk '/Pages active|Pages wired/ {gsub(/\\./, \"\", $NF); sum+=$NF} END {print sum}'",
       function(pages_raw)
-        local total    = tonumber(total_raw)  or 0
-        local pages    = tonumber(pages_raw)  or 0
-        local total_gb = math.floor(total / 1073741824)
-        local total_mb = math.floor(total / 1048576)
-        local used_mb  = math.floor(pages * 4096 / 1048576)
+        local total      = tonumber(total_raw)  or 0
+        local pages      = tonumber(pages_raw)  or 0
+        local page_size  = 16384
+        local total_gb   = math.floor(total / 1073741824)
+        local total_mb   = math.floor(total / 1048576)
+        local used_mb    = math.floor(pages * page_size / 1048576)
         local avail_mb = total_mb - used_mb
 
         local used_s  = used_mb  >= 1024

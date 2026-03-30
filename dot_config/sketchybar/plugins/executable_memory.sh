@@ -3,8 +3,9 @@
 TOTAL=$(sysctl -n hw.memsize)
 TOTAL_GB=$((TOTAL / 1073741824))
 TOTAL_MB=$((TOTAL / 1048576))
+PAGE_SIZE=$(sysctl -n vm.pagesize)
 USED_PAGES=$(vm_stat | awk '/Pages active|Pages wired/ {gsub(/\./,"",$NF); sum+=$NF} END {print sum}')
-USED_MB=$((USED_PAGES * 4096 / 1048576))
+USED_MB=$((USED_PAGES * PAGE_SIZE / 1048576))
 AVAIL_MB=$((TOTAL_MB - USED_MB))
 
 if [ $USED_MB -ge 1024 ]; then

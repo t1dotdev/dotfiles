@@ -1,7 +1,5 @@
 #!/bin/bash
 
-CPU=$(ps -A -o %cpu | awk '{s+=$1} END {printf "%.0f", s}')
-CORES=$(sysctl -n hw.ncpu)
-USAGE=$((CPU / CORES))
+USAGE=$(top -l 1 -n 0 | grep "CPU usage" | awk '{printf "%.0f", $3 + $5}')
 
 sketchybar --set "$NAME" label="${USAGE}%"

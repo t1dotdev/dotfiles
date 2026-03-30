@@ -24,22 +24,32 @@ fi
 
 printf '%s' "$FOCUSED" > /tmp/.sb_prev_focused
 
-. "$CONFIG_DIR/plugins/icon_map_fn.sh" > /dev/null 2>&1
-
-"$CONFIG_DIR/plugins/window_sort" > /tmp/.sb_wpos 2>/dev/null &
-aerospace list-windows --all --format '%{workspace}|%{window-id}|%{app-name}' > /tmp/.sb_windows 2>/dev/null &
-wait
-
-ALL_WINDOWS=$(</tmp/.sb_windows)
-POS_DATA=$(</tmp/.sb_wpos)
-
+# Early exit for front_app_switched: check window list signature BEFORE
+# expensive work (window_sort, icon mapping). This saves ~200ms on every
+# workspace switch since both aerospace_workspace_change and front_app_switched
+# fire, but the window list rarely changes on a simple focus switch.
 if [ "$SENDER" = "front_app_switched" ]; then
+  FRESH_WINDOWS=$(aerospace list-windows --all --format '%{workspace}|%{window-id}|%{app-name}' 2>/dev/null)
   PREV_SIG=""
   [ -f /tmp/.sb_windows_sig ] && PREV_SIG=$(</tmp/.sb_windows_sig)
-  if [ "$ALL_WINDOWS" = "$PREV_SIG" ]; then
+  if [ "$FRESH_WINDOWS" = "$PREV_SIG" ]; then
     exit 0
   fi
 fi
+
+. "$CONFIG_DIR/plugins/icon_map_fn.sh" > /dev/null 2>&1
+
+if [ -n "$FRESH_WINDOWS" ]; then
+  ALL_WINDOWS="$FRESH_WINDOWS"
+  "$CONFIG_DIR/plugins/window_sort" > /tmp/.sb_wpos 2>/dev/null
+else
+  "$CONFIG_DIR/plugins/window_sort" > /tmp/.sb_wpos 2>/dev/null &
+  aerospace list-windows --all --format '%{workspace}|%{window-id}|%{app-name}' > /tmp/.sb_windows 2>/dev/null &
+  wait
+  ALL_WINDOWS=$(</tmp/.sb_windows)
+fi
+
+POS_DATA=$(</tmp/.sb_wpos)
 
 printf '%s' "$ALL_WINDOWS" > /tmp/.sb_windows_sig
 

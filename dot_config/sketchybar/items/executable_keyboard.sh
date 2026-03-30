@@ -7,7 +7,7 @@ sketchybar --add item keyboard right \
     icon.color=$WHITE \
     icon.padding_left=10 \
     icon.padding_right=4 \
-    label.font="SF Pro:Bold:11.0" \
+    label.font="Berkeley Mono:Bold:11.0" \
     label.color=0xccffffff \
     label.padding_right=10 \
     background.color=0x18ffffff \

@@ -5,7 +5,7 @@ sketchybar --add item battery right \
     icon.font="SF Pro:Bold:15.0" \
     icon.padding_left=10 \
     icon.padding_right=4 \
-    label.font="SF Pro:Medium:11.0" \
+    label.font="Berkeley Mono:Regular:11.0" \
     label.color=0xccffffff \
     label.padding_right=10 \
     background.color=0x18ffffff \
@@ -33,7 +33,7 @@ sketchybar --add item battery right \
     icon.padding_left=12 \
     icon.padding_right=8 \
     label="··· %" \
-    label.font="SF Pro:Medium:12.0" \
+    label.font="Berkeley Mono:Regular:12.0" \
     label.color=0xccffffff \
     label.padding_right=12 \
     background.color=0x00000000 \
@@ -50,7 +50,7 @@ sketchybar --add item battery right \
     icon.padding_left=12 \
     icon.padding_right=8 \
     label="··· %" \
-    label.font="SF Pro:Medium:12.0" \
+    label.font="Berkeley Mono:Regular:12.0" \
     label.color=0xccffffff \
     label.padding_right=12 \
     background.color=0x00000000 \

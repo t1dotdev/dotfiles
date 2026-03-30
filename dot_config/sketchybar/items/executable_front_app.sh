@@ -7,7 +7,7 @@ sketchybar --add item front_app left \
     icon.color=$WHITE \
     icon.padding_left=6 \
     icon.padding_right=6 \
-    label.font="SF Pro:Semibold:13.0" \
+    label.font="Berkeley Mono:Bold:13.0" \
     label.color=$WHITE \
     script="$PLUGIN_DIR/front_app.sh" \
   --subscribe front_app front_app_switched

@@ -7,13 +7,23 @@ case "$SENDER" in
   ;;
 esac
 
-CURRENT_WIFI="$(ipconfig getsummary en0 2>/dev/null)"
-SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID : .*" | sed 's/^SSID : //' | tail -n1)"
-IP_WIFI="$(echo "$CURRENT_WIFI" | grep -o "IPv4 Address: .*" | sed 's/^IPv4 Address: //')"
+IP_WIFI=$(ipconfig getifaddr en0 2>/dev/null)
 
-if [[ -n "$SSID" ]]; then
+SSID=""
+SSID_RAW=$(networksetup -getairportnetwork en0 2>/dev/null)
+if [[ "$SSID_RAW" == "Current Wi-Fi Network: "* ]]; then
+  SSID="${SSID_RAW#Current Wi-Fi Network: }"
+fi
+
+if [[ -z "$SSID" ]]; then
+  SSID=$(ipconfig getsummary en0 2>/dev/null | awk -F' : ' '/^ *SSID/{print $2}')
+  [[ "$SSID" == "<redacted>" ]] && SSID=""
+fi
+
+if [[ -n "$IP_WIFI" ]]; then
   ICON=􀙇
-elif echo "$CURRENT_WIFI" | grep -q "AirPort: Off"; then
+  SSID="${SSID:-Wi-Fi}"
+elif networksetup -getairportpower en0 2>/dev/null | grep -q "Off"; then
   ICON=􀐾
 else
   ICON=􀙈
@@ -21,7 +31,7 @@ fi
 
 sketchybar --set wifi icon="$ICON"
 
-if [[ -n "$SSID" ]]; then
+if [[ -n "$IP_WIFI" ]]; then
   sketchybar \
     --set wifi.ssid label="$SSID" icon=􀙇 \
     --set wifi.ip label="$IP_WIFI" \

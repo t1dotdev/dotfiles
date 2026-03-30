@@ -1,7 +1,7 @@
 #!/bin/bash
 
 POPUP_ITEM=(
-  label.font="SF Pro:Medium:12.0"
+  label.font="Berkeley Mono:Regular:12.0"
   label.color=0xccffffff
   label.padding_right=12
   icon.font="SF Pro:Bold:14.0"

@@ -7,7 +7,7 @@ sketchybar --add item calendar right \
     icon.color=$WHITE \
     icon.padding_left=10 \
     icon.padding_right=6 \
-    label.font="SF Pro:Semibold:12.0" \
+    label.font="Berkeley Mono:Bold:12.0" \
     label.color=0xddffffff \
     label.padding_right=10 \
     background.color=0x18ffffff \

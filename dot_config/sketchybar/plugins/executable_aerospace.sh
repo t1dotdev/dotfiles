@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-source "$CONFIG_DIR/colors.sh"
+# Fast: get focused workspace from env (no process spawn for normal workspace changes)
+FOCUSED="$FOCUSED_WORKSPACE"
 
-FOCUSED="${FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused 2>/dev/null)}"
+# Ultra-fast early exit: same workspace — skip redundant events entirely
+if [ -n "$FOCUSED" ] && [ -z "$SORT_POSITIONS" ] && [ "$SENDER" != "front_app_switched" ] && [ -f /tmp/.sb_prev_focused ]; then
+  [ "$(</tmp/.sb_prev_focused)" = "$FOCUSED" ] && exit 0
+fi
 
+# Fallback: query aerospace only when env var isn't available (non-standard callers)
+[ -z "$FOCUSED" ] && FOCUSED=$(aerospace list-workspaces --focused 2>/dev/null)
+
+# Fast path: highlight swap only (no icon rebuild, no aerospace calls, no colors.sh)
 if [ -z "$SORT_POSITIONS" ] && [ "$SENDER" != "front_app_switched" ] && [ -f /tmp/.sb_prev_focused ]; then
   PREV=$(</tmp/.sb_prev_focused)
   if [ "$PREV" != "$FOCUSED" ]; then
@@ -13,6 +21,7 @@ if [ -z "$SORT_POSITIONS" ] && [ "$SENDER" != "front_app_switched" ] && [ -f /tm
     [ -f "/tmp/.sb_ws_${PREV}_icons" ] && [ -s "/tmp/.sb_ws_${PREV}_icons" ] && PREV_HAS=true
     [ -f "/tmp/.sb_ws_${FOCUSED}_icons" ] && [ -s "/tmp/.sb_ws_${FOCUSED}_icons" ] && NEW_HAS=true
 
+    # Inline WHITE=0xffffffff — avoids sourcing colors.sh on the hot path
     ARGS=()
     if [ "$PREV_HAS" = true ]; then
       ARGS+=(--set "space.$PREV" icon.color=0x55ffffff label.color=0x55ffffff background.drawing=off)
@@ -20,15 +29,18 @@ if [ -z "$SORT_POSITIONS" ] && [ "$SENDER" != "front_app_switched" ] && [ -f /tm
       ARGS+=(--set "space.$PREV" drawing=off)
     fi
     if [ "$NEW_HAS" = true ]; then
-      ARGS+=(--set "space.$FOCUSED" icon.color=$WHITE label.color=$WHITE background.drawing=on)
+      ARGS+=(--set "space.$FOCUSED" icon.color=0xffffffff label.color=0xffffffff background.drawing=on)
     else
-      ARGS+=(--set "space.$FOCUSED" drawing=on icon="$FOCUSED" icon.color=$WHITE label="" label.color=$WHITE background.drawing=on)
+      ARGS+=(--set "space.$FOCUSED" drawing=on icon="$FOCUSED" icon.color=0xffffffff label="" label.color=0xffffffff background.drawing=on)
     fi
     sketchybar "${ARGS[@]}"
     printf '' > /tmp/.sb_ws_debounce
     exit 0
   fi
 fi
+
+# ── Full path (icon rebuild needed) — only runs for SORT_POSITIONS, front_app_switched, or first boot ──
+source "$CONFIG_DIR/colors.sh"
 
 printf '%s' "$FOCUSED" > /tmp/.sb_prev_focused
 

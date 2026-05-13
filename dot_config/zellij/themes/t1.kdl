@@ -33,13 +33,13 @@ themes {
             emphasis_2 175 150 255
             emphasis_3 45 30 80
         }
-        frame_unselected {
-            base 65 45 130
+         frame_unselected {
+            base 73 77 100
             background 0
-            emphasis_0 95 70 180
-            emphasis_1 65 45 130
-            emphasis_2 45 30 80
-            emphasis_3 95 70 180
+            emphasis_0 73 77 100
+            emphasis_1 73 77 100
+            emphasis_2 73 77 100
+            emphasis_3 73 77 100
         }
         frame_selected {
             base 135 95 255

@@ -173,9 +173,11 @@ keybinds clear-defaults=true {
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl space" { SwitchToMode "tmux"; }
     }
-    shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" { SwitchToMode "scroll"; }
-    }
+    // Ctrl+s intentionally unbound — passes through to nvim/apps for "save".
+    // Enter scroll mode via tmux prefix: Ctrl+Space then [
+    // shared_except "locked" "scroll" "search" {
+    //     bind "Ctrl s" { SwitchToMode "scroll"; }
+    // }
     shared_except "locked" "tab" {
         bind "Ctrl t" { SwitchToMode "tab"; }
     }
@@ -258,6 +260,17 @@ keybinds clear-defaults=true {
         bind "o" { FocusNextPane; }
         bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+        // tmux.conf parity: resize pane with Ctrl h/j/k/l (stay in tmux mode to repeat)
+        bind "Ctrl h" { Resize "Increase left"; }
+        bind "Ctrl j" { Resize "Increase down"; }
+        bind "Ctrl k" { Resize "Increase up"; }
+        bind "Ctrl l" { Resize "Increase right"; }
+        // tmux.conf parity: `bind 0 select-layout even-horizontal`
+        bind "0" { NextSwapLayout; SwitchToMode "normal"; }
+        // tmux.conf parity: `bind ` last-window` (toggle to previously focused tab)
+        bind "`" { ToggleTab; SwitchToMode "normal"; }
+        // tmux.conf parity: `bind & kill-window`
+        bind "&" { CloseTab; SwitchToMode "normal"; }
     }
 }
 

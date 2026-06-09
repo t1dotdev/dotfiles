@@ -2,7 +2,7 @@
 
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "#8be9fd" }
 
 # Hovered
@@ -19,11 +19,6 @@ marker_cut      = { fg = "#ff5555", bg = "#ff5555" }
 marker_marked   = { fg = "#8be9fd", bg = "#8be9fd" }
 marker_selected = { fg = "#f1fa8c", bg = "#f1fa8c" }
 
-# Tab
-tab_active   = { reversed = true }
-tab_inactive = {}
-tab_width    = 1
-
 # Count
 count_copied   = { fg = "#282a36", bg = "#50fa7b" }
 count_cut      = { fg = "#282a36", bg = "#ff5555" }
@@ -36,12 +31,21 @@ border_style  = { fg = "#7282b5" }
 # : }}}
 
 
+# : Tabs {{{
+
+[tabs]
+active   = { reversed = true }
+inactive = {}
+
+# : }}}
+
+
 # : Mode {{{
 
 [mode]
 
-normal_main = { fg = "#282a36", bg = "#bd93f9", bold = true }
-normal_alt  = { fg = "#bd93f9", bg = "#44475a" }
+normal_main = { fg = "#282a36", bg = "#875fff", bold = true }
+normal_alt  = { fg = "#875fff", bg = "#44475a" }
 
 # Select mode
 select_main = { fg = "#282a36", bg = "#8be9fd", bold = true }
@@ -59,14 +63,14 @@ unset_alt  = { fg = "#ffb86c", bg = "#44475a" }
 [status]
 # Permissions
 perm_sep   = { fg = "#7282b5" }
-perm_type  = { fg = "#bd93f9" }
+perm_type  = { fg = "#875fff" }
 perm_read  = { fg = "#f1fa8c" }
 perm_write = { fg = "#ff5555" }
 perm_exec  = { fg = "#50fa7b" }
 
 # Progress
 progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#bd93f9", bg = "#63667d" }
+progress_normal = { fg = "#875fff", bg = "#63667d" }
 progress_error  = { fg = "#ff5555", bg = "#63667d" }
 
 # : }}}
@@ -75,7 +79,7 @@ progress_error  = { fg = "#ff5555", bg = "#63667d" }
 # : Pick {{{
 
 [pick]
-border   = { fg = "#bd93f9" }
+border   = { fg = "#875fff" }
 active   = { fg = "#ff79c6", bold = true }
 inactive = {}
 
@@ -85,7 +89,7 @@ inactive = {}
 # : Input {{{
 
 [input]
-border   = { fg = "#bd93f9" }
+border   = { fg = "#875fff" }
 title    = {}
 value    = {}
 selected = { reversed = true }
@@ -96,7 +100,7 @@ selected = { reversed = true }
 # : Completion {{{
 
 [cmp]
-border = { fg = "#bd93f9" }
+border = { fg = "#875fff" }
 
 # : }}}
 
@@ -104,7 +108,7 @@ border = { fg = "#bd93f9" }
 # : Tasks {{{
 
 [tasks]
-border  = { fg = "#bd93f9" }
+border  = { fg = "#875fff" }
 title   = {}
 hovered = { fg = "#ff79c6", underline = true }
 
@@ -163,8 +167,8 @@ rules = [
 	{ mime = "application/{pdf,doc,rtf}", fg = "#50fa7b" },
 
 	# Fallback
-	{ name = "*", fg = "#f8f8f2" },
-	{ name = "*/", fg = "#bd93f9" }
+	{ url = "*", fg = "#f8f8f2" },
+	{ url = "*/", fg = "#875fff" }
 ]
 
 # : }}}

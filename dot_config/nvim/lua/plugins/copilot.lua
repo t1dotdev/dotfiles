@@ -28,6 +28,5 @@ return {
 			["."] = false,
 			[""] = false,
 		},
-		copilot_model = "gpt-41-copilot",
 	},
 }

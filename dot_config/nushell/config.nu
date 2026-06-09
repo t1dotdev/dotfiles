@@ -113,6 +113,7 @@ alias tk = tmux kill-session -t
 alias tka = tmux kill-server
 alias c = claude
 alias o = opencode
+alias y = yazi
 
 
 # Starship prompt

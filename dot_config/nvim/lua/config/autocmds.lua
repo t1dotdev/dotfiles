@@ -141,14 +141,12 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
 	end,
 })
 
--- Performance: disable some providers
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_node_provider = 0
+-- Provider disables live in lua/config/options.lua.
 
 -- NOTE: Ensures that when exiting NeoVim, Zellij returns to normal mode
-vim.api.nvim_create_autocmd("VimLeave", {
-	pattern = "*",
-	command = "silent !zellij action switch-mode normal",
-})
+if vim.env.ZELLIJ then
+	vim.api.nvim_create_autocmd("VimLeave", {
+		pattern = "*",
+		command = "silent !zellij action switch-mode normal",
+	})
+end

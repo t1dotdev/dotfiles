@@ -106,10 +106,6 @@ return {
         },
       },
     })
-    
-    -- Enable folding with treesitter
-    vim.opt.foldmethod = "expr"
-    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    vim.opt.foldenable = false
+    -- Fold options (foldmethod/foldexpr) live in lua/config/options.lua.
   end,
 }

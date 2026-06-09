@@ -12,42 +12,9 @@ local DISABLE_FILETYPES = {
 	"lspinfo",
 }
 
--- Configure diagnostics
+-- Diagnostic config lives in lua/config/diagnostics.lua (single source of
+-- truth). On attach we only add undercurl underlines and error-jump keymaps.
 local function diagnostics()
-	vim.diagnostic.config({
-		float = {
-			border = "rounded",
-			width = 60,
-		},
-		jump = {
-			float = true,
-		},
-		severity_sort = true,
-		signs = {
-			text = {
-				[vim.diagnostic.severity.ERROR] = "", -- Error
-				[vim.diagnostic.severity.WARN] = "", -- Warning
-				[vim.diagnostic.severity.INFO] = "", -- Info
-				[vim.diagnostic.severity.HINT] = "󰌵", -- Hint
-			},
-		},
-		underline = true,
-		update_in_insert = false,
-		virtual_text = false, -- Disable Neovim's default virtual text diagnostics
-		-- virtual_text = {
-		--   spacing = 4,
-		--   source = 'if_many',
-		--   prefix = '●',
-		--   severity = vim.diagnostic.severity.ERROR,
-		--   current_line = true,
-		-- },
-	})
-
-	-- vim.fn.sign_define('DiagnosticSignError', { text = '✕', texthl = 'DiagnosticSignError' })
-	-- vim.fn.sign_define('DiagnosticSignWarn', { text = '△', texthl = 'DiagnosticSignWarn' })
-	-- vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-	-- vim.fn.sign_define('DiagnosticSignHint', { text = '☆', texthl = 'DiagnosticSignHint' })
-
 	local hl_groups = {
 		"DiagnosticUnderlineError",
 		"DiagnosticUnderlineWarn",
@@ -206,6 +173,21 @@ local function keymaps(bufnr, client)
 	k("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 	k("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 	k("K", hover, "[H]over")
+
+	-- ts_ls source actions (replaces typescript-tools.nvim commands)
+	if client.name == "ts_ls" then
+		local function ts_source_action(kind, desc)
+			return function()
+				vim.lsp.buf.code_action({
+					context = { only = { kind }, diagnostics = {} },
+					apply = true,
+				})
+			end
+		end
+		k("<leader>cu", ts_source_action("source.removeUnusedImports.ts"), "Remove [U]nused imports")
+		k("<leader>co", ts_source_action("source.organizeImports.ts"), "[O]rganize imports")
+		k("<leader>ci", ts_source_action("source.addMissingImports.ts"), "Add m[I]ssing imports")
+	end
 
 	-- -- Jump to type implementation
 	-- if client:supports_method(methods.textDocument_typeDefinition) then

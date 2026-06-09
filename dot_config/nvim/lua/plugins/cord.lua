@@ -8,8 +8,8 @@ return {
 		},
 
 		display = {
-			swap_icons = "true",
-			swap_fields = "true",
+			swap_icons = true,
+			swap_fields = true,
 			theme = "catppuccin",
 			flavor = "accent",
 		},

@@ -22,8 +22,11 @@ local PACKAGES = {
 
   -- Format
   'black',
+  'isort',
   'prettierd',
   'stylua',
+  'shfmt',
+  'goimports',
   -- Lint
   'eslint-lsp',
   'pylint',

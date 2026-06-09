@@ -3,11 +3,8 @@ local map = vim.keymap.set
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
--- Move to window using the <ctrl> hjkl keys
-map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+-- Normal-mode <C-hjkl> window navigation is owned by vim-tmux-navigator
+-- (seamless vim<->tmux pane movement). See lua/plugins/tmux.lua.
 
 -- Also add for terminal mode to navigate out of terminal
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to Left Window from Terminal" })
@@ -18,8 +15,7 @@ map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to Right Window from Termina
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
--- windows
-map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
+-- windows (<leader>- is owned by oil.nvim; use <C-w>s for a horizontal split)
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 
 -- Don't yank
@@ -56,9 +52,8 @@ map("v", ">", ">gv")
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
--- Better search and replace
+-- Better search and replace (<leader>sr is owned by grug-far.nvim)
 map({ "n", "x" }, "gw", "*N", { desc = "Search Word Under Cursor" })
-map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace Word Under Cursor" })
 
 -- Quick save and quit
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save File" })

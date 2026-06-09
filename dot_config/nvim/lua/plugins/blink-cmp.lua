@@ -50,7 +50,7 @@ return {
 				return false
 			end
 
-			if vim.bo.filetype == "snacks_input" or vim.bo.filetype == "opencode_ask" then
+			if vim.bo.filetype == "snacks_input" then
 				return false
 			end
 
@@ -280,9 +280,6 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
-				opencode_ask = {},
-				codecompanion = { "codecompanion" },
-
 				-- Minimal sources for config files
 				yaml = { "path", "buffer" },
 				toml = { "path", "buffer" },

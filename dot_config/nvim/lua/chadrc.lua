@@ -26,15 +26,6 @@ M.ui = {
 		enabled = true,
 		theme = "minimal",
 	},
-	cmp = {
-		lspkind_text = true,
-		style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
-
-		format_colors = {
-			tailwind = true,
-			lsp = true,
-		},
-	},
 }
 
 return M

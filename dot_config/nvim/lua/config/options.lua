@@ -1,8 +1,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- lua/config/options.lua
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- mapleader/maplocalleader are set in lua/config/lazy.lua before lazy loads.
 
 -- Auto format
 vim.g.autoformat = true
@@ -114,5 +113,5 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- Add binaries installed by mason.nvim to path
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+local is_windows = vim.uv.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH

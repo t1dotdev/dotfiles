@@ -9,7 +9,7 @@ return {
 			auto_trigger = true,
 			debounce = 75,
 			keymap = {
-				accept = "<Tab>",
+				accept = false, -- accepted via blink.cmp's <Tab> (see blink-cmp.lua)
 				accept_word = false,
 				accept_line = false,
 				next = "<M-]>",

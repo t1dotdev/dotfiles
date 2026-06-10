@@ -1,7 +1,7 @@
 ### Brew Packages
 
 ```
-brew install nvim node nushell ghostty chezmoi lazygit zoxide starship tmux nikitabobko/tap/aerospace oven-sh/bun/bun claude-code FelixKratz/formulae/borders font-jetbrains-mono-nerd-font rust ripgrep shortcat
+brew install nvim node nushell ghostty chezmoi lazygit zoxide starship tmux nikitabobko/tap/aerospace oven-sh/bun/bun claude-code FelixKratz/formulae/borders font-jetbrains-mono-nerd-font rust ripgrep shortcat raycast
 ```
 
 ### Load Config

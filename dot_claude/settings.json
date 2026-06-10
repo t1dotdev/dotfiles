@@ -1,26 +1,14 @@
 {
-  "effortLevel": "xhigh",
-  "env": {
-    "CLAUDE_CODE_EFFORT_LEVEL": "max"
-  },
-  "enabledPlugins": {
-    "caveman@caveman": true
-  },
-  "extraKnownMarketplaces": {
-    "caveman": {
-      "source": {
-        "repo": "JuliusBrussee\/caveman",
-        "source": "github"
-      }
-    }
+  "permissions": {
+    "defaultMode": "auto"
   },
   "hooks": {
     "Notification": [
       {
         "hooks": [
           {
-            "command": "afplay \/System\/Library\/Sounds\/Ping.aiff",
-            "type": "command"
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Ping.aiff"
           }
         ]
       }
@@ -29,20 +17,28 @@
       {
         "hooks": [
           {
-            "command": "afplay \/System\/Library\/Sounds\/Glass.aiff",
-            "type": "command"
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff"
           }
         ]
       }
     ]
   },
-  "permissions": {
-    "defaultMode": "auto"
-  },
-  "skipAutoPermissionPrompt": true,
   "statusLine": {
-    "command": "bash \"$HOME/.claude/statusline-command.sh\"",
-    "type": "command"
+    "type": "command",
+    "command": "bash \"$HOME/.claude/statusline-command.sh\""
   },
-  "theme": "dark"
+  "enabledPlugins": {
+    "caveman@caveman": true
+  },
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
+  "theme": "dark",
+  "skipAutoPermissionPrompt": true
 }

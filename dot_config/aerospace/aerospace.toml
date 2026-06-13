@@ -71,8 +71,8 @@ preset = 'qwerty'
 inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
 inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
 outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
-outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
-outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 24 }, 20]
+outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 80 }, 16]
+outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 84 }, 20]
 outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
 
 # 'main' binding mode declaration

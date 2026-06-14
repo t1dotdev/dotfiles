@@ -7,11 +7,11 @@ local config = wezterm.config_builder()
 config.colors = {
 	foreground = colors.fg,
 	background = colors.bg,
-	cursor_bg = colors.fg,
-	cursor_border = colors.fg,
+	cursor_bg = "#f5e0dc",
+	cursor_border = "#f5e0dc",
 	cursor_fg = colors.bg,
-	selection_bg = colors.primary,
-	selection_fg = colors.fg,
+	selection_bg = "#353749",
+	selection_fg = "#cdd6f4",
 	tab_bar = {
 		background = colors.bg,
 		active_tab = { bg_color = colors.primary, fg_color = colors.bg },
@@ -19,53 +19,92 @@ config.colors = {
 		new_tab = { bg_color = colors.bg, fg_color = colors.fg },
 	},
 	ansi = {
-		"#51576d",
-		"#e78284",
+		"#45475a",
+		"#f38ba8",
+		"#a6e3a1",
+		"#f9e2af",
+		"#89b4fa",
 		"#875fff",
-		"#e5c890",
-		"#8caaee",
-		"#f4b8e4",
-		"#81c8be",
-		"#ffffff",
+		"#94e2d5",
+		"#a6adc8",
 	},
 	brights = {
-		"#626880",
-		"#e67172",
+		"#585b70",
+		"#f38ba8",
+		"#a6e3a1",
+		"#f9e2af",
+		"#89b4fa",
 		"#875fff",
-		"#d9ba73",
-		"#7b9ef0",
-		"#f2a4db",
-		"#5abfb5",
-		"#ffffff",
+		"#94e2d5",
+		"#bac2de",
 	},
 }
 
 -- === Font ===
 config.font = wezterm.font_with_fallback({
-	{ family = "JetBrainsMono NF", weight = "Bold" },
-	{ family = "Pridi", weight = "Regular" },
+	{ family = "Berkeley Mono", weight = "Bold" },
+	{ family = "JetBrains Mono", weight = "Bold" },
+	{ family = "Courier MonoThai", weight = "Bold" },
 })
-config.font_size = 15
+config.font_size = 16
 config.line_height = 1
 
 -- === Window ===
 config.window_padding = { top = 20, bottom = 0 }
-config.text_background_opacity = 0.9
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
+config.text_background_opacity = 0.93
+config.window_background_opacity = 0.93
+config.macos_window_background_blur = 25
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
+config.tab_bar_at_bottom = false
 config.window_decorations = "MACOS_FORCE_ENABLE_SHADOW|RESIZE"
 
 -- === Keybindings ===
 config.keys = {
-	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+	-- Cmd+Q: confirm, then quit GUI only. Mux server + sessions survive, reattach on relaunch.
+	{
+		key = "q",
+		mods = "CMD",
+		action = wezterm.action.InputSelector({
+			title = "Quit WezTerm? (sessions kept)",
+			choices = {
+				{ id = "quit", label = "Quit (keep mux + sessions)" },
+				{ id = "cancel", label = "Cancel" },
+			},
+			action = wezterm.action_callback(function(window, pane, id, _)
+				if id ~= "quit" then
+					return
+				end
+				window:perform_action(wezterm.action.QuitApplication, pane)
+			end),
+		}),
+	},
+	-- Cmd+Shift+K: confirm, then kill the persistent mux server (clear all sessions), then quit
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.InputSelector({
+			title = "Kill everything? (all sessions lost)",
+			choices = {
+				{ id = "kill", label = "Kill mux + all sessions, then quit" },
+				{ id = "cancel", label = "Cancel" },
+			},
+			action = wezterm.action_callback(function(window, pane, id, _)
+				if id ~= "kill" then
+					return
+				end
+				os.execute("ps -axo pid,comm | awk '/wezterm-mux-server/{print $1}' | xargs kill 2>/dev/null")
+				window:perform_action(wezterm.action.QuitApplication, pane)
+			end),
+		}),
+	},
 	{ key = "h", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
 	{ key = "l", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
 	{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
 	{ key = "j", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
 	{
-		key = "K",
+		key = "x",
 		mods = "CMD|SHIFT",
 		action = wezterm.action.Multiple({
 			wezterm.action.ClearScrollback("ScrollbackAndViewport"),
@@ -74,12 +113,45 @@ config.keys = {
 	},
 	{ key = "d", mods = "CMD", action = wezterm.action.SplitPane({ direction = "Right" }) },
 	{ key = "d", mods = "CMD|SHIFT", action = wezterm.action.SplitPane({ direction = "Down" }) },
+	-- Word jump: Cmd+Left/Right -> Alt+b / Alt+f (readline word motion)
+	{ key = "LeftArrow", mods = "CMD", action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
+	{ key = "RightArrow", mods = "CMD", action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
+	-- Multiplexing: detach from mux server (jobs keep running)
+	{ key = "u", mods = "CMD|SHIFT", action = wezterm.action.DetachDomain({ DomainName = "unix" }) },
+	-- Workspaces (named sessions)
+	{ key = "p", mods = "CMD|SHIFT", action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES" }) },
+	{ key = "]", mods = "CMD|SHIFT", action = wezterm.action.SwitchWorkspaceRelative(1) },
+	{ key = "[", mods = "CMD|SHIFT", action = wezterm.action.SwitchWorkspaceRelative(-1) },
+	{
+		key = "n",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Foreground = { Color = colors.primary } },
+				{ Text = "New workspace name:" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				if line and line ~= "" then
+					window:perform_action(wezterm.action.SwitchToWorkspace({ name = line }), pane)
+				end
+			end),
+		}),
+	},
 }
 
 -- === Tab Title ===
 wezterm.on("format-tab-title", function(tab, _, _, _, _, max_width)
 	local title = wezterm.truncate_right(tab.tab_index + 1, max_width - 2)
 	return { { Text = " " .. title .. " " } }
+end)
+
+-- === Active Workspace in status bar ===
+wezterm.on("update-right-status", function(window, _)
+	window:set_right_status(wezterm.format({
+		{ Foreground = { Color = colors.primary } },
+		{ Text = " " .. window:active_workspace() .. " " },
+	}))
 end)
 
 -- === Right Status Bar ===
@@ -154,6 +226,14 @@ end)
 --
 -- 	window:set_right_status(wezterm.format(elements))
 -- end)
+
+-- === Multiplexing ===
+-- Local unix-domain mux server. Tabs/panes survive GUI quit + relaunch.
+config.unix_domains = {
+	{ name = "unix" },
+}
+-- Auto-attach to the unix mux on startup, so every window is persistent.
+config.default_gui_startup_args = { "connect", "unix" }
 
 -- === Smart Splits ===
 smart_splits.apply_to_config(config, {

@@ -35,7 +35,7 @@ a modular architecture. LSP is configured with **Neovim's native `vim.lsp`** API
   reference highlighting, undercurl, error-jump (`[x`/`]x`), reference-jump.
 - `keymaps.lua` - Global, plugin-independent keybindings.
 - `lua/chadrc.lua` - NvChad config: **catppuccin** theme, transparency, custom
-  purple (`#875fff`) float/border highlights.
+  purple (`#7A6FF0`) float/border highlights.
 
 ### Plugin System (`lua/plugins/`)
 
@@ -135,7 +135,7 @@ shfmt, goimports); gofmt/rustfmt come from the Go/Rust toolchains on `PATH`.
 - **Pairing**: mini.pairs (not nvim-autopairs). **Icons**: mini.icons.
 - **Pickers**: Snacks picker + fff.nvim (not telescope). **Statuscolumn**: snacks.
 - **Multiplexer**: tmux (vim-tmux-navigator). `zellij-nav.lua` exists but is disabled.
-- **Window borders**: custom purple (`#875fff`) for floats.
+- **Window borders**: custom purple (`#7A6FF0`) for floats.
 
 ## Adding New Plugins
 

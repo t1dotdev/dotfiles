@@ -4,7 +4,7 @@ return {
 	opts = {
 		preset = "modern",
 		delay = 200,
-		-- match purple float borders (#875fff)
+		-- match purple float borders (#7A6FF0)
 		win = {
 			border = "rounded",
 		},

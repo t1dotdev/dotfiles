@@ -1,16 +1,23 @@
+onboarding = false
+[terminal]
+default_shell = "nu"
 [keys]
 prefix = "ctrl+;"
 split_vertical = "prefix+|"
-focus_pane_left = ["prefix+h", "ctrl+h"]
-focus_pane_down = ["prefix+j", "ctrl+j"]
-focus_pane_up = ["prefix+k", "ctrl+k"]
-focus_pane_right = ["prefix+l", "ctrl+l"]
-navigate_workspace_up = ["ctrl+k"]
-navigate_workspace_down = ["ctrl+j"]
+# ctrl+h/j/k/l handled by vim-herdr-navigation plugin (see [[keys.command]] below)
+focus_pane_left = ["prefix+h"]
+focus_pane_down = ["prefix+j"]
+focus_pane_up = ["prefix+k"]
+focus_pane_right = ["prefix+l"]
+navigate_workspace_up = ["ctrl+alt+k"]
+navigate_workspace_down = ["ctrl+alt+j"]
 next_agent = ["prefix+]"]
 previous_agent = ["prefix+["]
 goto = "prefix+s"
 settings = "prefix+shift+s"
+switch_tab = "prefix+1..9"
+switch_workspace = "prefix+shift+1..9"
+focus_agent = "prefix+alt+1..9"
 
 [ui]
 agent_panel_sort = "spaces"
@@ -37,3 +44,43 @@ red = "#f38ba8"
 blue = "#89b4fa"
 teal = "#94e2d5"
 peach = "#fab387"
+
+
+[[keys.command]]
+key = "prefix+g"
+type = "pane"
+command = "lazygit"
+description = "run lazygit"
+
+[[keys.command]]
+key = "prefix+y"
+type = "pane"
+command = "yazi"
+description = "run yazi"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "vim-herdr-navigation.left"
+description = "navigate left (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "vim-herdr-navigation.down"
+description = "navigate down (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "vim-herdr-navigation.up"
+description = "navigate up (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "vim-herdr-navigation.right"
+description = "navigate right (vim/herdr)"
+
+[ui.toast]
+delivery = "herdr"

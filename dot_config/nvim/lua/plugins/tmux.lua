@@ -1,19 +1,15 @@
+-- vim-herdr-navigation: seamless <C-h/j/k/l> across nvim splits and herdr panes,
+-- falling back to tmux (vim-tmux-navigator) or plain wincmd when not in herdr.
+-- The plugin's editor/nvim.lua sets the normal-mode keymaps itself, so we load
+-- eagerly (no `keys`) and disable vim-tmux-navigator's own mappings.
 return {
-	"christoomey/vim-tmux-navigator",
-	event = "VeryLazy",
-	cmd = {
-		"TmuxNavigateLeft",
-		"TmuxNavigateDown",
-		"TmuxNavigateUp",
-		"TmuxNavigateRight",
-		"TmuxNavigatePrevious",
-		"TmuxNavigatorProcessList",
-	},
-	keys = {
-		{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-		{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-		{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-		{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-		{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-	},
+	"paulbkim-dev/vim-herdr-navigation",
+	dependencies = { "christoomey/vim-tmux-navigator" },
+	lazy = false,
+	init = function()
+		vim.g.tmux_navigator_no_mappings = 1
+	end,
+	config = function()
+		dofile(vim.fn.stdpath("data") .. "/lazy/vim-herdr-navigation/editor/nvim.lua")
+	end,
 }

@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "wA",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/Development/chaoidgame",
+      "public_pane_numbers": {
+        "47": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 47
+          },
+          "panes": {
+            "47": {
+              "cwd": "/Users/topone/Development/chaoidgame"
+            }
+          },
+          "zoomed": false,
+          "focused": 47,
+          "root_pane": 47
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wB",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/.config/herdr",
+      "public_pane_numbers": {
+        "48": 1,
+        "49": 2
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 48
+          },
+          "panes": {
+            "48": {
+              "cwd": "/Users/topone/.config/herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 48,
+          "root_pane": 48
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 49
+          },
+          "panes": {
+            "49": {
+              "cwd": "/Users/topone/.config/herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 49,
+          "root_pane": 49
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 1,
+  "selected": 1,
+  "sidebar_width": 26,
+  "sidebar_section_split": 0.5,
+  "collapsed_space_keys": []
+}

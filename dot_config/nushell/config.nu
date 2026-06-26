@@ -114,6 +114,7 @@ alias tka = tmux kill-server
 alias c = claude
 alias o = opencode
 alias y = yazi
+alias h = herdr
 
 
 # Starship prompt

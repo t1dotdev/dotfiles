@@ -1,0 +1,39 @@
+[keys]
+prefix = "ctrl+;"
+split_vertical = "prefix+|"
+focus_pane_left = ["prefix+h", "ctrl+h"]
+focus_pane_down = ["prefix+j", "ctrl+j"]
+focus_pane_up = ["prefix+k", "ctrl+k"]
+focus_pane_right = ["prefix+l", "ctrl+l"]
+navigate_workspace_up = ["ctrl+k"]
+navigate_workspace_down = ["ctrl+j"]
+next_agent = ["prefix+]"]
+previous_agent = ["prefix+["]
+goto = "prefix+s"
+settings = "prefix+shift+s"
+
+[ui]
+agent_panel_sort = "spaces"
+prompt_new_tab_name = false
+
+[theme.custom]
+accent = "#7A6FF0"
+panel_bg = "reset"
+surface0 = "#161B22"
+surface1 = "#8B949E"
+
+overlay0 = "#8B949E"
+overlay1 = "#7A6FF0"
+
+text = "#e6e0f0"
+subtext0 = "#9AA4B2"
+
+surface_dim = "#1C2128"
+
+mauve = "#7A6FF0"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+red = "#f38ba8"
+blue = "#89b4fa"
+teal = "#94e2d5"
+peach = "#fab387"

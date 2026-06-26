@@ -22,11 +22,23 @@ return {
 		{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
 	},
 	opts = {
+		terminal_cmd = "claude --ide",
 		terminal = {
 			provider = "external",
 			provider_opts = {
-				external_terminal_cmd = function(cmd)
-					return { "tmux", "split-window", "-h", "-p", "40", cmd }
+				-- Pass IDE connection env (CLAUDE_CODE_SSE_PORT, ENABLE_IDE_INTEGRATION, ...)
+				-- into the new pane via `-e`. `tmux split-window` spawns in the tmux server
+				-- env, so jobstart's env never reaches the pane — without this, claude falls
+				-- back to lockfile auto-discovery and fails to connect when more than one
+				-- nvim IDE lockfile exists.
+				external_terminal_cmd = function(cmd, env)
+					local args = { "tmux", "split-window", "-h", "-p", "40" }
+					for k, v in pairs(env or {}) do
+						table.insert(args, "-e")
+						table.insert(args, k .. "=" .. v)
+					end
+					table.insert(args, cmd)
+					return args
 				end,
 			},
 		},

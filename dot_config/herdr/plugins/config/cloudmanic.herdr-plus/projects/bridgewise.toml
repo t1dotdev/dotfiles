@@ -1,0 +1,13 @@
+name = "bridgewise"
+working_dir = "~/Development/bridgewise"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

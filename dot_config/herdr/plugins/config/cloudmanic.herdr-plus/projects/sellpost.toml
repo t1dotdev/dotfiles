@@ -1,0 +1,13 @@
+name = "sellpost"
+working_dir = "~/Development/sellpost"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

@@ -1,0 +1,13 @@
+name = "t1social"
+working_dir = "~/Development/t1social"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

@@ -1,0 +1,13 @@
+name = "global-kbeauty"
+working_dir = "~/Development/global-kbeauty"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

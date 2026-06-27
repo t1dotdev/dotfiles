@@ -1,0 +1,136 @@
+# A "select" action like "Open Repo on GitHub": pick a folder under ~/.config from
+# the fuzzy list, open it in nvim in a new pane (split right, focused).
+#
+# Options are STATIC (herdr-plus select lists can't be generated at runtime), so
+# this list is a snapshot of ~/.config. Regenerate when folders change:
+#   cd ~/.config && ls -d */ | sed 's#/$##' | awk '{printf "\n[[options]]\nlabel = \"%s\"\nvalue = \"%s\"\n", $0, $0}'
+# ...and paste below, replacing the [[options]] blocks.
+
+name = "Edit ~/.config in nvim"
+description = "Pick a ~/.config folder and edit it in nvim"
+type = "select"
+command = "herdr pane split {{.PaneId}} --direction right --cwd ~/.config/{{.Value}} --focus | grep -oE '\"pane_id\":\"[^\"]+\"' | head -1 | cut -d'\"' -f4 | xargs -I{} herdr pane run {} 'nvim .'"
+
+[[options]]
+label = "aerospace"
+value = "aerospace"
+
+[[options]]
+label = "backup"
+value = "backup"
+
+[[options]]
+label = "cagent"
+value = "cagent"
+
+[[options]]
+label = "chezmoi"
+value = "chezmoi"
+
+[[options]]
+label = "cmux"
+value = "cmux"
+
+[[options]]
+label = "configstore"
+value = "configstore"
+
+[[options]]
+label = "fish"
+value = "fish"
+
+[[options]]
+label = "gh"
+value = "gh"
+
+[[options]]
+label = "ghostty"
+value = "ghostty"
+
+[[options]]
+label = "git"
+value = "git"
+
+[[options]]
+label = "github-copilot"
+value = "github-copilot"
+
+[[options]]
+label = "herdr"
+value = "herdr"
+
+[[options]]
+label = "homebrew"
+value = "homebrew"
+
+[[options]]
+label = "karabiner"
+value = "karabiner"
+
+[[options]]
+label = "lazygit"
+value = "lazygit"
+
+[[options]]
+label = "meridian"
+value = "meridian"
+
+[[options]]
+label = "nushell"
+value = "nushell"
+
+[[options]]
+label = "nvim"
+value = "nvim"
+
+[[options]]
+label = "openchamber"
+value = "openchamber"
+
+[[options]]
+label = "opencode"
+value = "opencode"
+
+[[options]]
+label = "otty"
+value = "otty"
+
+[[options]]
+label = "raycast"
+value = "raycast"
+
+[[options]]
+label = "sketchybar"
+value = "sketchybar"
+
+[[options]]
+label = "skhd"
+value = "skhd"
+
+[[options]]
+label = "starship"
+value = "starship"
+
+[[options]]
+label = "tanstack"
+value = "tanstack"
+
+[[options]]
+label = "tmux"
+value = "tmux"
+
+[[options]]
+label = "wezterm"
+value = "wezterm"
+
+[[options]]
+label = "yabai"
+value = "yabai"
+
+[[options]]
+label = "yazi"
+value = "yazi"
+
+[[options]]
+label = "zellij"
+value = "zellij"

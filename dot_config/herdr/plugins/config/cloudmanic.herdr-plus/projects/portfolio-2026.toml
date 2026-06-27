@@ -1,0 +1,13 @@
+name = "portfolio-2026"
+working_dir = "~/Development/portfolio-2026"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

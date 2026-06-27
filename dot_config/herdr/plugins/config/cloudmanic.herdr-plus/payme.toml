@@ -1,0 +1,28 @@
+name = "PayMe"
+description = "payme monorepo — backend / dashboard / web"
+working_dir = "~/Development/payme"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "servers"
+
+[[tabs.panes]]
+command = "cd payme-backend && exec nu"
+
+[[tabs.panes]]
+command = "cd payme-dashboard && exec nu"
+split = "right"
+
+[[tabs.panes]]
+command = "cd payme-web && exec nu"
+split = "right"
+
+[[tabs]]
+name = "terminal"

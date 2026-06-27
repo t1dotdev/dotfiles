@@ -1,0 +1,13 @@
+name = "lovertoon"
+working_dir = "~/Development/lovertoon"
+
+[[tabs]]
+name = "claude"
+command = "claude --dangerously-skip-permissions --chrome"
+
+[[tabs]]
+name = "lazygit"
+command = "lazygit"
+
+[[tabs]]
+name = "terminal"

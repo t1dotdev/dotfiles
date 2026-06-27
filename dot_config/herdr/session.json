@@ -2,11 +2,75 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "wS",
-      "custom_name": null,
-      "identity_cwd": "/Users/topone",
+      "id": "w17",
+      "custom_name": "chaoidgame",
+      "identity_cwd": "/Users/topone/Development/chaoidgame",
       "public_pane_numbers": {
-        "51": 1
+        "176": 33,
+        "147": 13,
+        "175": 32
+      },
+      "next_public_pane_number": 34,
+      "public_tab_numbers": [
+        3
+      ],
+      "next_public_tab_number": 14,
+      "tabs": [
+        {
+          "custom_name": "terminal",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 147
+              },
+              "second": {
+                "Split": {
+                  "direction": "Vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 175
+                  },
+                  "second": {
+                    "Pane": 176
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "176": {
+              "cwd": "/Users/topone/Development/chaoidgame",
+              "label": "chaoidgame"
+            },
+            "175": {
+              "cwd": "/Users/topone/Development/chaoidgame",
+              "label": "chaoidgame"
+            },
+            "147": {
+              "cwd": "/Users/topone/Development/chaoidgame",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "9e22e41f-7919-49c0-9494-8c170b2cbeb0"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 147,
+          "root_pane": 147
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w1C",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/.config",
+      "public_pane_numbers": {
+        "177": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -17,23 +81,24 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 51
+            "Pane": 177
           },
           "panes": {
-            "51": {
-              "cwd": "/Users/topone"
+            "177": {
+              "cwd": "/Users/topone/.config",
+              "label": ".config"
             }
           },
           "zoomed": false,
-          "focused": 51,
-          "root_pane": 51
+          "focused": 177,
+          "root_pane": 177
         }
       ],
       "active_tab": 0
     }
   ],
-  "active": 0,
-  "selected": 0,
+  "active": 1,
+  "selected": 1,
   "sidebar_width": 26,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []

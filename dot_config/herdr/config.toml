@@ -1,6 +1,7 @@
 onboarding = false
 [terminal]
 default_shell = "nu"
+new_cwd = "home"
 [keys]
 prefix = "ctrl+;"
 split_vertical = "prefix+|"
@@ -81,6 +82,18 @@ key = "ctrl+l"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
+
+[[keys.command]]
+key = "prefix+p"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.projects"
+description = "herdr-plus: projects picker"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.quick-actions"
+description = "herdr-plus: quick actions"
 
 [ui.toast]
 delivery = "herdr"

@@ -130,3 +130,15 @@ $env.PATH = (
     | prepend ($env.HOME | path join ".cargo/bin")
     | prepend ($env.HOME | path join ".local/bin")
 )
+
+# Auto-rename herdr pane to current dir. Runs each prompt, no-op outside herdr.
+$env.config.hooks.pre_prompt = (
+    $env.config.hooks.pre_prompt? | default [] | append {||
+        if 'HERDR_PANE_ID' in $env {
+            try { herdr pane rename $env.HERDR_PANE_ID ($env.PWD | path basename) o+e>| ignore }
+        }
+    }
+)
+
+# Right prompt on last line of multi-line prompt (needed for starship add_newline)
+$env.config.render_right_prompt_on_last_line = true

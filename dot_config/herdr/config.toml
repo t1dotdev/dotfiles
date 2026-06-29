@@ -1,7 +1,7 @@
 onboarding = false
 [terminal]
 default_shell = "nu"
-new_cwd = "home"
+new_cwd = "follow"
 [keys]
 prefix = "ctrl+;"
 split_vertical = "prefix+|"

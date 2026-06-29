@@ -1,2 +1,11 @@
 [flavor]
-dark = "dracula"
+dark = "catppuccin-mocha"
+
+# Rounded powerline caps around the mode/progress indicators (needs a Nerd Font)
+[status]
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Slanted powerline separators between tabs
+[tabs]
+sep_inner = { open = "", close = "" }

@@ -17,8 +17,7 @@ previous_agent = ["prefix+["]
 goto = "prefix+s"
 settings = "prefix+shift+s"
 switch_tab = "prefix+1..9"
-switch_workspace = "prefix+shift+1..9"
-focus_agent = "prefix+alt+1..9"
+focus_agent = "prefix+ctrl+1..9"
 
 [ui]
 agent_panel_sort = "spaces"
@@ -94,6 +93,62 @@ key = "prefix+a"
 type = "plugin_action"
 command = "cloudmanic.herdr-plus.quick-actions"
 description = "herdr-plus: quick actions"
+
+# Workspace switch via shift+digit. Terminal sends the shifted SYMBOL (US layout:
+# shift+1=! shift+3=# shift+4=$ shift+5=%), not shift+digit, so bind the symbol.
+[[keys.command]]
+key = "prefix+!"
+type = "shell"
+command = "herdr workspace focus 1"
+description = "switch workspace 1"
+
+[[keys.command]]
+key = "prefix+#"
+type = "shell"
+command = "herdr workspace focus 3"
+description = "switch workspace 3"
+
+[[keys.command]]
+key = "prefix+$"
+type = "shell"
+command = "herdr workspace focus 4"
+description = "switch workspace 4"
+
+[[keys.command]]
+key = "prefix+%"
+type = "shell"
+command = "herdr workspace focus 5"
+description = "switch workspace 5"
+
+[[keys.command]]
+key = "prefix+@"
+type = "shell"
+command = "herdr workspace focus 2"
+description = "switch workspace 2"
+
+[[keys.command]]
+key = "prefix+^"
+type = "shell"
+command = "herdr workspace focus 6"
+description = "switch workspace 6"
+
+[[keys.command]]
+key = "prefix+&"
+type = "shell"
+command = "herdr workspace focus 7"
+description = "switch workspace 7"
+
+[[keys.command]]
+key = "prefix+*"
+type = "shell"
+command = "herdr workspace focus 8"
+description = "switch workspace 8"
+
+[[keys.command]]
+key = "prefix+("
+type = "shell"
+command = "herdr workspace focus 9"
+description = "switch workspace 9"
 
 [ui.toast]
 delivery = "herdr"

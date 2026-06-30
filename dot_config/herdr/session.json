@@ -2,99 +2,160 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w17",
-      "custom_name": "chaoidgame",
-      "identity_cwd": "/Users/topone/Development/chaoidgame",
+      "id": "w1W",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
       "public_pane_numbers": {
-        "176": 33,
-        "147": 13,
-        "175": 32
+        "344": 24,
+        "346": 26,
+        "308": 3,
+        "307": 2,
+        "306": 1
       },
-      "next_public_pane_number": 34,
+      "next_public_pane_number": 43,
       "public_tab_numbers": [
-        3
+        1,
+        2
       ],
-      "next_public_tab_number": 14,
+      "next_public_tab_number": 30,
       "tabs": [
         {
-          "custom_name": "terminal",
+          "custom_name": null,
           "layout": {
             "Split": {
               "direction": "Horizontal",
               "ratio": 0.5,
               "first": {
-                "Pane": 147
+                "Split": {
+                  "direction": "Vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 306
+                  },
+                  "second": {
+                    "Pane": 344
+                  }
+                }
               },
               "second": {
                 "Split": {
                   "direction": "Vertical",
                   "ratio": 0.5,
                   "first": {
-                    "Pane": 175
+                    "Pane": 307
                   },
                   "second": {
-                    "Pane": 176
+                    "Pane": 346
                   }
                 }
               }
             }
           },
           "panes": {
-            "176": {
-              "cwd": "/Users/topone/Development/chaoidgame",
-              "label": "chaoidgame"
+            "306": {
+              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
+              "label": "kaoorg-backend"
             },
-            "175": {
-              "cwd": "/Users/topone/Development/chaoidgame",
-              "label": "chaoidgame"
+            "307": {
+              "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
+              "label": "kaoorg-web"
             },
-            "147": {
-              "cwd": "/Users/topone/Development/chaoidgame",
+            "346": {
+              "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
+              "label": "kaoorg-web"
+            },
+            "344": {
+              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
+              "label": "kaoorg-backend",
               "agent_session": {
                 "source": "herdr:claude",
                 "agent": "claude",
                 "kind": "id",
-                "value": "9e22e41f-7919-49c0-9494-8c170b2cbeb0"
+                "value": "4dc77b7d-642e-4b59-a2dc-d391f7641024"
               }
             }
           },
           "zoomed": false,
-          "focused": 147,
-          "root_pane": 147
+          "focused": 346,
+          "root_pane": 306
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 308
+          },
+          "panes": {
+            "308": {
+              "cwd": "/Users/topone/Development/kaoorg",
+              "label": "kaoorg",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "0ffdd84b-600a-4f87-90fc-b6ee6680f605"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 308,
+          "root_pane": 308
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     },
     {
-      "id": "w1C",
+      "id": "w2F",
       "custom_name": null,
-      "identity_cwd": "/Users/topone/.config",
+      "identity_cwd": "/Users/topone/.config/herdr",
       "public_pane_numbers": {
-        "177": 1
+        "433": 4,
+        "430": 1
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 5,
       "public_tab_numbers": [
-        1
+        1,
+        4
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 5,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 177
+            "Pane": 430
           },
           "panes": {
-            "177": {
-              "cwd": "/Users/topone/.config",
-              "label": ".config"
+            "430": {
+              "cwd": "/Users/topone/.config/herdr",
+              "label": "herdr",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "9dec6019-fdd1-4f86-909e-326c3078a18b"
+              }
             }
           },
           "zoomed": false,
-          "focused": 177,
-          "root_pane": 177
+          "focused": 430,
+          "root_pane": 430
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 433
+          },
+          "panes": {
+            "433": {
+              "cwd": "/Users/topone/.config/herdr",
+              "label": "chezmoi"
+            }
+          },
+          "zoomed": false,
+          "focused": 433,
+          "root_pane": 433
         }
       ],
-      "active_tab": 0
+      "active_tab": 1
     }
   ],
   "active": 1,

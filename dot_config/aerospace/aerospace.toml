@@ -68,12 +68,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
-inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
-outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
-outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 80 }, 16]
-outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 84 }, 20]
-outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 16]
+inner.horizontal = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
+inner.vertical = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
+outer.left = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 8]
+outer.bottom = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 80 }, 12]
+outer.top = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 84 }, 12]
+outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -119,8 +119,8 @@ alt-l = 'focus right'
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Twilight.app"'
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Dia.app"'
 # alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Safari.app"'
-alt-ctrl-shift-cmd-1 = ['exec-and-forget open -a "Google Chrome.app"']
-alt-ctrl-shift-cmd-2 = 'exec-and-forget open -a "Ghostty.app"'
+alt-ctrl-shift-cmd-2 = ['exec-and-forget open -a "Google Chrome.app"']
+alt-ctrl-shift-cmd-1 = 'exec-and-forget open -a "Ghostty.app"'
 # alt-ctrl-shift-cmd-3 = 'exec-and-forget open -a "ChatGPT.app"'
 
 # alt-ctrl-shift-cmd-t = 'exec-and-forget open -a "WezTerm.app"'

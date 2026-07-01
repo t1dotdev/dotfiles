@@ -69,7 +69,7 @@ let theme = {
 
 $env.PROMPT_INDICATOR = {|| "> " }
 $env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "$ "
+$env.PROMPT_INDICATOR_VI_NORMAL = "| "
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 $env.config = {
@@ -112,6 +112,7 @@ alias ta = tmux attach -t
 alias tk = tmux kill-session -t
 alias tka = tmux kill-server
 alias c = claude
+alias commit = claude -p "review the staged and unstaged git changes and create a commit with a clear conventional-commit message" --model claude-sonnet-5 --allowedTools "Bash(git add:*)" "Bash(git commit:*)" "Bash(git status:*)" "Bash(git diff:*)" "Bash(git log:*)"
 alias o = opencode
 alias y = yazi
 alias h = herdr

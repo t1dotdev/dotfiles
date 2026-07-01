@@ -12,8 +12,6 @@ focus_pane_up = ["prefix+k"]
 focus_pane_right = ["prefix+l"]
 navigate_workspace_up = ["ctrl+alt+k"]
 navigate_workspace_down = ["ctrl+alt+j"]
-next_agent = ["prefix+]"]
-previous_agent = ["prefix+["]
 goto = "prefix+s"
 settings = "prefix+shift+s"
 switch_tab = "prefix+1..9"
@@ -22,6 +20,7 @@ focus_agent = "prefix+ctrl+1..9"
 [ui]
 agent_panel_sort = "spaces"
 prompt_new_tab_name = false
+
 
 [theme.custom]
 accent = "#7A6FF0"

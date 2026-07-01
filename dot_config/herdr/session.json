@@ -6,18 +6,18 @@
       "custom_name": null,
       "identity_cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
       "public_pane_numbers": {
-        "344": 24,
         "346": 26,
-        "308": 3,
         "307": 2,
-        "306": 1
+        "306": 1,
+        "344": 24,
+        "308": 3
       },
-      "next_public_pane_number": 43,
+      "next_public_pane_number": 45,
       "public_tab_numbers": [
         1,
         2
       ],
-      "next_public_tab_number": 30,
+      "next_public_tab_number": 32,
       "tabs": [
         {
           "custom_name": null,
@@ -52,17 +52,23 @@
             }
           },
           "panes": {
-            "306": {
-              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
-              "label": "kaoorg-backend"
-            },
             "307": {
               "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
               "label": "kaoorg-web"
             },
             "346": {
               "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
-              "label": "kaoorg-web"
+              "label": "kaoorg-web",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "e8ae2e73-9d5e-4e4f-8f99-caa4bf49ec3d"
+              }
+            },
+            "306": {
+              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
+              "label": "kaoorg-backend"
             },
             "344": {
               "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
@@ -104,63 +110,111 @@
       "active_tab": 1
     },
     {
-      "id": "w2F",
+      "id": "w2J",
       "custom_name": null,
-      "identity_cwd": "/Users/topone/.config/herdr",
+      "identity_cwd": "/Users/topone/Development/sortskin",
       "public_pane_numbers": {
-        "433": 4,
-        "430": 1
+        "445": 2,
+        "444": 1
       },
-      "next_public_pane_number": 5,
+      "next_public_pane_number": 4,
       "public_tab_numbers": [
         1,
-        4
+        2
       ],
-      "next_public_tab_number": 5,
+      "next_public_tab_number": 3,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 430
+            "Pane": 444
           },
           "panes": {
-            "430": {
-              "cwd": "/Users/topone/.config/herdr",
-              "label": "herdr",
+            "444": {
+              "cwd": "/Users/topone/Development/sortskin",
+              "label": "sortskin",
               "agent_session": {
                 "source": "herdr:claude",
                 "agent": "claude",
                 "kind": "id",
-                "value": "9dec6019-fdd1-4f86-909e-326c3078a18b"
+                "value": "53321b2d-bdce-45c0-8b38-5b4f98691f74"
               }
             }
           },
           "zoomed": false,
-          "focused": 430,
-          "root_pane": 430
+          "focused": 444,
+          "root_pane": 444
         },
         {
           "custom_name": null,
           "layout": {
-            "Pane": 433
+            "Pane": 445
           },
           "panes": {
-            "433": {
-              "cwd": "/Users/topone/.config/herdr",
-              "label": "chezmoi"
+            "445": {
+              "cwd": "/Users/topone",
+              "label": "topone"
             }
           },
           "zoomed": false,
-          "focused": 433,
-          "root_pane": 433
+          "focused": 445,
+          "root_pane": 445
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w2M",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/.config/herdr",
+      "public_pane_numbers": {
+        "450": 2,
+        "449": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 449
+          },
+          "panes": {
+            "449": {
+              "cwd": "/Users/topone/.config/herdr",
+              "label": "herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 449,
+          "root_pane": 449
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 450
+          },
+          "panes": {
+            "450": {
+              "cwd": "/Users/topone/.config/herdr",
+              "label": "herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 450,
+          "root_pane": 450
         }
       ],
       "active_tab": 1
     }
   ],
-  "active": 1,
-  "selected": 1,
+  "active": 2,
+  "selected": 2,
   "sidebar_width": 26,
-  "sidebar_section_split": 0.5,
+  "sidebar_section_split": 0.4680851,
   "collapsed_space_keys": []
 }

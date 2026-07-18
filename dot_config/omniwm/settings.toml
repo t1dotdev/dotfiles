@@ -43,10 +43,10 @@ moveMouseToFocusedWindow = false
 size = 16.0
 
 [gaps.outer]
-bottom = 64.0
+bottom = 100.0
 left = 16.0
 right = 16.0
-top = 64.0
+top = 100.0
 
 [general]
 animationsEnabled = true

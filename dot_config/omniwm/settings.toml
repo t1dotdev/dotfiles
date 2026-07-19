@@ -1,3 +1,4 @@
+monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
@@ -80,7 +81,8 @@ margin = 1
 [niri]
 alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
-columnWidthPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
+columnWidthPresets = [0.3333333333333333, 0.5, 0.66, 0.98]
+defaultColumnWidth = 0.98
 infiniteLoop = false
 maxVisibleColumns = 1
 singleWindowAspectRatio = "column_width"
@@ -135,7 +137,7 @@ useWorkspaceId = false
 [workspaceBar]
 backgroundOpacity = 0.1
 deduplicateAppIcons = false
-enabled = true
+enabled = false
 excludedBundleIDs = []
 height = 24.0
 hideEmptyWorkspaces = false
@@ -831,13 +833,6 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
-
-[[monitorBarOverrides]]
-enabled = false
-id = "940DB91C-9BD6-4A4D-AA54-A027E1973FD3"
-monitorDisplayId = 1
-monitorName = "Built-in Retina Display"
-showLabels = true
 
 [[monitorGapOverrides]]
 id = "BCA785E0-56BE-47F0-B35D-AB1F2D13CBE1"

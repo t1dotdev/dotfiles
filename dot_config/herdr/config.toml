@@ -1,4 +1,6 @@
 onboarding = false
+[experimental]
+kitty_graphics = true
 [terminal]
 default_shell = "nu"
 new_cwd = "follow"
@@ -150,4 +152,4 @@ command = "herdr workspace focus 9"
 description = "switch workspace 9"
 
 [ui.toast]
-delivery = "herdr"
+delivery = "terminal"

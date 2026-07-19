@@ -2,22 +2,75 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w1W",
+      "id": "w3E",
       "custom_name": null,
-      "identity_cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
+      "identity_cwd": "/Users/topone/dev/chaoidgame",
       "public_pane_numbers": {
-        "346": 26,
-        "307": 2,
-        "306": 1,
-        "344": 24,
-        "308": 3
+        "1": 1,
+        "2": 6
       },
-      "next_public_pane_number": 45,
+      "next_public_pane_number": 10,
       "public_tab_numbers": [
         1,
-        2
+        4
       ],
-      "next_public_tab_number": 32,
+      "next_public_tab_number": 6,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 1
+          },
+          "panes": {
+            "1": {
+              "cwd": "/Users/topone/dev/chaoidgame",
+              "label": "chaoidgame",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "e35e7187-167e-42e9-bcc8-ff220184f72b"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 1,
+          "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 2
+          },
+          "panes": {
+            "2": {
+              "cwd": "/Users/topone/dev/chaoidgame",
+              "label": "chaoidgame"
+            }
+          },
+          "zoomed": false,
+          "focused": 2,
+          "root_pane": 2
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w3G",
+      "custom_name": null,
+      "identity_cwd": "/Users/topone/dev/sortskin",
+      "public_pane_numbers": {
+        "3": 1,
+        "7": 13,
+        "4": 8,
+        "8": 14
+      },
+      "next_public_pane_number": 15,
+      "public_tab_numbers": [
+        1,
+        7
+      ],
+      "next_public_tab_number": 8,
       "tabs": [
         {
           "custom_name": null,
@@ -26,194 +79,73 @@
               "direction": "Horizontal",
               "ratio": 0.5,
               "first": {
-                "Split": {
-                  "direction": "Vertical",
-                  "ratio": 0.5,
-                  "first": {
-                    "Pane": 306
-                  },
-                  "second": {
-                    "Pane": 344
-                  }
-                }
+                "Pane": 3
               },
               "second": {
-                "Split": {
-                  "direction": "Vertical",
-                  "ratio": 0.5,
-                  "first": {
-                    "Pane": 307
-                  },
-                  "second": {
-                    "Pane": 346
-                  }
-                }
+                "Pane": 4
               }
             }
           },
           "panes": {
-            "307": {
-              "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
-              "label": "kaoorg-web"
-            },
-            "346": {
-              "cwd": "/Users/topone/Development/kaoorg/kaoorg-web",
-              "label": "kaoorg-web",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "e8ae2e73-9d5e-4e4f-8f99-caa4bf49ec3d"
-              }
-            },
-            "306": {
-              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
-              "label": "kaoorg-backend"
-            },
-            "344": {
-              "cwd": "/Users/topone/Development/kaoorg/kaoorg-backend",
-              "label": "kaoorg-backend",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "4dc77b7d-642e-4b59-a2dc-d391f7641024"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 346,
-          "root_pane": 306
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 308
-          },
-          "panes": {
-            "308": {
-              "cwd": "/Users/topone/Development/kaoorg",
-              "label": "kaoorg",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "0ffdd84b-600a-4f87-90fc-b6ee6680f605"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 308,
-          "root_pane": 308
-        }
-      ],
-      "active_tab": 1
-    },
-    {
-      "id": "w2J",
-      "custom_name": null,
-      "identity_cwd": "/Users/topone/Development/sortskin",
-      "public_pane_numbers": {
-        "445": 2,
-        "444": 1
-      },
-      "next_public_pane_number": 4,
-      "public_tab_numbers": [
-        1,
-        2
-      ],
-      "next_public_tab_number": 3,
-      "tabs": [
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 444
-          },
-          "panes": {
-            "444": {
-              "cwd": "/Users/topone/Development/sortskin",
+            "3": {
+              "cwd": "/Users/topone/dev/sortskin",
               "label": "sortskin",
               "agent_session": {
                 "source": "herdr:claude",
                 "agent": "claude",
                 "kind": "id",
-                "value": "53321b2d-bdce-45c0-8b38-5b4f98691f74"
+                "value": "e92c1c96-3e43-4800-a9a6-c36b09516831"
+              }
+            },
+            "4": {
+              "cwd": "/Users/topone/dev/sortskin",
+              "label": "sortskin",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "a3baf120-901a-44af-bb88-3cdd74d40ae9"
               }
             }
           },
           "zoomed": false,
-          "focused": 444,
-          "root_pane": 444
+          "focused": 3,
+          "root_pane": 3
         },
         {
           "custom_name": null,
           "layout": {
-            "Pane": 445
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 7
+              },
+              "second": {
+                "Pane": 8
+              }
+            }
           },
           "panes": {
-            "445": {
-              "cwd": "/Users/topone",
-              "label": "topone"
+            "8": {
+              "cwd": "/Users/topone/dev/sortskin",
+              "label": "sortskin"
+            },
+            "7": {
+              "cwd": "/Users/topone/dev/sortskin",
+              "label": "sortskin"
             }
           },
           "zoomed": false,
-          "focused": 445,
-          "root_pane": 445
+          "focused": 8,
+          "root_pane": 7
         }
       ],
       "active_tab": 0
-    },
-    {
-      "id": "w2M",
-      "custom_name": null,
-      "identity_cwd": "/Users/topone/.config/herdr",
-      "public_pane_numbers": {
-        "450": 2,
-        "449": 1
-      },
-      "next_public_pane_number": 3,
-      "public_tab_numbers": [
-        1,
-        2
-      ],
-      "next_public_tab_number": 3,
-      "tabs": [
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 449
-          },
-          "panes": {
-            "449": {
-              "cwd": "/Users/topone/.config/herdr",
-              "label": "herdr"
-            }
-          },
-          "zoomed": false,
-          "focused": 449,
-          "root_pane": 449
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 450
-          },
-          "panes": {
-            "450": {
-              "cwd": "/Users/topone/.config/herdr",
-              "label": "herdr"
-            }
-          },
-          "zoomed": false,
-          "focused": 450,
-          "root_pane": 450
-        }
-      ],
-      "active_tab": 1
     }
   ],
-  "active": 2,
-  "selected": 2,
+  "active": 0,
+  "selected": 0,
   "sidebar_width": 26,
   "sidebar_section_split": 0.4680851,
   "collapsed_space_keys": []

@@ -4423,3 +4423,139 @@
 2026-06-27T01:43:55.948202Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
 2026-06-27T01:43:55.948675Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
 2026-06-27T01:44:00.949704Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:54:41.111837Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-07-02T02:54:47.393705Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-07-02T02:54:47.394555Z  INFO herdr::api::server: api server listening path=/Users/topone/.config/herdr/herdr.sock
+2026-07-02T02:54:47.399395Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.402629Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=45014
+2026-07-02T02:54:47.402982Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.405179Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=45015
+2026-07-02T02:54:47.405325Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=6 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.407345Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=6 pid=45016
+2026-07-02T02:54:47.407608Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=7 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.409875Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=7 pid=45017
+2026-07-02T02:54:47.410298Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=2
+2026-07-02T02:54:47.410328Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.433711Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-02T02:54:47.435113Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/Users/topone
+2026-07-02T02:54:47.435281Z  INFO herdr::server::headless: client protocol socket listening path=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-02T02:54:47.435309Z  INFO herdr::server::headless: herdr server started api_socket=/Users/topone/.config/herdr/herdr.sock client_socket=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-02T02:54:47.435333Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=45013
+2026-07-02T02:54:47.439622Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.439899Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.442612Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.442968Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.443728Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.444973Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.445088Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.445196Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.445245Z  INFO herdr::server::headless: client connected client_id=2 cols=148 rows=47 cell_width_px=19 cell_height_px=38 render_encoding=SemanticFrame
+2026-07-02T02:54:47.457838Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=46 cols=121 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.460258Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=45182
+2026-07-02T02:54:47.460553Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=44 cols=58 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.463647Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=45184
+2026-07-02T02:54:47.463910Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=44 cols=58 scrollback_limit_bytes=10000000
+2026-07-02T02:54:47.475874Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=45191
+2026-07-02T02:54:47.499950Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.502091Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.513773Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.514713Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:54:47.515876Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:47.516000Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:54:48.020884Z  INFO herdr::pane: agent changed pane=3 previous_agent=None agent=Some(Claude) process=claude pgid=Some(45308)
+2026-07-02T02:54:48.020935Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(Claude) process=claude pgid=Some(45307)
+2026-07-02T02:54:48.030886Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(Claude) process=claude pgid=Some(45309)
+2026-07-02T02:54:48.858724Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t3"
+2026-07-02T02:54:49.491171Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:54:51.958891Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:54:51.958956Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:54:51.958969Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:54:51.959001Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:54:53.869763Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:workspace:focus" method="workspace.focus" changes_ui=true
+2026-07-02T02:54:53.869858Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3E"
+2026-07-02T02:54:53.869880Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3E" tab_id="w3E:t1"
+2026-07-02T02:54:53.869942Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:workspace:focus" method="workspace.focus"
+2026-07-02T02:54:58.880426Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:55:00.557954Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3G"
+2026-07-02T02:55:00.558020Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:01.591333Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:01.591444Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:01.591464Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:01.591519Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:01.984109Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:01.984155Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:01.984164Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:01.984191Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:02.553171Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:02.553256Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:02.553277Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:02.553324Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:03.030875Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:03.030963Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.030981Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.031029Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:03.298485Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:03.298533Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.298543Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.298571Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:03.909029Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:03.909139Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.909161Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:03.909221Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:04.619776Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:55:04.619891Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:04.619918Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:04.619972Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:55:05.515915Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t3"
+2026-07-02T02:55:08.208556Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t7"
+2026-07-02T02:55:09.679113Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:14.685015Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:55:16.296265Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t7"
+2026-07-02T02:55:21.299564Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:55:33.665884Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:55:35.245811Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t7"
+2026-07-02T02:55:36.983732Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=23 cols=61 scrollback_limit_bytes=10000000
+2026-07-02T02:55:36.988772Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=46533
+2026-07-02T02:55:37.044611Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:55:37.048338Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:55:37.550228Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 1, signal: Some(\"Hangup: 1\") }"
+2026-07-02T02:55:37.569444Z  INFO herdr::pane: pane session terminated pane=5 pid=45015 signal=Hangup
+2026-07-02T02:55:37.573111Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 1, signal: Some(\"Hangup: 1\") }"
+2026-07-02T02:55:37.593171Z  INFO herdr::pane: pane session terminated pane=6 pid=45016 signal=Hangup
+2026-07-02T02:55:37.593576Z  WARN herdr::app::actions: PaneDied for unknown pane pane=5
+2026-07-02T02:55:37.593617Z  WARN herdr::app::actions: PaneDied for unknown pane pane=6
+2026-07-02T02:55:42.056031Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:55:42.260464Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:55:42.260885Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:55:47.267940Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:57:58.535385Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:57:59.729828Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t7"
+2026-07-02T02:58:02.758678Z  INFO herdr::pane: agent changed pane=8 previous_agent=None agent=Some(Claude) process=claude pgid=Some(47264)
+2026-07-02T02:58:06.568371Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:58:11.577136Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:58:16.217907Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:rename" method="pane.rename" changes_ui=true
+2026-07-02T02:58:16.218342Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:rename" method="pane.rename"
+2026-07-02T02:58:16.744259Z  INFO herdr::pane: agent changed pane=8 previous_agent=Some(Claude) agent=None pgid=Some(46533)
+2026-07-02T02:58:21.441682Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:58:22.874002Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:58:22.874133Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:58:22.874157Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:58:22.874209Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:58:27.878765Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:59:36.261928Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:pane:focus" method="pane.focus_direction" changes_ui=true
+2026-07-02T02:59:36.262191Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:59:36.262203Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3G" tab_id="w3G:t1"
+2026-07-02T02:59:36.262235Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:pane:focus" method="pane.focus_direction"
+2026-07-02T02:59:39.534473Z  INFO herdr::logging: api request received event="api.request.start" subsystem="api" outcome="started" request_id="cli:workspace:focus" method="workspace.focus" changes_ui=true
+2026-07-02T02:59:39.534563Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3E"
+2026-07-02T02:59:39.534589Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3E" tab_id="w3E:t1"
+2026-07-02T02:59:39.534661Z  INFO herdr::logging: api request completed event="api.request.complete" subsystem="api" outcome="ok" request_id="cli:workspace:focus" method="workspace.focus"
+2026-07-02T02:59:44.543040Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T02:59:57.868926Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3E" tab_id="w3E:t4"
+2026-07-02T03:00:00.856648Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=46 cols=122 scrollback_limit_bytes=10000000
+2026-07-02T03:00:00.859077Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=48134
+2026-07-02T03:00:02.882431Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2
+2026-07-02T03:00:07.693368Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 0, signal: None }"
+2026-07-02T03:00:07.693684Z  INFO herdr::pane: pane session terminated pane=9 pid=48134 signal=Hangup
+2026-07-02T03:00:10.977930Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3E" tab_id="w3E:t1"
+2026-07-02T03:00:15.987571Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/topone/.config/herdr/session.json workspaces=2

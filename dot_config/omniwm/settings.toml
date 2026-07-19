@@ -1,6 +1,4 @@
-monitorBarOverrides = []
 monitorDwindleOverrides = []
-monitorGapOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
 
@@ -26,7 +24,7 @@ maxTotalBytes = 67108864
 [dwindle]
 defaultSplitRatio = 1.0
 moveToRootStable = true
-singleWindowAspectRatio = "1920x1080"
+singleWindowAspectRatio = "fill"
 smartSplit = false
 splitWidthMultiplier = 1.0
 useGlobalGaps = true
@@ -43,10 +41,10 @@ moveMouseToFocusedWindow = false
 size = 16.0
 
 [gaps.outer]
-bottom = 100.0
-left = 16.0
-right = 16.0
-top = 100.0
+bottom = 8.0
+left = 8.0
+right = 8.0
+top = 40.0
 
 [general]
 animationsEnabled = true
@@ -80,12 +78,12 @@ enabled = true
 margin = 1
 
 [niri]
-alwaysCenterSingleColumn = false
+alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
 columnWidthPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
 infiniteLoop = false
-maxVisibleColumns = 2
-singleWindowAspectRatio = "1920x1080"
+maxVisibleColumns = 1
+singleWindowAspectRatio = "column_width"
 
 [overview]
 zoom = 0.5
@@ -117,21 +115,21 @@ green = 0.43529411764705883
 red = 0.4784313725490196
 
 [quakeTerminal]
-animationDuration = 0.1
+animationDuration = 0.0
 autoHide = false
 enabled = true
 heightPercent = 50.0
 monitorMode = "focusedWindow"
 opacity = 1.0
 position = "center"
-widthPercent = 40.0
+widthPercent = 60.0
 
 [routing]
 mode = "macOS"
 
 [statusBar]
 showAppNames = false
-showWorkspaceName = false
+showWorkspaceName = true
 useWorkspaceId = false
 
 [workspaceBar]
@@ -833,6 +831,18 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[monitorBarOverrides]]
+enabled = false
+id = "940DB91C-9BD6-4A4D-AA54-A027E1973FD3"
+monitorDisplayId = 1
+monitorName = "Built-in Retina Display"
+showLabels = true
+
+[[monitorGapOverrides]]
+id = "BCA785E0-56BE-47F0-B35D-AB1F2D13CBE1"
+monitorDisplayId = 1
+monitorName = "Built-in Retina Display"
 
 [[monitorRoutingOverrides]]
 gridColumn = 0

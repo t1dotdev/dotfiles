@@ -62,3 +62,17 @@
 2026-06-30T08:06:55.507092Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=76361
 2026-06-30T08:06:55.507219Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
 2026-06-30T08:06:55.507422Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-07-01T11:14:48.925774Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=95838
+2026-07-01T11:14:48.926034Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-01T11:14:48.980138Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-07-01T12:01:44.865479Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=95838
+2026-07-01T12:01:46.148891Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=58284
+2026-07-01T12:01:46.148948Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-01T12:01:46.195580Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-07-01T17:06:14.486349Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=77477
+2026-07-01T17:06:14.486541Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-01T17:06:14.508353Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-07-02T02:54:40.237612Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=77477
+2026-07-02T02:54:47.440660Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=45012
+2026-07-02T02:54:47.440891Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-07-02T02:54:47.445272Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame

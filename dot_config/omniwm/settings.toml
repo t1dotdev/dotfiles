@@ -1,6 +1,4 @@
-monitorBarOverrides = []
 monitorDwindleOverrides = []
-monitorNiriOverrides = []
 monitorOrientationOverrides = []
 
 [appearance]
@@ -82,7 +80,6 @@ margin = 1
 alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
 columnWidthPresets = [0.3333333333333333, 0.5, 0.66, 0.98]
-defaultColumnWidth = 0.98
 infiniteLoop = false
 maxVisibleColumns = 1
 singleWindowAspectRatio = "column_width"
@@ -834,15 +831,38 @@ id = "toggleOverview"
 binding = "Unassigned"
 id = "toggleSystemStats"
 
+[[monitorBarOverrides]]
+backgroundOpacity = 0.0
+enabled = true
+height = 24.0
+id = "069E5859-22F4-47E1-A8C3-1A1490BF35D1"
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+xOffset = 0.0
+yOffset = -40.0
+
 [[monitorGapOverrides]]
 id = "BCA785E0-56BE-47F0-B35D-AB1F2D13CBE1"
-monitorDisplayId = 1
 monitorName = "Built-in Retina Display"
+
+[[monitorGapOverrides]]
+id = "0724CB0B-CFB3-4025-B4BB-F9F43B5625AA"
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+outerGapBottom = 100.0
+outerGapTop = 100.0
+
+[[monitorNiriOverrides]]
+id = "87656202-F0C1-4C9D-B248-86F5C71EC249"
+maxVisibleColumns = 2
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+singleWindowAspectRatio = "1920x1080"
 
 [[monitorRoutingOverrides]]
 gridColumn = 0
 gridRow = 0
-monitorDisplayId = 1
+monitorDisplayId = 3
 monitorName = "Mi Monitor"
 
 [[workspaces]]

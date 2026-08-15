@@ -45,6 +45,9 @@ return {
       },
       indent = {
         enable = true,
+        -- ponytail: ts indent returns 0 inside a not-yet-closed tag (ERROR node),
+        -- so `o` lands at col 0. Builtin indent/html.vim handles it.
+        disable = { "html" },
       },
       incremental_selection = {
         enable = true,

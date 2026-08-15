@@ -24,6 +24,7 @@ maxTotalBytes = 67108864
 defaultSplitRatio = 1.0
 moveToRootStable = true
 singleWindowAspectRatio = "fill"
+singleWindowFit = "fill"
 smartSplit = false
 splitWidthMultiplier = 1.0
 useGlobalGaps = true
@@ -49,6 +50,7 @@ top = 36.0
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
+hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
 preventSleepEnabled = false
 systemHyperTrigger = "None"
@@ -57,13 +59,14 @@ updateChecksEnabled = true
 [gestures]
 fingerCount = 3
 invertDirection = true
+mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
 scrollEnabled = true
 scrollModifierKey = "optionShift"
 scrollSensitivity = 5.0
 trackpadScrollStyle = "snap"
 workspaceSwipeAxis = "vertical"
-workspaceSwipeEnabled = true
+workspaceSwipeEnabled = false
 workspaceSwipeFingerCount = 3
 
 [hiddenBar]
@@ -80,9 +83,12 @@ margin = 1
 alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
 columnWidthPresets = [0.3333333333333333, 0.5, 0.66, 0.98]
+containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
 infiniteLoop = false
 maxVisibleColumns = 1
 singleWindowAspectRatio = "column_width"
+singleWindowFit = "container_primary_span"
+visibleContainerCount = 1
 
 [overview]
 zoom = 0.5
@@ -116,6 +122,8 @@ red = 0.4784313725490196
 [quakeTerminal]
 animationDuration = 0.0
 autoHide = false
+backgroundBlurRadius = 0
+backgroundEffect = "standardBlur"
 enabled = true
 heightPercent = 50.0
 monitorMode = "focusedWindow"
@@ -156,6 +164,8 @@ alpha = 1.0
 blue = 0.9411764705882353
 green = 0.43529411764705883
 red = 0.4784313725490196
+
+[workspaceBar.iconOverrides]
 
 [[appRules]]
 bundleId = "com.openai.codex"
@@ -492,6 +502,38 @@ binding = "Control+Command+Grave"
 id = "focusMonitorLast"
 
 [[hotkeys]]
+binding = "Unassigned"
+id = "moveWorkspaceToMonitor.left"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWorkspaceToMonitor.right"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWorkspaceToMonitor.up"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWorkspaceToMonitor.down"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWindowToMonitor.left"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWindowToMonitor.right"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWindowToMonitor.up"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "moveWindowToMonitor.down"
+
+[[hotkeys]]
 binding = "Option+Return"
 id = "toggleFullscreen"
 
@@ -645,63 +687,63 @@ id = "moveColumnToIndex.9"
 
 [[hotkeys]]
 binding = "Option+Period"
-id = "cycleColumnWidthForward"
+id = "cycleSizeForward"
 
 [[hotkeys]]
 binding = "Option+Comma"
-id = "cycleColumnWidthBackward"
+id = "cycleSizeBackward"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "cycleWindowWidthForward"
+id = "cycleWindowPrimarySpanForward"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "cycleWindowWidthBackward"
+id = "cycleWindowPrimarySpanBackward"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "cycleWindowHeightForward"
+id = "cycleWindowSecondarySpanForward"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "cycleWindowHeightBackward"
+id = "cycleWindowSecondarySpanBackward"
 
 [[hotkeys]]
 binding = "Option+Shift+F"
-id = "toggleColumnFullWidth"
+id = "toggleContainerFullPrimarySpan"
 
 [[hotkeys]]
 binding = "Control+Option+F"
-id = "expandColumnToAvailableWidth"
+id = "expandContainerToAvailablePrimarySpan"
 
 [[hotkeys]]
 binding = "Control+Option+R"
-id = "resetWindowHeight"
+id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
 binding = "Option+Minus"
-id = "setColumnWidth.decrease10Percent"
+id = "setContainerPrimarySpan.decrease10Percent"
 
 [[hotkeys]]
 binding = "Option+Equal"
-id = "setColumnWidth.increase10Percent"
+id = "setContainerPrimarySpan.increase10Percent"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowWidth.decrease10Percent"
+id = "setWindowPrimarySpan.decrease10Percent"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowWidth.increase10Percent"
+id = "setWindowPrimarySpan.increase10Percent"
 
 [[hotkeys]]
 binding = "Option+Shift+Minus"
-id = "setWindowHeight.decrease10Percent"
+id = "setWindowSecondarySpan.decrease10Percent"
 
 [[hotkeys]]
 binding = "Option+Shift+Equal"
-id = "setWindowHeight.increase10Percent"
+id = "setWindowSecondarySpan.increase10Percent"
 
 [[hotkeys]]
 binding = "Option+Shift+B"
@@ -842,10 +884,6 @@ xOffset = 0.0
 yOffset = -40.0
 
 [[monitorGapOverrides]]
-id = "BCA785E0-56BE-47F0-B35D-AB1F2D13CBE1"
-monitorName = "Built-in Retina Display"
-
-[[monitorGapOverrides]]
 id = "0724CB0B-CFB3-4025-B4BB-F9F43B5625AA"
 monitorDisplayId = 3
 monitorName = "Mi Monitor"
@@ -854,10 +892,8 @@ outerGapTop = 100.0
 
 [[monitorNiriOverrides]]
 id = "87656202-F0C1-4C9D-B248-86F5C71EC249"
-maxVisibleColumns = 2
 monitorDisplayId = 3
 monitorName = "Mi Monitor"
-singleWindowAspectRatio = "1920x1080"
 
 [[monitorRoutingOverrides]]
 gridColumn = 0

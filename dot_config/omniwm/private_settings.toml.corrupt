@@ -1,9 +1,5 @@
-monitorBarOverrides = []
 monitorDwindleOverrides = []
-monitorGapOverrides = []
-monitorNiriOverrides = []
 monitorOrientationOverrides = []
-monitorRoutingOverrides = []
 
 [appearance]
 mode = "dark"
@@ -27,6 +23,7 @@ maxTotalBytes = 67108864
 [dwindle]
 defaultSplitRatio = 1.0
 moveToRootStable = true
+singleWindowAspectRatio = "fill"
 singleWindowFit = "fill"
 smartSplit = false
 splitWidthMultiplier = 1.0
@@ -39,24 +36,22 @@ followsWindowToMonitor = false
 lockModifier = "off"
 moveCrossesMonitorAtEdge = false
 moveMouseToFocusedWindow = false
-raiseOnMouseFocus = false
 
 [gaps]
-fullscreenUsesOuterGaps = false
 size = 16.0
 
 [gaps.outer]
-bottom = 0.0
+bottom = 2.0
 left = 0.0
 right = 0.0
-top = 0.0
+top = 36.0
 
 [general]
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
-ipcEnabled = false
+ipcEnabled = true
 preventSleepEnabled = false
 systemHyperTrigger = "None"
 updateChecksEnabled = true
@@ -85,44 +80,47 @@ enabled = true
 margin = 1
 
 [niri]
-alwaysCenterSingleColumn = false
+alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
-containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
+columnWidthPresets = [0.3333333333333333, 0.5, 0.66, 0.98]
+containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.66]
 infiniteLoop = false
+maxVisibleColumns = 1
+singleWindowAspectRatio = "column_width"
 singleWindowFit = "container_primary_span"
 visibleContainerCount = 1
 
 [overview]
-zoom = 1.0
+zoom = 0.5
 
 [overview.backdrop]
-alpha = 1.0
-blue = 0.08
-green = 0.05
-red = 0.05
+alpha = 0.7021414118705036
+blue = 0.07999999821186066
+green = 0.05000000447034836
+red = 0.05000000447034836
 
 [overview.windowBorders]
 
 [overview.windowBorders.hovered]
 alpha = 1.0
-blue = 1.0
-green = 0.6
-red = 0.4
+blue = 0.9411764705882353
+green = 0.43529411764705883
+red = 0.4784313725490196
 
 [overview.windowBorders.normal]
 alpha = 0.5
-blue = 0.35
-green = 0.3
-red = 0.3
+blue = 0.34999987483024597
+green = 0.2999999523162842
+red = 0.2999999523162842
 
 [overview.windowBorders.selected]
 alpha = 1.0
-blue = 0.4
-green = 0.8
-red = 0.3
+blue = 0.9411764705882353
+green = 0.43529411764705883
+red = 0.4784313725490196
 
 [quakeTerminal]
-animationDuration = 0.2
+animationDuration = 0.0
 autoHide = false
 backgroundBlurRadius = 0
 backgroundEffect = "standardBlur"
@@ -131,7 +129,7 @@ heightPercent = 50.0
 monitorMode = "focusedWindow"
 opacity = 1.0
 position = "center"
-widthPercent = 50.0
+widthPercent = 60.0
 
 [routing]
 mode = "macOS"
@@ -156,10 +154,16 @@ revealHoldMilliseconds = 200.0
 revealModifier = "off"
 showFloatingWindows = false
 showLabels = true
-systemStatsButton = false
+systemStatsButton = true
 windowLevel = "popup"
 xOffset = 0.0
 yOffset = 0.0
+
+[workspaceBar.accentColor]
+alpha = 1.0
+blue = 0.9411764705882353
+green = 0.43529411764705883
+red = 0.4784313725490196
 
 [workspaceBar.iconOverrides]
 
@@ -386,11 +390,11 @@ binding = "Unassigned"
 id = "centerVisibleColumns"
 
 [[hotkeys]]
-binding = "Control+Option+Shift+Up Arrow"
+binding = "Control+Option+Shift+K"
 id = "moveWindowToWorkspaceUp"
 
 [[hotkeys]]
-binding = "Control+Option+Shift+Down Arrow"
+binding = "Control+Option+Shift+J"
 id = "moveWindowToWorkspaceDown"
 
 [[hotkeys]]
@@ -438,19 +442,19 @@ binding = "Unassigned"
 id = "moveColumnToWorkspace.8"
 
 [[hotkeys]]
-binding = "Option+Shift+Left Arrow"
+binding = "Option+Shift+H"
 id = "move.left"
 
 [[hotkeys]]
-binding = "Option+Shift+Down Arrow"
+binding = "Option+Shift+J"
 id = "move.down"
 
 [[hotkeys]]
-binding = "Option+Shift+Up Arrow"
+binding = "Option+Shift+K"
 id = "move.up"
 
 [[hotkeys]]
-binding = "Option+Shift+Right Arrow"
+binding = "Option+Shift+L"
 id = "move.right"
 
 [[hotkeys]]
@@ -794,7 +798,7 @@ binding = "Unassigned"
 id = "preselectClear"
 
 [[hotkeys]]
-binding = "Control+Option+Space"
+binding = "Unassigned"
 id = "openCommandPalette"
 
 [[hotkeys]]
@@ -806,7 +810,7 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+Space"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -834,7 +838,7 @@ binding = "Option+Grave"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
-binding = "Option+Shift+L"
+binding = "Unassigned"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
@@ -844,6 +848,34 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[monitorBarOverrides]]
+backgroundOpacity = 0.0
+enabled = true
+height = 24.0
+id = "069E5859-22F4-47E1-A8C3-1A1490BF35D1"
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+xOffset = 0.0
+yOffset = -40.0
+
+[[monitorGapOverrides]]
+id = "0724CB0B-CFB3-4025-B4BB-F9F43B5625AA"
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+outerGapBottom = 100.0
+outerGapTop = 100.0
+
+[[monitorNiriOverrides]]
+id = "87656202-F0C1-4C9D-B248-86F5C71EC249"
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
+
+[[monitorRoutingOverrides]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayId = 3
+monitorName = "Mi Monitor"
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
@@ -886,19 +918,10 @@ name = "5"
 type = "main"
 
 [[workspaces]]
-displayName = "❤️"
-id = "5953F2BF-A378-4266-91B2-287174C4FA4D"
+displayName = "👾"
+id = "D4408397-C926-492B-8B5F-49C8500168BB"
 layoutType = "niri"
 name = "6"
 
 [workspaces.monitorAssignment]
-type = "secondary"
-
-[[workspaces]]
-displayName = "🚀"
-id = "A7D5E104-6985-4516-8ED5-07F144F2A33D"
-layoutType = "niri"
-name = "7"
-
-[workspaces.monitorAssignment]
-type = "secondary"
+type = "main"

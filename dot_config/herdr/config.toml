@@ -22,6 +22,8 @@ focus_agent = "prefix+ctrl+1..9"
 [ui]
 agent_panel_sort = "spaces"
 prompt_new_tab_name = false
+sidebar_collapsed_mode = "compact"
+
 
 
 [theme.custom]
@@ -29,15 +31,11 @@ accent = "#7A6FF0"
 panel_bg = "reset"
 surface0 = "#161B22"
 surface1 = "#8B949E"
-
 overlay0 = "#8B949E"
 overlay1 = "#7A6FF0"
-
 text = "#e6e0f0"
 subtext0 = "#9AA4B2"
-
 surface_dim = "#1C2128"
-
 mauve = "#7A6FF0"
 green = "#a6e3a1"
 yellow = "#f9e2af"
@@ -45,6 +43,11 @@ red = "#f38ba8"
 blue = "#89b4fa"
 teal = "#94e2d5"
 peach = "#fab387"
+
+
+[ui.toast]
+delivery = "terminal"
+
 
 
 [[keys.command]]
@@ -151,5 +154,3 @@ type = "shell"
 command = "herdr workspace focus 9"
 description = "switch workspace 9"
 
-[ui.toast]
-delivery = "terminal"

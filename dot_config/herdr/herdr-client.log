@@ -76,3 +76,63 @@
 2026-07-02T02:54:47.440660Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=45012
 2026-07-02T02:54:47.440891Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
 2026-07-02T02:54:47.445272Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-08-21T11:57:05.786319Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=21029
+2026-08-21T11:57:05.786558Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-21T11:57:05.816505Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-22T18:30:57.737719Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=64650
+2026-08-22T18:30:57.737977Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-22T18:30:57.773320Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-23T05:20:56.602418Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=70186
+2026-08-23T05:20:56.602561Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-23T05:20:56.624595Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-23T17:52:44.457914Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=62612
+2026-08-23T17:52:44.458121Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-23T17:52:44.514573Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-24T04:44:09.983213Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=28999
+2026-08-24T04:44:09.983414Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-24T04:44:10.046114Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-25T04:02:57.255801Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3223
+2026-08-25T04:02:57.255920Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-25T04:02:57.358030Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-25T10:46:57.170901Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=52779
+2026-08-25T10:46:57.171154Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-25T10:46:57.241292Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-26T12:34:38.417115Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=19553
+2026-08-26T12:34:38.417470Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-26T12:34:38.531950Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-27T04:47:24.278082Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=70062
+2026-08-27T04:47:24.278358Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-27T04:47:24.523690Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T05:49:24.964683Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=6413
+2026-08-29T05:49:24.964792Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T05:49:25.066011Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T05:57:29.515293Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=15169
+2026-08-29T05:57:29.515534Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T05:57:29.691856Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T06:03:38.829534Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=16957
+2026-08-29T06:03:38.829790Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T06:03:38.977821Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T06:04:18.093711Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17152
+2026-08-29T06:04:18.093783Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T06:04:18.111043Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T06:05:36.306909Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17597
+2026-08-29T06:05:36.306949Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T06:05:36.540993Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T06:07:00.021046Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17922
+2026-08-29T06:07:00.024236Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T06:07:00.221963Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T06:07:07.721471Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=18009
+2026-08-29T06:07:07.721527Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T06:07:07.852453Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T07:48:21.648237Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=32840
+2026-08-29T07:48:21.648293Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T07:48:21.761002Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T08:48:03.135128Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=37908
+2026-08-29T08:48:03.135179Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T08:48:03.211506Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-29T09:56:07.524816Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1001
+2026-08-29T09:56:07.525634Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-29T09:56:07.777150Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame
+2026-08-30T08:02:50.486140Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1761
+2026-08-30T08:02:50.486262Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-08-30T08:02:50.530102Z  INFO herdr::client: handshake succeeded version=16 encoding=SemanticFrame

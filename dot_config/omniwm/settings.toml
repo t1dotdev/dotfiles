@@ -1,6 +1,5 @@
 monitorBarOverrides = []
 monitorDwindleOverrides = []
-monitorNiriOverrides = []
 monitorOrientationOverrides = []
 monitorRoutingOverrides = []
 schemaVersion = 1
@@ -929,6 +928,12 @@ monitorName = "Mi Monitor"
 outerGapBottom = 64.0
 outerGapLeft = 0.0
 outerGapTop = 64.0
+
+[[monitorNiriOverrides]]
+id = "252D31F9-FC54-47CC-9766-DFBF8DAE5BC0"
+monitorDisplayUUID = "C8006B71-A955-47A6-99F1-74E27C5587A6"
+monitorName = "Mi Monitor"
+visibleContainerCount = 2
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"

@@ -1,6 +1,5 @@
 monitorBarOverrides = []
 monitorDwindleOverrides = []
-monitorGapOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
 monitorRoutingOverrides = []
@@ -922,6 +921,14 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[monitorGapOverrides]]
+id = "02C4011F-2084-405C-AF76-9E32D3E9321A"
+monitorDisplayUUID = "C8006B71-A955-47A6-99F1-74E27C5587A6"
+monitorName = "Mi Monitor"
+outerGapBottom = 64.0
+outerGapLeft = 0.0
+outerGapTop = 64.0
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"

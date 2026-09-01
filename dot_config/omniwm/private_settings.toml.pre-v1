@@ -4,7 +4,6 @@ monitorGapOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
 monitorRoutingOverrides = []
-schemaVersion = 1
 
 [appearance]
 mode = "dark"
@@ -137,10 +136,6 @@ widthPercent = 50.0
 [routing]
 mode = "macOS"
 
-[scratchpads]
-
-[scratchpads.labels]
-
 [statusBar]
 showAppNames = false
 showWorkspaceName = true
@@ -153,7 +148,6 @@ enabled = false
 excludedBundleIDs = []
 height = 24.0
 hideEmptyWorkspaces = false
-hideInNativeFullscreen = false
 notchActiveZoneWidth = 180.0
 notchMode = "moveBelowMenuBar"
 position = "overlappingMenuBar"
@@ -246,86 +240,6 @@ bundleId = "com.apple.MobileSMS"
 id = "552FB77D-BF0E-4737-90A6-B5BC6986C579"
 minHeight = 320.0
 minWidth = 660.0
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.1"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.1"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.2"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.2"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.3"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.3"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.4"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.4"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.5"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.5"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.6"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.6"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.7"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.7"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.8"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.8"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.9"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.9"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleScratchpad.10"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "assignFocusedWindowToScratchpad.10"
 
 [[hotkeys]]
 binding = "Option+1"
@@ -524,19 +438,19 @@ binding = "Unassigned"
 id = "moveColumnToWorkspace.8"
 
 [[hotkeys]]
-binding = "Option+Shift+H"
+binding = "Option+Shift+Left Arrow"
 id = "move.left"
 
 [[hotkeys]]
-binding = "Option+Shift+J"
+binding = "Option+Shift+Down Arrow"
 id = "move.down"
 
 [[hotkeys]]
-binding = "Option+Shift+K"
+binding = "Option+Shift+Up Arrow"
 id = "move.up"
 
 [[hotkeys]]
-binding = "Option+Shift+L"
+binding = "Option+Shift+Right Arrow"
 id = "move.right"
 
 [[hotkeys]]
@@ -880,7 +794,7 @@ binding = "Unassigned"
 id = "preselectClear"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Option+Space"
 id = "openCommandPalette"
 
 [[hotkeys]]
@@ -892,8 +806,16 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Option+Shift+Space"
+binding = "Unassigned"
 id = "toggleFocusedWindowFloating"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "assignFocusedWindowToScratchpad"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleScratchpadWindow"
 
 [[hotkeys]]
 binding = "Control+Option+M"
@@ -912,7 +834,7 @@ binding = "Option+Grave"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+L"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]

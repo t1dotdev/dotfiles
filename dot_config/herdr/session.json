@@ -2,84 +2,44 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "wAZ",
+      "id": "w4K",
       "custom_name": null,
       "identity_cwd": "/Users/topone/Development/school-os",
       "public_pane_numbers": {
-        "103": 8,
-        "128": 22,
-        "124": 18
+        "1": 2
       },
-      "next_public_pane_number": 25,
+      "next_public_pane_number": 7,
       "public_tab_numbers": [
-        1,
-        4,
-        7
+        2
       ],
-      "next_public_tab_number": 8,
+      "next_public_tab_number": 4,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 103
+            "Pane": 1
           },
           "panes": {
-            "103": {
+            "1": {
               "cwd": "/Users/topone/Development/school-os",
               "label": "school-os"
             }
           },
           "zoomed": false,
-          "focused": 103,
-          "root_pane": 103
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 124
-          },
-          "panes": {
-            "124": {
-              "cwd": "/Users/topone/Development/school-os",
-              "label": "school-os",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "4e1d7929-0c5d-4ef2-838f-333d7399cf0c"
-              }
-            }
-          },
-          "zoomed": false,
-          "focused": 124,
-          "root_pane": 124
-        },
-        {
-          "custom_name": null,
-          "layout": {
-            "Pane": 128
-          },
-          "panes": {
-            "128": {
-              "cwd": "/Users/topone/.config/omniwm",
-              "label": "herdr"
-            }
-          },
-          "zoomed": false,
-          "focused": 128,
-          "root_pane": 128
+          "focused": 1,
+          "root_pane": 1
         }
       ],
-      "active_tab": 2
+      "active_tab": 0
     },
     {
-      "id": "wB1",
+      "id": "w4M",
       "custom_name": null,
-      "identity_cwd": "/Users/topone/Development/sortskin",
+      "identity_cwd": "/Users/topone/.config/herdr",
       "public_pane_numbers": {
-        "123": 1
+        "3": 1
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 3,
       "public_tab_numbers": [
         1
       ],
@@ -88,31 +48,25 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 123
+            "Pane": 3
           },
           "panes": {
-            "123": {
-              "cwd": "/Users/topone/Development/sortskin",
-              "label": "sortskin",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "d11e6388-00c9-4d30-a044-ece51fec743a"
-              }
+            "3": {
+              "cwd": "/Users/topone/.config/herdr",
+              "label": "herdr"
             }
           },
           "zoomed": false,
-          "focused": 123,
-          "root_pane": 123
+          "focused": 3,
+          "root_pane": 3
         }
       ],
       "active_tab": 0
     }
   ],
-  "active": 0,
-  "selected": 0,
+  "active": 1,
+  "selected": 1,
   "sidebar_width": 26,
-  "sidebar_section_split": 0.4680851,
+  "sidebar_section_split": 0.46153846,
   "collapsed_space_keys": []
 }

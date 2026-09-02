@@ -935,6 +935,13 @@ monitorDisplayUUID = "C8006B71-A955-47A6-99F1-74E27C5587A6"
 monitorName = "Mi Monitor"
 visibleContainerCount = 2
 
+[[monitorNiriOverrides]]
+id = "5EE965F1-27EE-42BB-9151-2E667B8038FF"
+monitorDisplayUUID = "72B5E48D-2F83-4FB8-912D-C1E8F65FFA00"
+monitorName = "LG HDR WFHD"
+singleWindowFit = "1920x900"
+visibleContainerCount = 2
+
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
 layoutType = "niri"

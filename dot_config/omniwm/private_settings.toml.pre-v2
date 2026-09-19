@@ -1,7 +1,8 @@
 monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorOrientationOverrides = []
-schemaVersion = 3
+monitorRoutingOverrides = []
+schemaVersion = 1
 
 [appearance]
 mode = "dark"
@@ -132,7 +133,6 @@ position = "center"
 widthPercent = 50.0
 
 [routing]
-arrangements = []
 mode = "macOS"
 
 [scratchpads]
@@ -396,78 +396,6 @@ id = "switchWorkspace.8"
 [[hotkeys]]
 binding = "Option+Shift+9"
 id = "moveToWorkspace.8"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.1"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.1"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.2"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.2"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.3"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.3"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.4"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.4"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.5"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.5"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.6"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.6"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.7"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.7"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.8"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.8"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "switchWorkspaceSlot.9"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "moveToWorkspaceSlot.9"
 
 [[hotkeys]]
 binding = "Control+Option+Tab"
@@ -966,10 +894,6 @@ binding = "Option+Shift+Space"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
-binding = "Unassigned"
-id = "closeFocusedWindow"
-
-[[hotkeys]]
 binding = "Control+Option+M"
 id = "openMenuAnywhere"
 
@@ -1023,13 +947,6 @@ id = "5EE965F1-27EE-42BB-9151-2E667B8038FF"
 monitorDisplayUUID = "72B5E48D-2F83-4FB8-912D-C1E8F65FFA00"
 monitorName = "LG HDR WFHD"
 singleWindowFit = "1920x900"
-visibleContainerCount = 2
-
-[[monitorNiriOverrides]]
-id = "065CBF32-BE18-4BBB-9964-82B7C4E2CF32"
-monitorDisplayUUID = "2E426AA7-0E14-4144-83D1-581D9B008033"
-monitorName = "Mi Monitor"
-singleWindowFit = "1920x1080"
 visibleContainerCount = 2
 
 [[workspaces]]

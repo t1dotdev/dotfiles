@@ -1,7 +1,7 @@
 monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorOrientationOverrides = []
-schemaVersion = 3
+schemaVersion = 2
 
 [appearance]
 mode = "dark"
@@ -132,8 +132,7 @@ position = "center"
 widthPercent = 50.0
 
 [routing]
-arrangements = []
-mode = "macOS"
+mode = "custom"
 
 [scratchpads]
 
@@ -1025,12 +1024,17 @@ monitorName = "LG HDR WFHD"
 singleWindowFit = "1920x900"
 visibleContainerCount = 2
 
-[[monitorNiriOverrides]]
-id = "065CBF32-BE18-4BBB-9964-82B7C4E2CF32"
-monitorDisplayUUID = "2E426AA7-0E14-4144-83D1-581D9B008033"
-monitorName = "Mi Monitor"
-singleWindowFit = "1920x1080"
-visibleContainerCount = 2
+[[monitorRoutingOverrides]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "0FA39BC2-E350-495D-828B-07A23D05ECE8"
+monitorName = "LG HDR WFHD"
+
+[[monitorRoutingOverrides]]
+gridColumn = 0
+gridRow = 1
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"

@@ -62,7 +62,7 @@ updateChecksEnabled = true
 [gestures]
 fingerCount = 3
 invertDirection = true
-mouseMoveModifierKey = "option"
+mouseMoveModifierKey = "off"
 mouseResizeModifierKey = "option"
 scrollEnabled = true
 scrollModifierKey = "optionShift"
@@ -692,7 +692,7 @@ binding = "Unassigned"
 id = "moveWindowToMonitor.down"
 
 [[hotkeys]]
-binding = "Option+Return"
+binding = "Unassigned"
 id = "toggleFullscreen"
 
 [[hotkeys]]

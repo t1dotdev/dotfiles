@@ -24,7 +24,8 @@ focus_agent = "prefix+ctrl+1..9"
 agent_panel_sort = "spaces"
 prompt_new_tab_name = false
 sidebar_collapsed_mode = "compact"
-
+window_title = "{hostname}: {workspace}"
+tab_bar_right = [{ type = "hostname" }]
 
 
 [theme.custom]

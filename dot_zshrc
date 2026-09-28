@@ -1,7 +1,7 @@
 # # ─────────────────────────────────────────────────────────────
 # 🐚 Start Nu Shell
 # ─────────────────────────────────────────────────────────────
-if [[ -z "$NU_VERSION" ]]; then
+if [[ -z "$NU_VERSION" && -z "$ZSH_EXECUTION_STRING" && -t 0 ]]; then
     export XDG_CONFIG_HOME="$HOME/.config"
     exec nu
 fi
@@ -151,4 +151,3 @@ export FZF_DEFAULT_OPTS="--color=fg:-1,bg:-1,hl:#8751ff,fg+:#000000,bg+:#ffffff,
 # 📂 Named Directories
 # ─────────────────────────────────────────────────────────────
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-

@@ -21,8 +21,6 @@ map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 -- Don't yank
 map({ "n", "v" }, "<Leader>p", '"0p')
 map({ "n", "v" }, "<Leader>P", '"0P')
-map({ "n", "v" }, "<Leader>c", '"_c')
-map({ "n", "v" }, "<Leader>C", '"_C')
 map({ "n", "v" }, "<Leader>d", '"_d')
 map({ "n", "v" }, "<Leader>D", '"_D')
 
@@ -38,12 +36,10 @@ map("n", "N", "Nzzzv")
 
 -- buffer indent
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- select all
 map("n", "<C-a>", "gg<S-v>G")
-
--- map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
 -- Better indenting
 map("v", "<", "<gv")
@@ -57,7 +53,7 @@ map({ "n", "x" }, "gw", "*N", { desc = "Search Word Under Cursor" })
 
 -- Quick save and quit
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save File" })
-map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Quick fix and location list
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })

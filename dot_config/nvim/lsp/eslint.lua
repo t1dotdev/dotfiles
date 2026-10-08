@@ -78,32 +78,24 @@ return {
 			},
 		},
 	},
-	on_new_config = function(config, new_root_dir)
-		-- The "workspaceFolder" is a VSCode concept. It limits how far the
-		-- server will traverse the file system when locating the ESLint config
-		-- file (e.g., .eslintrc).
-		config.settings.workspaceFolder = {
-			uri = new_root_dir,
-			name = vim.fn.fnamemodify(new_root_dir, ":t"),
-		}
-
-		-- Support flat config
-		if
-			vim.fn.filereadable(new_root_dir .. "/eslint.config.js") == 1
-			or vim.fn.filereadable(new_root_dir .. "/eslint.config.mjs") == 1
-			or vim.fn.filereadable(new_root_dir .. "/eslint.config.cjs") == 1
-			or vim.fn.filereadable(new_root_dir .. "/eslint.config.ts") == 1
-			or vim.fn.filereadable(new_root_dir .. "/eslint.config.mts") == 1
-			or vim.fn.filereadable(new_root_dir .. "/eslint.config.cts") == 1
-		then
-			config.settings.experimental.useFlatConfig = true
+	-- Native vim.lsp ignores lspconfig's on_new_config; before_init runs per client.
+	before_init = function(_, config)
+		local root = config.root_dir
+		if not root then
+			return
 		end
-
-		-- Support Yarn2 (PnP) projects
-		local pnp_cjs = new_root_dir .. "/.pnp.cjs"
-		local pnp_js = new_root_dir .. "/.pnp.js"
-		if vim.uv.fs_stat(pnp_cjs) or vim.uv.fs_stat(pnp_js) then
-			config.cmd = vim.list_extend({ "yarn", "exec" }, config.cmd)
+		-- The "workspaceFolder" is a VSCode concept. It limits how far the
+		-- server will traverse the file system when locating the ESLint config.
+		config.settings.workspaceFolder = {
+			uri = root,
+			name = vim.fn.fnamemodify(root, ":t"),
+		}
+		-- Support flat config (eslint.config.*)
+		for _, name in ipairs(ROOT_MARKERS) do
+			if vim.startswith(name, "eslint.config.") and vim.uv.fs_stat(root .. "/" .. name) then
+				config.settings.experimental.useFlatConfig = true
+				break
+			end
 		end
 	end,
 	handlers = {

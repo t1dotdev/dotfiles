@@ -125,28 +125,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- Disable some features for large files to improve performance
-vim.api.nvim_create_autocmd({ "BufReadPre" }, {
-	group = augroup("large_files"),
-	callback = function(event)
-		local file = vim.api.nvim_buf_get_name(event.buf)
-		local size = vim.fn.getfsize(file)
-		if size > 1024 * 1024 or size == -2 then -- 1MB
-			vim.cmd("syntax off")
-			vim.opt_local.foldmethod = "manual"
-			vim.opt_local.undolevels = -1
-			vim.opt_local.undoreload = 0
-			vim.opt_local.list = false
-		end
-	end,
-})
-
--- Provider disables live in lua/config/options.lua.
-
--- NOTE: Ensures that when exiting NeoVim, Zellij returns to normal mode
-if vim.env.ZELLIJ then
-	vim.api.nvim_create_autocmd("VimLeave", {
-		pattern = "*",
-		command = "silent !zellij action switch-mode normal",
-	})
-end
+-- Large files: handled by snacks.bigfile (lua/plugins/snacks.lua).

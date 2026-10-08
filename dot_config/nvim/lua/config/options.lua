@@ -3,15 +3,6 @@ vim.g.loaded_netrwPlugin = 1
 -- lua/config/options.lua
 -- mapleader/maplocalleader are set in lua/config/lazy.lua before lazy loads.
 
--- Auto format
-vim.g.autoformat = true
-
--- Root dir detection patterns for plugins that support it
-vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
-
--- Hide deprecation warnings
-vim.g.deprecation_warnings = false
-
 local opt = vim.opt
 
 -- General
@@ -63,14 +54,10 @@ opt.fillchars = {
 -- Folding
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-if vim.fn.has("nvim-0.10") == 1 then
-	opt.smoothscroll = true
-	opt.foldmethod = "expr"
-	opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use treesitter for folding if you have it
-	opt.foldtext = ""
-else
-	opt.foldmethod = "indent"
-end
+opt.smoothscroll = true
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldtext = ""
 
 -- Indentation
 opt.expandtab = true -- Use spaces instead of tabs

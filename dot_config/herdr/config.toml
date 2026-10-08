@@ -25,7 +25,16 @@ agent_panel_sort = "spaces"
 prompt_new_tab_name = false
 sidebar_collapsed_mode = "compact"
 window_title = "{hostname}: {workspace}"
-tab_bar_right = [{ type = "hostname" }]
+# tab_bar_right = [{ type = "hostname" }]
+tab_bar_right = [
+  { type = "zoom" },
+  { type = "hostname" },
+  # { type = "datetime", format = "%H:%M" },
+  # { type = "text", text = "prod" },
+  # { type = "command", command = "~/.config/herdr/status.sh", interval_seconds = 5, timeout_seconds = 2 },
+]
+tab_bar_right_separator = " · "
+
 
 
 [theme.custom]

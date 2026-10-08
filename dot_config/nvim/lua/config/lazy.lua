@@ -27,11 +27,6 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 		"nvim-lua/plenary.nvim",
-		{
-			"nvim-tree/nvim-web-devicons",
-			lazy = true,
-			event = "VeryLazy", -- or specific events when you need icons
-		},
 
 		{
 			"nvchad/base46",

@@ -29,8 +29,6 @@ local PACKAGES = {
   'goimports',
   -- Lint
   'eslint-lsp',
-  'pylint',
-  'jsonlint',
 }
 
 local function install(pack, version)

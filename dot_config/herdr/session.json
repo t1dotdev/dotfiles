@@ -2,35 +2,75 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "wGG",
+      "id": "wHE",
       "custom_name": null,
-      "identity_cwd": "/Users/topone/.config",
+      "identity_cwd": "/Users/topone",
       "public_pane_numbers": {
-        "1260": 1
+        "5": 22,
+        "1": 1,
+        "2": 2
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 23,
       "public_tab_numbers": [
-        1
+        1,
+        2,
+        3
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 4,
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 1260
+            "Pane": 1
           },
           "panes": {
-            "1260": {
+            "1": {
+              "cwd": "/Users/topone",
+              "label": "topone",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "bbcd9ce3-569c-414d-b5e0-ed0f95e8c928"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 1,
+          "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 2
+          },
+          "panes": {
+            "2": {
+              "cwd": "/Users/topone/Development/gangsocial",
+              "label": "gangsocial"
+            }
+          },
+          "zoomed": false,
+          "focused": 2,
+          "root_pane": 2
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
               "cwd": "/Users/topone/.config",
               "label": ".config"
             }
           },
           "zoomed": false,
-          "focused": 1260,
-          "root_pane": 1260
+          "focused": 5,
+          "root_pane": 5
         }
       ],
-      "active_tab": 0
+      "active_tab": 2
     }
   ],
   "active": 0,

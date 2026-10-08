@@ -27,3 +27,11 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+local function jump_to_error(count)
+	return function()
+		vim.diagnostic.jump({ count = count, severity = vim.diagnostic.severity.ERROR })
+	end
+end
+vim.keymap.set("n", "[x", jump_to_error(-1), { desc = "Jump to previous error" })
+vim.keymap.set("n", "]x", jump_to_error(1), { desc = "Jump to next error" })

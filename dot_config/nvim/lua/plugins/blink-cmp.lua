@@ -31,13 +31,7 @@ return {
 	"saghen/blink.cmp",
 
 	event = "InsertEnter",
-	dependencies = {
-		"rafamadriz/friendly-snippets",
-		"nvim-tree/nvim-web-devicons",
-		-- Optional: Add these if you want specific integrations
-		-- 'giuxtaposition/blink-cmp-copilot',
-		-- 'L3MON4D3/LuaSnip',
-	},
+	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "v1.*",
 
 	opts = {
@@ -281,12 +275,12 @@ return {
 			default = { "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
 				-- Minimal sources for config files
-				yaml = { "path", "buffer" },
+				yaml = { "lsp", "path", "buffer" },
 				toml = { "path", "buffer" },
 				json = { "lsp", "path", "buffer" },
 
 				-- Documentation
-				markdown = { "path", "buffer", "snippets" },
+				markdown = { "lsp", "path", "buffer", "snippets" },
 				help = { "path", "buffer" },
 
 				-- Git
@@ -326,16 +320,6 @@ return {
 					module = "blink.cmp.sources.path",
 					score_offset = -30, -- Lower priority
 				},
-
-				-- Optional: Copilot provider (uncomment if using blink-cmp-copilot)
-				-- copilot = {
-				-- 	name = 'Copilot',
-				-- 	module = 'blink-cmp-copilot',
-				-- 	enabled = true,
-				-- 	async = true,
-				-- 	score_offset = 100,
-				-- 	min_keyword_length = 2,
-				-- },
 			},
 		},
 
@@ -357,117 +341,8 @@ return {
 				},
 			},
 		},
-
-		-- Snippets configuration (if using LuaSnip)
-		snippets = {
-			-- preset = 'luasnip', -- Uncomment if using LuaSnip
-			expand = function(snippet)
-				-- If using LuaSnip
-				-- local ls = require('luasnip')
-				-- if ls then
-				-- 	ls.lsp_expand(snippet)
-				-- end
-
-				-- Default snippet expansion
-				vim.snippet.expand(snippet)
-			end,
-			active = function(filter)
-				-- If using LuaSnip
-				-- local ls = require('luasnip')
-				-- if ls then
-				-- 	if filter and filter.direction then
-				-- 		return ls.jumpable(filter.direction)
-				-- 	end
-				-- 	return ls.in_snippet()
-				-- end
-
-				-- Default snippet check
-				return vim.snippet.active(filter)
-			end,
-			jump = function(direction)
-				-- If using LuaSnip
-				-- local ls = require('luasnip')
-				-- if ls then
-				-- 	ls.jump(direction)
-				-- end
-
-				-- Default snippet jump
-				vim.snippet.jump(direction)
-			end,
-		},
 	},
 
 	-- Extend the default sources
 	opts_extend = { "sources.default" },
-
-	config = function(_, opts)
-		-- Setup blink.cmp
-		local blink = require("blink.cmp")
-		blink.setup(opts)
-
-		-- Define custom highlight groups
-		-- local highlights = {
-		-- 	-- Borders
-		-- 	BlinkCmpMenuBorder = { link = "FloatBorder" },
-		-- 	BlinkCmpDocBorder = { link = "FloatBorder" },
-		-- 	BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
-		--
-		-- 	-- Menu
-		-- 	BlinkCmpMenu = { link = "Pmenu" },
-		-- 	BlinkCmpMenuSelection = { link = "PmenuSel" },
-		-- 	BlinkCmpLabelMatch = { fg = "#83a598", bold = true },
-		-- 	BlinkCmpLabelDescription = { fg = "#928374", italic = true },
-		-- 	BlinkCmpSource = { fg = "#928374", italic = true },
-		--
-		-- 	-- Documentation
-		-- 	BlinkCmpDoc = { link = "NormalFloat" },
-		-- 	BlinkCmpSignatureHelp = { link = "NormalFloat" },
-		--
-		-- 	-- Kind highlights (using gruvbox-like colors as example)
-		-- 	BlinkCmpKindText = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindMethod = { fg = "#83a598" },
-		-- 	BlinkCmpKindFunction = { fg = "#83a598" },
-		-- 	BlinkCmpKindConstructor = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindField = { fg = "#8ec07c" },
-		-- 	BlinkCmpKindVariable = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindClass = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindInterface = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindModule = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindProperty = { fg = "#8ec07c" },
-		-- 	BlinkCmpKindUnit = { fg = "#d3869b" },
-		-- 	BlinkCmpKindValue = { fg = "#d3869b" },
-		-- 	BlinkCmpKindEnum = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindKeyword = { fg = "#fb4934" },
-		-- 	BlinkCmpKindSnippet = { fg = "#d3869b" },
-		-- 	BlinkCmpKindColor = { fg = "#d3869b" },
-		-- 	BlinkCmpKindFile = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindReference = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindFolder = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindEnumMember = { fg = "#d3869b" },
-		-- 	BlinkCmpKindConstant = { fg = "#d3869b" },
-		-- 	BlinkCmpKindStruct = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindEvent = { fg = "#fabd2f" },
-		-- 	BlinkCmpKindOperator = { fg = "#ebdbb2" },
-		-- 	BlinkCmpKindTypeParameter = { fg = "#8ec07c" },
-		-- }
-		--
-		-- for name, hl in pairs(highlights) do
-		-- 	vim.api.nvim_set_hl(0, name, hl)
-		-- end
-
-		-- Optional: Setup additional keymaps for snippet navigation if using LuaSnip
-		-- vim.keymap.set({ 'i', 's' }, '<C-l>', function()
-		-- 	local ls = require('luasnip')
-		-- 	if ls.expand_or_jumpable() then
-		-- 		ls.expand_or_jump()
-		-- 	end
-		-- end, { silent = true })
-		--
-		-- vim.keymap.set({ 'i', 's' }, '<C-h>', function()
-		-- 	local ls = require('luasnip')
-		-- 	if ls.jumpable(-1) then
-		-- 		ls.jump(-1)
-		-- 	end
-		-- end, { silent = true })
-	end,
 }

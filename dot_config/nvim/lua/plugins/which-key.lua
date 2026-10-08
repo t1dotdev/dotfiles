@@ -14,6 +14,7 @@ return {
 			{ "<leader>c", group = "Code", icon = "" },
 			{ "<leader>f", group = "Find/File", icon = "" },
 			{ "<leader>g", group = "Git", icon = "" },
+			{ "<leader>gh", group = "Hunks" },
 			{ "<leader>n", group = "Notifications", icon = "" },
 			{ "<leader>q", group = "Session/Quit", icon = "" },
 			{ "<leader>r", group = "Refactor/Rename", icon = "" },

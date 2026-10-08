@@ -23,6 +23,7 @@ return {
         "jsonc",
         "lua",
         "luadoc",
+        "nu",
         "luap",
         "markdown",
         "markdown_inline",
@@ -81,30 +82,30 @@ return {
           set_jumps = true,
           goto_next_start = {
             ["]f"] = "@function.outer",
-            ["]c"] = "@class.outer",
+            ["]k"] = "@class.outer",
             ["]p"] = "@parameter.inner",
           },
           goto_next_end = {
             ["]F"] = "@function.outer",
-            ["]C"] = "@class.outer",
+            ["]K"] = "@class.outer",
           },
           goto_previous_start = {
             ["[f"] = "@function.outer",
-            ["[c"] = "@class.outer",
+            ["[k"] = "@class.outer",
             ["[p"] = "@parameter.inner",
           },
           goto_previous_end = {
             ["[F"] = "@function.outer",
-            ["[C"] = "@class.outer",
+            ["[K"] = "@class.outer",
           },
         },
         swap = {
           enable = true,
           swap_next = {
-            ["<leader>sn"] = "@parameter.inner",
+            ["<leader>cx"] = "@parameter.inner",
           },
           swap_previous = {
-            ["<leader>sp"] = "@parameter.inner",
+            ["<leader>cX"] = "@parameter.inner",
           },
         },
       },

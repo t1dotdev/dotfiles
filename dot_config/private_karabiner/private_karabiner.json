@@ -6,6 +6,7 @@
                 "rules": [
                     {
                         "description": "Enter → Hyper Key (⌃⌥⇧⌘) (Enter if alone)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "key_code": "return_or_enter" },
@@ -35,16 +36,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": true,
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 4,
-                        "vendor_id": 18003
-                    }
-                }
-            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }

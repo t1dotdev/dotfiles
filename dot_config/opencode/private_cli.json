@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "plugins": [
+    "opencode-ghost@1.3.8",
+    {
+      "package": "@leohenon/opencode-vim-plugin@beta",
+      "options": {
+        "vim_enter_submit": true,
+        "vim_insert_after_submit": true
+      }
+    }
+  ],
+  "theme": {
+    "name": "system",
+    "mode": "system"
+  }
+}

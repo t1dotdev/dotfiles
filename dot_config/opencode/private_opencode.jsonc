@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "~/.claude/skills/caveman/SKILL.md",
+    // The claude-agent provider ignores event.system from plugin hooks, so the
+    // ponytail plugin's per-turn injection never reaches the model there. This
+    // generated copy of its ruleset (level full, plugin 5.3.3) does reach it.
+    // It is static: /ponytail lite|ultra|off does not change it. Regenerate it
+    // from hooks/ponytail-instructions.js after updating the plugin.
+    "~/.config/opencode/ponytail-rules.md"
+  ],
+  "plugins": [
+    "@dietrichgebert/ponytail",
+    // ECC's installer writes the same inert stub (id "ecc-hooks") to both
+    // plugins/ecc-hooks.ts and plugins/index.ts, so one fails with
+    // "Duplicate plugin ID". Remove this entry if ECC hooks are ever enabled.
+    "-ecc-hooks"
+  ],
+  // Keep .env reads on "ask": ECC's opencode.json sets tools.read=true per agent,
+  // which adds read * allow after OpenCode's defaults. Last matching rule wins.
+  "agent": {
+    "build": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "planner": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "architect": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "code-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "security-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "tdd-guide": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "build-error-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "e2e-runner": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "doc-updater": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "refactor-cleaner": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "go-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "go-build-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "database-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "cpp-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "cpp-build-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "docs-lookup": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "harness-optimizer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "java-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "java-build-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "kotlin-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "kotlin-build-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "loop-operator": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "php-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "python-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "ruby-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "rust-reviewer": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}},
+    "rust-build-resolver": {"permission":{"read":{"*.env":"ask","*.env.*":"ask","*.env.example":"allow"}}}
+  }
+}

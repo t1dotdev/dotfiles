@@ -10,8 +10,8 @@ font-family = "Courier MonoThai"
 font-size = 16
 font-thicken = true
 
-window-padding-x = 6
-window-padding-y = 6
+window-padding-x = 0
+window-padding-y = 0
 window-padding-balance = true
 
 
@@ -26,5 +26,4 @@ window-height = 30
 window-width = 120
 
 mouse-hide-while-typing = true
-keybind = shift+enter=text:\n
 macos-option-as-alt = left

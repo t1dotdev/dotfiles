@@ -79,7 +79,7 @@ windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
 workspaceSwipeAxis = "vertical"
-workspaceSwipeEnabled = true
+workspaceSwipeEnabled = false
 workspaceSwipeFingerCount = 3
 
 [hiddenBar]
@@ -158,6 +158,36 @@ gridColumn = 0
 gridRow = 0
 monitorDisplayUUID = "2E426AA7-0E14-4144-83D1-581D9B008033"
 monitorName = "Mi Monitor"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 1
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
+
+[[routing.arrangements]]
+id = "A171C2AB-3464-44D4-95B8-6A45ACEE4BBB"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 1
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "29A0ECE2-BB6D-408E-AF06-792541CEC46F"
+monitorName = "Apple TV (AirPlay)"
+
+[[routing.arrangements]]
+id = "F6359995-CD98-4D9F-808E-9F530E3238D3"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "0830BA63-7CBD-4F99-ABD9-A638A627CB77"
+monitorName = "STM-HS-IN (AirPlay)"
 
 [[routing.arrangements.monitors]]
 gridColumn = 0

@@ -382,3 +382,344 @@
 2026-10-08T07:01:09.461725Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1488
 2026-10-08T07:01:09.462019Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
 2026-10-08T07:01:09.476499Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-08T15:13:03.677896Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=1488
+2026-10-08T15:13:16.712103Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=76933
+2026-10-08T15:13:16.712138Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-76795-campusca-c58e6a5721e5945d.sock
+2026-10-08T15:13:17.039717Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-10-08T15:29:22.922985Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=87264
+2026-10-08T15:29:22.923289Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-08T15:29:23.158448Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-08T16:13:05.805871Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=76933
+2026-10-08T16:13:13.463038Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12321
+2026-10-08T16:13:13.463085Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-12173-campusca-c58e6a5721e5945d.sock
+2026-10-08T16:13:13.754305Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-10-08T16:37:23.582270Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-08T16:37:23.583516Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12321
+2026-10-11T15:21:06.107853Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=87264
+2026-10-11T15:21:59.472311Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1261
+2026-10-11T15:21:59.472431Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-11T15:21:59.520307Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-13T13:33:26.947276Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=5099
+2026-10-13T13:33:26.947388Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-13T13:33:27.050148Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-13T16:49:43.270160Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-14T19:37:51.716485Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=5099
+2026-10-15T03:55:04.265740Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=85936
+2026-10-15T03:55:04.265910Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-15T03:55:04.403632Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-15T17:13:50.190724Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-15T17:13:50.191902Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=85936
+2026-10-16T10:19:47.936475Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=56323
+2026-10-16T10:19:47.936634Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-16T10:19:48.029873Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-16T10:20:06.622625Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=56323
+2026-10-16T10:24:50.185141Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=57883
+2026-10-16T10:24:50.185407Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-remote-57746-campuscare-172.20.10.2-default.sock
+2026-10-16T10:24:50.640468Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-16T10:25:05.513107Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=57962
+2026-10-16T10:25:05.513181Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-16T10:25:05.616812Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-16T10:38:33.072726Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-16T10:38:33.075669Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=57883
+2026-10-16T21:48:35.938817Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-18T04:09:08.161491Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=57962
+2026-10-18T04:14:02.935784Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1728
+2026-10-18T04:14:02.935913Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-18T04:14:02.976511Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-18T10:15:48.344869Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-18T10:15:48.346553Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=1728
+2026-10-18T12:47:42.774595Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=18327
+2026-10-18T12:47:42.774717Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-18T12:47:42.858005Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-19T10:33:42.556870Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=18327
+2026-10-19T10:37:11.181926Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=1877
+2026-10-19T10:37:11.182038Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-19T10:37:11.229947Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-19T10:39:46.955573Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-19T10:39:46.956342Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=1877
+2026-10-19T10:48:07.659833Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4682
+2026-10-19T10:48:07.659883Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-19T10:48:07.672064Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-20T17:12:24.106234Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=4682
+2026-10-21T02:29:21.886730Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=43933
+2026-10-21T02:29:21.886923Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-21T02:29:22.073540Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-21T11:43:19.873212Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-22T01:41:35.893858Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-22T01:41:35.894690Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=43933
+2026-10-22T05:45:31.328673Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12447
+2026-10-22T05:45:31.328728Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-22T05:45:31.337241Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-22T06:00:35.987445Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12447
+2026-10-22T06:05:20.029734Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=15220
+2026-10-22T06:05:20.029806Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-15087-campusca-297a833b079d347b.sock
+2026-10-22T06:05:20.333165Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-22T06:33:56.450195Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=15220
+2026-10-22T06:34:04.393857Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=20643
+2026-10-22T06:34:04.393883Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-20489-campusca-297a833b079d347b.sock
+2026-10-22T06:34:04.772401Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-22T07:14:02.764206Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=20643
+2026-10-22T07:14:11.512766Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=28904
+2026-10-22T07:14:11.512836Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-28750-campusca-297a833b079d347b.sock
+2026-10-22T07:14:11.960620Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-22T07:59:28.243767Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-22T07:59:28.244759Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=28904
+2026-10-22T09:38:57.407151Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3262
+2026-10-22T09:38:57.407288Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-22T09:38:57.465333Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-22T09:39:13.526334Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=3262
+2026-10-22T09:39:22.945967Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4217
+2026-10-22T09:39:22.946022Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-4090-campusca-297a833b079d347b.sock
+2026-10-22T09:39:23.160876Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-22T10:39:03.231724Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-22T10:39:03.232851Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=4217
+2026-10-22T13:03:21.303458Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=24074
+2026-10-22T13:03:21.303653Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-22T13:03:21.323587Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-22T13:40:43.592923Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-23T10:20:09.318562Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=24074
+2026-10-23T10:20:26.553523Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=56148
+2026-10-23T10:20:26.553635Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-55937-campusca-297a833b079d347b.sock
+2026-10-23T10:20:26.661989Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-23T11:48:09.619735Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-23T11:48:09.621978Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=56148
+2026-10-24T06:40:28.617334Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=87508
+2026-10-24T06:40:28.617669Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-24T06:40:28.680030Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-25T14:34:30.478719Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-25T14:34:30.479509Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=87508
+2026-10-26T01:51:08.890266Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=51063
+2026-10-26T01:51:08.890548Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-50929-campusca-297a833b079d347b.sock
+2026-10-26T01:51:09.128870Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-26T04:11:31.412948Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=83199
+2026-10-26T04:11:31.413189Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-26T04:11:31.437355Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-26T04:17:18.282448Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=83199
+2026-10-26T04:48:27.925267Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-26T04:48:27.926467Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=51063
+2026-10-26T04:54:07.093475Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=90210
+2026-10-26T04:54:07.093532Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-90082-campusca-297a833b079d347b.sock
+2026-10-26T04:54:07.211251Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-26T05:56:44.352028Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-26T05:56:44.354588Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=90210
+2026-10-26T06:57:03.492367Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=97197
+2026-10-26T06:57:03.492551Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-26T06:57:03.738238Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-26T08:08:26.952255Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-26T08:08:26.957115Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=97197
+2026-10-26T08:09:17.351423Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=6839
+2026-10-26T08:09:17.351480Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-26T08:09:17.599516Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-26T15:14:11.103912Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=6839
+2026-10-26T15:17:08.292721Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=48587
+2026-10-26T15:17:08.292737Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-26T15:17:08.295064Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-26T18:06:23.358161Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=48587
+2026-10-27T00:18:50.062404Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=83442
+2026-10-27T00:18:50.062624Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-27T00:18:50.077899Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-27T01:18:02.504970Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=83442
+2026-10-27T01:22:38.522042Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=90572
+2026-10-27T01:22:38.522090Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-90438-stm-hs-0-b3d506e5cbb36bb9.sock
+2026-10-27T01:22:38.833693Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-27T02:27:27.719941Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4886
+2026-10-27T02:27:27.719991Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-27T02:27:27.741220Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-27T02:52:45.572622Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-27T02:52:45.573319Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=90572
+2026-10-27T02:53:41.918284Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=11137
+2026-10-27T02:53:41.918337Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-10971-stm-hs-0-b3d506e5cbb36bb9.sock
+2026-10-27T02:53:42.379340Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-27T02:58:52.530353Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12314
+2026-10-27T02:58:52.530410Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-27T02:58:52.540853Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-27T03:02:17.036304Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-27T03:02:17.037156Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12314
+2026-10-27T03:19:58.774526Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=11137
+2026-10-27T03:29:13.418460Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=28981
+2026-10-27T03:29:13.418497Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-28803-stm-hs-0-b3d506e5cbb36bb9.sock
+2026-10-27T03:29:13.837980Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-27T03:38:42.552254Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=4886
+2026-10-27T04:09:42.266179Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=28981
+2026-10-27T04:12:32.093305Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=39863
+2026-10-27T04:12:32.093351Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-27T04:12:32.104460Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-27T04:19:11.146039Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=45181
+2026-10-27T04:19:11.146228Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-45054-stm-hs-0-b3d506e5cbb36bb9.sock
+2026-10-27T04:19:11.447928Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-27T05:10:51.185993Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-27T05:10:51.188214Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=45181
+2026-10-27T07:34:16.133839Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-28T01:49:21.538563Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12387
+2026-10-28T01:49:21.538943Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-28T01:49:21.759900Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-28T01:59:13.243047Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=17224
+2026-10-28T01:59:13.243082Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-17096-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T01:59:13.668811Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T01:59:33.881515Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=17224
+2026-10-28T02:59:29.609239Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=39477
+2026-10-28T02:59:29.609447Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-39151-stm-kg-0-15318e06a959511e.sock
+2026-10-28T02:59:30.647927Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T02:59:52.100663Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=39477
+2026-10-28T02:59:55.463073Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12387
+2026-10-28T02:59:56.810638Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-28T02:59:56.811614Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=39863
+2026-10-28T02:59:59.930382Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=39860
+2026-10-28T02:59:59.930439Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-28T03:00:00.082840Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-28T03:50:10.839894Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=53139
+2026-10-28T03:50:10.839964Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-52998-stm-kg-0-15318e06a959511e.sock
+2026-10-28T03:50:11.428653Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T03:50:20.741590Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=53139
+2026-10-28T04:18:11.191618Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=63405
+2026-10-28T04:18:11.191675Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-63252-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T04:18:11.620763Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T04:38:30.573881Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=63405
+2026-10-28T04:38:35.986249Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=68754
+2026-10-28T04:38:35.986322Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-68628-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T04:38:36.256688Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T05:44:05.757269Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=86210
+2026-10-28T05:44:05.757335Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-86075-stm-kg-0-15318e06a959511e.sock
+2026-10-28T05:44:06.042293Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T05:49:01.730433Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=68754
+2026-10-28T05:49:17.061435Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=86984
+2026-10-28T05:49:17.061495Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-86832-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T05:49:17.244319Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T06:17:05.569078Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=86984
+2026-10-28T06:17:14.728471Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=95474
+2026-10-28T06:17:14.728523Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-95311-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T06:17:14.825728Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T06:21:00.076889Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=95474
+2026-10-28T06:21:06.229351Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=96908
+2026-10-28T06:21:06.229418Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-96782-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T06:21:06.447304Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T08:08:53.217765Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-28T08:08:53.218474Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=86210
+2026-10-28T08:08:54.236870Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-28T08:08:54.237508Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=96908
+2026-10-28T08:09:52.824479Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=27486
+2026-10-28T08:09:52.824529Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-27354-stm-kg-0-15318e06a959511e.sock
+2026-10-28T08:09:53.141222Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T08:09:58.858343Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=27486
+2026-10-28T08:10:12.721531Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=27752
+2026-10-28T08:10:12.721599Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-27608-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-28T08:10:13.032122Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-28T09:27:14.038971Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-28T09:27:14.039597Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=27752
+2026-10-28T14:58:49.476640Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=60138
+2026-10-28T14:58:49.476827Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-28T14:58:49.695115Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-29T05:48:40.698867Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=39860
+2026-10-29T05:48:59.238697Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=9571
+2026-10-29T05:48:59.238754Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-9432-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T05:48:59.329022Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T06:07:34.199715Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=9571
+2026-10-29T06:07:51.395834Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=12643
+2026-10-29T06:07:51.395894Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-12500-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T06:07:51.544297Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T06:18:39.578500Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-29T06:28:29.476905Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T06:28:29.477291Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=12643
+2026-10-29T07:17:59.495810Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=29795
+2026-10-29T07:17:59.496012Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-29620-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T07:17:59.926876Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T07:37:27.890769Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T07:37:27.891549Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=29795
+2026-10-29T07:42:18.817632Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=40741
+2026-10-29T07:42:18.817692Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-40551-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T07:42:19.227445Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T08:17:36.235457Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=40741
+2026-10-29T08:17:42.309934Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=44661
+2026-10-29T08:17:42.309999Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-44526-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T08:17:42.551809Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T08:45:49.553492Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=44661
+2026-10-29T08:45:58.928539Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=49023
+2026-10-29T08:45:58.928609Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-48886-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T08:45:59.130705Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T09:11:10.559090Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T09:11:10.559909Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=49023
+2026-10-29T09:23:34.213945Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=56879
+2026-10-29T09:23:34.214010Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-56744-stm-kg-0-15318e06a959511e.sock
+2026-10-29T09:23:34.708165Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T09:55:30.644365Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T09:55:30.645205Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=56879
+2026-10-29T11:42:37.471223Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=59716
+2026-10-29T11:42:37.471282Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-59542-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T11:42:37.653010Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T11:47:47.989004Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=61383
+2026-10-29T11:47:47.989075Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-61215-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T11:47:48.068788Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T11:48:44.107327Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=59716
+2026-10-29T11:48:53.448463Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=61693
+2026-10-29T11:48:53.448543Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-29T11:48:53.524362Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-29T12:13:36.839837Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T12:13:36.840247Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=61383
+2026-10-29T12:53:24.282818Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=66390
+2026-10-29T12:53:24.282885Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-66242-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T12:53:24.728628Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T13:03:41.836576Z  INFO herdr::client::clipboard_images: bridging local image to remote server bytes=22676 extension="png" source="file drop"
+2026-10-29T13:06:19.289606Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=66390
+2026-10-29T13:59:28.183919Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=73588
+2026-10-29T13:59:28.185173Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-72887-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T13:59:28.476823Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T15:28:25.243721Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-29T15:28:25.247101Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=73588
+2026-10-29T18:40:19.603595Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=55638
+2026-10-29T18:40:19.603669Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-55450-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-29T18:40:19.974283Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-29T19:55:35.669370Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=60138
+2026-10-29T19:59:55.759503Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=87389
+2026-10-29T19:59:55.759581Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-29T19:59:55.778506Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-29T20:00:52.578072Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=87389
+2026-10-29T20:01:32.161527Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=87855
+2026-10-29T20:01:32.161574Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-29T20:01:32.176482Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-29T20:04:58.045839Z  WARN herdr::client: failed to present retained pane surface patch error=Input/output error (os error 5)
+2026-10-29T20:04:58.046527Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=87855
+2026-10-30T09:35:52.138260Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=55638
+2026-10-30T10:27:02.336093Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=63916
+2026-10-30T10:27:02.336165Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-63695-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-30T10:27:02.814302Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-30T11:17:14.724137Z  WARN herdr::sound: sound playback failed sound=Request err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-30T11:38:36.650708Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-30T11:38:36.651658Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=63916
+2026-10-30T13:56:38.165780Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=85189
+2026-10-30T13:56:38.166521Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-84896-stm-pr-0-0010d56f6d5c7f56.sock
+2026-10-30T13:56:38.825636Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-30T14:26:13.226639Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=85189
+2026-10-31T05:23:36.373505Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=61693
+2026-10-31T05:23:38.834515Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=70474
+2026-10-31T05:23:38.834568Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T05:23:38.890458Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T05:23:47.358283Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=70474
+2026-10-31T05:24:10.644827Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=70582
+2026-10-31T05:24:10.644847Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T05:24:10.654266Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T05:25:48.662057Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=70582
+2026-10-31T05:27:17.084159Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=72282
+2026-10-31T05:27:17.084297Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T05:27:17.325911Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T05:27:28.597936Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=72282
+2026-10-31T07:24:28.396001Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=74043
+2026-10-31T07:24:28.396064Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T07:24:28.609439Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T07:25:47.500149Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=77684
+2026-10-31T07:25:47.500225Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T07:25:47.735736Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T07:25:57.110180Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=77684
+2026-10-31T07:57:11.679875Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=86873
+2026-10-31T07:57:11.679924Z  INFO herdr::client: connecting to server path=/Users/topone/.config/herdr/herdr-client.sock
+2026-10-31T07:57:11.697281Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-10-31T07:57:13.789601Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=86873
+2026-10-31T07:57:29.399707Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=87090
+2026-10-31T07:57:29.399771Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-86947-stm-kg-0-15318e06a959511e.sock
+2026-10-31T07:57:29.847280Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-31T08:38:34.506847Z  WARN herdr::sound: sound playback failed sound=Done err=player exited with exit status: 1: Error: AudioQueueStart failed (-66681)
+2026-10-31T09:01:14.385574Z  WARN herdr::client: endpoint transport failed endpoint=local error=connection was lost
+2026-10-31T09:01:14.386549Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=87090
+2026-10-31T09:38:37.001233Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=94351
+2026-10-31T09:38:37.001283Z  INFO herdr::client: connecting to server path=/var/folders/37/8v9ln7td3_333x90r8332l4r0000gn/T/herdr-r-94113-stm-kg-0-15318e06a959511e.sock
+2026-10-31T09:38:37.413432Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.5
+2026-10-31T09:58:39.522349Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=94351

@@ -96,13 +96,13 @@ outer.right = [{ monitor.'build-in' = 0 }, { monitor.'mi' = 20 }, 12]
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
+# New terminal window with alt + enter (like in i3). "is running" guard avoids two windows on cold start
+alt-enter = '''exec-and-forget osascript -e '
+if application "Ghostty" is running then tell application "Ghostty" to new window
+tell application "Ghostty" to activate'
+'''
+# New browser window with alt + shift + enter
+alt-shift-enter = 'exec-and-forget open -na "Google Chrome" --args --new-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'

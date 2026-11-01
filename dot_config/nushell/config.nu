@@ -2,28 +2,28 @@
 
 let theme = {
     # color for nushell primitives
-    separator: white
+    separator: default
     leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
-    header: { fg: '#ffffff' attr: b } # bold headerb
+    header: { fg: default attr: b } # bold headerb
     empty: blue
     # Closures can be used to choose colors for specific values.
     # The value (in this case, a bool) is piped into the closure.
     # eg) {|| if $in { 'light_cyan' } else { 'light_gray' } }
     bool: light_cyan
-    int: white
+    int: default
     filesize: cyan
-    duration: white
-    date: white
-    range: white
-    float: white
-    string: "#ffffff"
-    nothing: white
-    binary: white
-    cell-path: white
-    row_index: { fg: '#ffffff' attr: b } # bold row index
-    record: white
-    list: white
-    block: white
+    duration: default
+    date: default
+    range: default
+    float: default
+    string: default
+    nothing: default
+    binary: default
+    cell-path: default
+    row_index: { fg: default attr: b } # bold row index
+    record: default
+    list: default
+    block: default
     hints: dark_gray
     search_result: { bg: red fg: white }
     shape_and: purple_bold

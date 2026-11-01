@@ -17,7 +17,7 @@ $character
 right_format = """$all"""
 
 [directory]
-style = 'bold white'
+style = 'bold'
 format = "[ $path ]($style)"
 truncation_length = 4
 
@@ -59,7 +59,6 @@ error_symbol = '[➜](bold red) '
 
 [palettes.t1]
 primary = "#7A6FF0"
-white = "#ffffff"
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
 pink = "#f5c2e7"

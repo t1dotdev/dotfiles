@@ -18,7 +18,7 @@ a modular architecture. LSP is configured with **Neovim's native `vim.lsp`** API
    `options` → `diagnostics` → `commands` → `autocmds` → `autocmds.entrypoint`
    → `autocmds.lsp-attach` → `lazy` → `keymaps`.
 2. After lazy, `init.lua` loads the NvChad base46 highlight cache from
-   `stdpath("data")/base46_cache/` (regenerating it if missing).
+   `stdpath("data")/base46_cache/<background>/` (regenerating it if missing).
 
 ### Core Configuration Modules (`lua/config/`)
 
@@ -35,7 +35,8 @@ a modular architecture. LSP is configured with **Neovim's native `vim.lsp`** API
   Reference highlight/jump is `snacks.words`; `[x`/`]x` live in `diagnostics.lua`;
   diagnostic undercurl is applied in `init.lua` after the base46 cache loads.
 - `keymaps.lua` - Global, plugin-independent keybindings.
-- `lua/chadrc.lua` - NvChad config: **catppuccin** theme, transparency, custom
+- `lua/chadrc.lua` - NvChad config: **catppuccin** / **catppuccin-latte** theme
+  picked from `'background'`, transparency, custom
   purple (`#7A6FF0`) float/border highlights.
 
 ### Plugin System (`lua/plugins/`)
@@ -133,8 +134,14 @@ shfmt, goimports); gofmt/rustfmt come from the Go/Rust toolchains on `PATH`.
 
 ## Important Implementation Details
 
-- **Theme**: NvChad base46 (catppuccin, transparency). Regenerate cache by deleting
-  `~/.local/share/nvim/base46_cache/` and restarting.
+- **Theme**: NvChad base46 (transparency). Follows the terminal: Nvim sets
+  `'background'` from OSC 11 before `init.lua` runs, so light terminals get
+  catppuccin-latte and dark or silent ones get catppuccin. Terminal theme changes
+  (DEC 2031) and `<leader>ub` switch live via the autocmds in `init.lua`. Keep theme
+  colors out of `hl_override` unless they work on both backgrounds; use base46 color
+  names instead of hex. Each background has its own cache, and saving `chadrc.lua`
+  recompiles only the active one, so delete `~/.local/share/nvim/base46_cache/` and
+  restart to regenerate both.
 - **Diagnostics**: tiny-inline-diagnostic renders inline; the one `vim.diagnostic.config`
   lives in `lua/config/diagnostics.lua` (do not re-configure elsewhere).
 - **Completion**: blink.cmp (not nvim-cmp). Copilot is zbirenbaum/copilot.lua (ghost

@@ -1,7 +1,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "catppuccin", -- default theme
+	theme = vim.o.background == "light" and "catppuccin-latte" or "catppuccin", -- follows the terminal
 	transparency = true,
 	hl_override = {
 		NormalFloat = { bg = "NONE", fg = "NONE" },
@@ -14,7 +14,6 @@ M.base46 = {
 		LazyBorder = { fg = "#7A6FF0" },
 		LazyNormal = { link = "Normal" },
 		StatusLine = { bg = "NONE", fg = "#7A6FF0" },
-		StatusLineNC = { bg = "#16161e", fg = "#7A6FF0" },
 	},
 }
 

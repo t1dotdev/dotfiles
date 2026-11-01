@@ -140,14 +140,3 @@ $env.config.hooks.pre_prompt = (
         }
     }
 )
-
-# Blank line before every prompt except first. Needs starship add_newline = false.
-$env.config.hooks.pre_prompt = (
-    $env.config.hooks.pre_prompt | append {||
-        if ($env.PROMPT_SHOWN? | default false) { print "" }
-        $env.PROMPT_SHOWN = true
-    }
-)
-
-# Right prompt on last line of multi-line prompt (needed for starship add_newline)
-$env.config.render_right_prompt_on_last_line = true

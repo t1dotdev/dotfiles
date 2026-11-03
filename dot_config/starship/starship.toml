@@ -1,6 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
+add_newline = false
 
 palette = "t1"
 
@@ -25,7 +25,7 @@ truncation_length = 4
 [custom.git]
 description = "Display symbol for remote Git server"
 command = """
-GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+GIT_REMOTE=$(command git config --get remote.origin.url 2> /dev/null)
 if [[ "$GIT_REMOTE" =~ "github" ]]; then
     GIT_REMOTE_SYMBOL=" "
 elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
@@ -39,11 +39,14 @@ else
 fi
 echo "$GIT_REMOTE_SYMBOL "
 """
-when = "git rev-parse --is-inside-work-tree 2> /dev/null"
-shell = 'sh'
+when = true
+shell = ['bash', '--noprofile', '--norc']
 format = "$output"
 require_repo = true
 ignore_timeout = true
+
+[swift]
+disabled = true
 
 [git_branch]
 symbol = " "
@@ -52,7 +55,7 @@ format =  "  [$symbol$branch]($style) "
 
 [character]
 success_symbol = "[➜](bold fg:primary)"
-error_symbol = '[➜](bold red) '
+error_symbol = '[➜](bold red)'
 # success_symbol = '[❯](bold primary)'
 # error_symbol = '[❯](bold red)'
 

@@ -1,0 +1,4 @@
+# $SHELL stays zsh, and .zshrc skips `exec nu` when NU_VERSION is inherited,
+# so a shell spawned from nu would otherwise remain zsh.
+[cd]
+    command = "nu"

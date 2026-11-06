@@ -51,7 +51,7 @@ right = 0.0
 top = 0.0
 
 [general]
-animationSpeed = 1.5
+animationSpeed = 1.0
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -70,6 +70,7 @@ fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "off"
 mouseResizeModifierKey = "option"
+mouseWheelSensitivity = 1.0
 overviewGestureEnabled = false
 overviewGestureFingerCount = 4
 resizePreviewStyle = "live"
@@ -100,10 +101,37 @@ enabled = false
 [launcher]
 appFolders = []
 cliFolders = []
-entries = []
 shell = "system"
 shellExecutable = ""
 terminal = "terminal"
+
+[[launcher.entries]]
+arguments = []
+command = ""
+id = "395140CC-EBFA-4484-B48D-8F69B50256B3"
+interpreter = ""
+keywords = ""
+kind = "application"
+name = "Rex Beta"
+path = "/Applications/Rex Beta.app"
+shell = "defaultShell"
+shellExecutable = ""
+terminal = "defaultTerminal"
+workingDirectory = ""
+
+[[launcher.entries]]
+arguments = []
+command = ""
+id = "D7FB0D93-91E5-462E-AF91-BDEB2510A6EF"
+interpreter = ""
+keywords = ""
+kind = "application"
+name = "Google Chrome"
+path = "/Applications/Google Chrome.app"
+shell = "defaultShell"
+shellExecutable = ""
+terminal = "defaultTerminal"
+workingDirectory = ""
 
 [mouseWarp]
 constrainToArrangement = false
@@ -235,10 +263,18 @@ showIcon = true
 showWorkspaceName = true
 useWorkspaceId = false
 
+[statusMenu]
+hiddenControls = []
+hiddenMenuItems = []
+showControlHelp = true
+showControls = true
+showMenuItems = true
+
 [windowSwitcher]
 commandTab = "activeWorkspace"
 enabled = false
 optionTab = "allWorkspaces"
+order = "omniLayout"
 scope = "allWorkspaces"
 showFooter = true
 
@@ -1101,6 +1137,14 @@ id = "exitKeyboardMode"
 
 [[hotkeys]]
 binding = "Unassigned"
+id = "openShellApp.example"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "newShellAppWindow.example"
+
+[[hotkeys]]
+binding = "Unassigned"
 id = "openCommandPalette"
 
 [[hotkeys]]
@@ -1182,6 +1226,14 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[hotkeys]]
+binding = "Option+Shift+Return"
+id = "openApp.com.google.Chrome"
+
+[[hotkeys]]
+binding = "Option+Return"
+id = "openApp.com.superlogical.rex"
 
 [[monitorGapOverrides]]
 id = "02C4011F-2084-405C-AF76-9E32D3E9321A"

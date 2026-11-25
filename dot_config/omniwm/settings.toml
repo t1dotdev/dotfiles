@@ -1,11 +1,28 @@
 schemaVersion = 5
 
+[appTheming]
+custom = []
+terminalColors = "palette"
+
+[appTheming.ghostty]
+enabled = false
+
+[appTheming.herdr]
+enabled = false
+reloadSavedMachines = true
+
+[appTheming.kitty]
+enabled = false
+
+[appTheming.neovim]
+enabled = false
+
 [appearance]
 mode = "dark"
 tabRailAppIcons = false
 
 [borders]
-enabled = true
+enabled = false
 width = 4.0
 
 [borders.color]
@@ -21,6 +38,10 @@ maxItemBytes = 8388608
 maxItems = 200
 maxTotalBytes = 67108864
 
+[commandPalette]
+searchedModes = ["windows", "applications", "commands", "files"]
+unifiedSearch = false
+
 [dwindle]
 defaultSplitRatio = 1.0
 moveToRootStable = true
@@ -30,6 +51,7 @@ splitWidthMultiplier = 1.0
 useGlobalGaps = true
 
 [focus]
+clickFocusWithoutScrolling = false
 crossesMonitorAtEdge = false
 edgeNavigationInterval = 1.5
 followsMouse = false
@@ -57,7 +79,9 @@ defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
+pausePalettePasteDuringSecureInput = true
 preventSleepEnabled = false
+slideWorkspaceSwitches = false
 systemHyperTrigger = "None"
 updateChecksEnabled = true
 workspaceAutoBackAndForth = false
@@ -122,12 +146,12 @@ workingDirectory = ""
 [[launcher.entries]]
 arguments = []
 command = ""
-id = "D7FB0D93-91E5-462E-AF91-BDEB2510A6EF"
+id = "005BF393-2302-4B0D-80B2-2CEB9238B552"
 interpreter = ""
 keywords = ""
 kind = "application"
-name = "Google Chrome"
-path = "/Applications/Google Chrome.app"
+name = "Safari"
+path = "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
 shell = "defaultShell"
 shellExecutable = ""
 terminal = "defaultTerminal"
@@ -143,11 +167,20 @@ allowOverscroll = false
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
 containerPrimarySpanPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
+defaultContainerPrimarySpan = 1.0
 edgeGaps = true
+edgePeekPercent = 0.0
+fitToVisibleContainerCount = false
 infiniteLoop = false
+keepExistingWindowWidth = false
+keepSizeOnUnstack = false
+keepSizesOnDisplayMove = false
+keepSizesOnSettingsChange = false
+keepStripEndsOnScreen = false
 moveWindowStacksIntoColumn = false
 overscrollVisibleStripPercent = 5
 resizeStepPercent = 5
+shrinkToFit = false
 singleWindowFit = "container_primary_span"
 visibleContainerCount = 1
 
@@ -260,6 +293,7 @@ weather = true
 [statusBar]
 showAppNames = false
 showIcon = true
+showLayout = false
 showWorkspaceName = true
 useWorkspaceId = false
 
@@ -1144,6 +1178,14 @@ binding = "Unassigned"
 id = "newShellAppWindow.example"
 
 [[hotkeys]]
+binding = "Option+Command+Z"
+id = "undo"
+
+[[hotkeys]]
+binding = "Option+Shift+Command+Z"
+id = "redo"
+
+[[hotkeys]]
 binding = "Unassigned"
 id = "openCommandPalette"
 
@@ -1229,7 +1271,7 @@ id = "toggleSystemStats"
 
 [[hotkeys]]
 binding = "Option+Shift+Return"
-id = "openApp.com.google.Chrome"
+id = "openApp.com.apple.Safari"
 
 [[hotkeys]]
 binding = "Option+Return"
